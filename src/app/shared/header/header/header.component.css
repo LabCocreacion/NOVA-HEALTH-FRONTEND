@@ -1,0 +1,16 @@
+.header{
+  background-color: #ffffff !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.blue-line {
+  height: 5px;
+  background-color: rgb(48, 2, 108);
+}
+
+.navbar-toogle{
+  color: #1da290;
+}
