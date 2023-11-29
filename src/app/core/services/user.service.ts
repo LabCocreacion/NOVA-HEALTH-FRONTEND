@@ -22,6 +22,17 @@ export class UserService {
         })
       );
   }
+
+  getUserById(id: string): Observable<User> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<User>(url, { withCredentials: true })
+      .pipe(
+        catchError(error => {
+          console.error(`Error fetching user with ID ${id}:`, error);
+          throw error;
+        })
+      );
+  }
   
   
 
