@@ -7,7 +7,7 @@ export interface User {
     numberphone: string;
     address: string;
     birthdate: string;
-    creationdate: string;
+    creationdate: Date;
     isactive: boolean;
   }
   

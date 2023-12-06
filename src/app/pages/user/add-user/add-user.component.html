@@ -1,0 +1,50 @@
+<div class="card container mt-5 shadow-lg mb-5">
+    <div class="card-body">
+        <h5 class="card-title">Crear Usuario</h5>
+        <p class="card-text">Formulario de creación de usuario</p>
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="container mt-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3 mt-2">
+                        <label class="form-label custom-label ">Nombre</label>
+                        <input type="text" formControlName="name" class="form-control" placeholder="Nombre">
+                    </div>
+                    <div class="mb-3 mt-2">
+                        <label class="form-label custom-label">Apellido</label>
+                        <input type="text" formControlName="lastname" class="form-control" placeholder="Apellido">
+                    </div>
+                    <div class="mb-3 mt-2">
+                        <label class="form-label custom-label">Email</label>
+                        <input type="email" formControlName="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="mb-3 mt-2">
+                        <label class="form-label custom-label">Edad</label>
+                        <input type="number" formControlName="age" class="form-control" placeholder="Edad">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3 mt-2">
+                        <label class="form-label custom-label">tel. Contacto</label>
+                        <input type="text" formControlName="numberphone" class="form-control" placeholder="Número de teléfono">
+                    </div>
+                    <div class="mb-3 mt-2">
+                        <label class="form-label custom-label">Dirección</label>
+                        <input type="text" formControlName="address" class="form-control" placeholder="Dirección">
+                    </div>
+                    <div class="mb-3 mt-2">
+                        <label class="form-label custom-label">Fecha de nacimiento</label>
+                        <input type="date" formControlName="birthdate" class="form-control" placeholder="Fecha de nacimiento">
+                    </div>
+                    <div class="mb-3 mt-2 form-check">
+                        <input type="checkbox" formControlName="isactive" class="form-check-input">
+                        <label class="form-check-label">Activo</label>
+                    </div>
+                </div>
+            </div>
+            <div class="tex-center">
+                <button class="btn btn-secondary">Cancelar</button>
+                <button type="submit" class="btn btn-success">Crear Usuario</button>
+            </div>
+        </form>
+    </div>
+</div>

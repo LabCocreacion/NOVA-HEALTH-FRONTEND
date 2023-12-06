@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/core/services/user.service';
 import { User } from 'src/app/core/models/user.model';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { User } from 'src/app/core/models/user.model';
 export class UserListComponent {
   users: User[] = []
 
-  constructor(private userService: UserService){}
+  constructor(private userService: UserService, private router: Router){}
 
   ngOnInit(): void {
     this.loadUsers();
@@ -32,6 +33,10 @@ export class UserListComponent {
     // Lógica para activar/desactivar usuario
     user.isactive = !user.isactive;
     console.log(`Activar/desactivar usuario con ID ${user.id}`);
+  }
+
+  onAddUser(): void {
+    this.router.navigate(['users/add-user']);
   }
 
 

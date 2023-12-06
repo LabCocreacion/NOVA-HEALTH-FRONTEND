@@ -1,0 +1,5 @@
+.custom-label {
+    border-bottom: 2px solid rgb(48, 2, 108);
+    display: inline-block;
+    width: 150px;
+}

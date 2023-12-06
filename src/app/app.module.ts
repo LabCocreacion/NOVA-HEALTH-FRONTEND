@@ -8,6 +8,7 @@ import { HeaderComponent } from './shared/header/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { IndexModule } from './pages/index/index.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { IndexModule } from './pages/index/index.module';
     BrowserAnimationsModule,
     IndexModule,
     CarouselModule.forRoot(),
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

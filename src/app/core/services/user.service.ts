@@ -33,6 +33,16 @@ export class UserService {
         })
       );
   }
+
+  addUser(user: User): Observable<User> {
+    return this.http.post<User>(`${this.apiUrl}/add`, user, { withCredentials: true })
+      .pipe(
+        catchError(error => {
+          console.error('Error adding user:', error);
+          throw error;
+        })
+      );
+  }
   
   
 
