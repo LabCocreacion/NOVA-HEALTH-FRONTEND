@@ -39,5 +39,12 @@ export class UserListComponent {
     this.router.navigate(['users/add-user']);
   }
 
+  deleteUser(id: number): void {
+    /*this.userService.deleteUser(id).subscribe((data: any) => {
+      this.loadUsers();
+    });*/
+    console.log(`Eliminar usuario con ID ${id}`);
+  }
+
 
 }

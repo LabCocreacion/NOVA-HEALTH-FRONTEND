@@ -1,7 +1,6 @@
-.header{
+.header-top{
   background-color: #ffffff !important;
-  padding-top: 10px;
-  padding-bottom: 10px;
+
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -11,6 +10,85 @@
   background-color: rgb(48, 2, 108);
 }
 
+.navbar-inc {
+  float: right;
+}
+
 .navbar-toogle{
   color: #1da290;
+}
+
+.header-menu{
+  background-color: #00828e;
+  color: #ffffff;
+  font-size: 26px;
+}
+
+.header-menu ul {
+  display: flex;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.nav-item-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-menu .nav-item {
+  list-style-type: none;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 17px; /* Ajusta este valor */
+  bottom: 17px; /* Ajusta este valor */
+  width: 1px;
+  background-color: #ffffff;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-item a {
+  display: block; 
+  width: 100%; 
+  padding: 10px;
+}
+
+.nav-item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-item-container .nav-item {
+  display: flex;
+}
+
+.nav-item-container .nav-item a {
+  display: block;
+  width: 100%;
+  padding: 10px;
+}
+
+.nav-item-container:hover {
+  background-color: #07585c;
 }

@@ -1,42 +1,60 @@
 <!-- header.component.html -->
-<nav class="header navbar navbar-expand-lg navbar-light bg-light">
-    <!-- Columna para el botón de navegación -->
+<nav class="header-top navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Columna para el botón de navegación -->
 
-    <a class="navbar-toogle" style="font-size: 30px; margin-right: 50px;" type="button"><i class="fa-solid fa-bars"></i></a>
+  <!-- <a class="navbar-toogle" style="font-size: 30px; margin-right: 50px;" type="button"><i class="fa-solid fa-bars"></i></a> -->
 
-    <div class="navbar-img" style="margin-right: 250px;">
+  <div class="navbar-container" style="display: flex; justify-content: space-between; width: 100%;">
+    <div class="navbar-cocreamos">
       <a style="cursor: pointer" title="NOVA" href="/index">
-        <img src="/assets/img/Mariposa2.png" width="80" height="80" alt="UNGRD">
+        <img src="/assets/img/logo-cocreamos.svg" width="370" height="150" alt="Cocreamos">
       </a>
     </div>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/index">Moninc</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/index">Phantom</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/users">Usuarios</a>
-        </li>
-      </ul>
-    </div>
-
-      <!-- Columna para el logo secundario -->
-
     <div class="navbar-inc">
       <a style="cursor: pointer" title="NOVA" href="/index">
-        <img src="/assets/img/logo_inc.png" width="200" height="80" alt="UNGRD">
+        <img src="/assets/img/logo-inc.svg" width="400" height="150" alt="Instituto Nacional de Cancerología">
       </a>
     </div>
+  </div>
 
-    <div class="login">
-      <button type="button" class="btn btn-primary">
-        Kperez <span class="badge badge-light">9</span>
-        <span class="sr-only">unread messages</span>
-      </button>
-    </div>
+  <div *ngIf="false" class="login">
+    <button type="button" class="btn btn-primary">
+      Kperez <span class="badge badge-light">9</span>
+      <span class="sr-only">unread messages</span>
+    </button>
+  </div>
 </nav>
-<div class="blue-line"></div>
+<div class="header-menu justify-content-center" id="navbarNav" >
+  <ul>
+    <div class="nav-item-container">
+      <li class="nav-item">
+        <a class="nav-link" href="/index">Inicio</a>
+      </li>
+    </div>
+    <div class="nav-item-container">
+      <li class="nav-item">
+        <a class="nav-link" href="/index">Acerca de nosotros</a>
+      </li>
+    </div>
+    <div class="nav-item-container">
+      <li class="nav-item">
+        <a class="nav-link" href="/index">Información de interés</a>
+      </li>
+    </div>
+    <div class="nav-item-container">
+      <li class="nav-item">
+        <a class="nav-link" href="/index">Contáctenos</a>
+      </li>
+    </div>
+    <div class="nav-item-container">
+      <li class="nav-item">
+        <a class="nav-link" href="/index">Proyectos de innovación</a>
+      </li>
+    </div>
+    <div class="nav-item-container">
+      <li class="nav-item">
+        <a class="nav-link" href="/users">Usuarios</a>
+      </li>
+    </div>
+  </ul>
+</div>
