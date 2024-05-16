@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { IndexModule } from './pages/index/index.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     IndexModule,
     CarouselModule.forRoot(),
     ReactiveFormsModule,
+    FullCalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

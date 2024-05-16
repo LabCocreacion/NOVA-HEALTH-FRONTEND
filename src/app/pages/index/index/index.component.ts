@@ -1,5 +1,6 @@
 import { Component, AfterViewChecked, ViewChild, ElementRef } from '@angular/core';
 import { Carousel } from 'bootstrap';
+import { CalendarComponent } from '../calendar/calendar.component';
 
 @Component({
   selector: 'app-index',
@@ -10,15 +11,22 @@ export class IndexComponent implements AfterViewChecked {
   @ViewChild('carouselExampleIndicators', { static: false }) carouselElementRef!: ElementRef;
   carousel!: Carousel;
   carouselInitialized = false;
+  calendarOptions: any;
+
+
+  constructor() {
+    this.calendarOptions = {
+      // Tus opciones de calendario van aquí
+    };
+  }
 
   ngAfterViewChecked() {
     if (!this.carouselInitialized) {
       setTimeout(() => {
-        console.log("Hola mundo")
         this.carousel = new Carousel(this.carouselElementRef.nativeElement, {
-          interval: 2000, // Cambia las imágenes cada 1000 milisegundos (1 segundo)
+          interval: 1000, // 2 seconds
         });
-        this.carousel.cycle(); // Inicia el carrusel
+        this.carousel.cycle(); 
         this.carouselInitialized = true;
       }, 0);
     }
@@ -32,7 +40,6 @@ export class IndexComponent implements AfterViewChecked {
     const activeItem = carouselElement.querySelector('.carousel-item.active');
     
     if (activeItem === carouselItems[0]) {
-      // Estás en el primer elemento del carrusel, no hagas nada
       return;
     }
     
@@ -43,4 +50,5 @@ export class IndexComponent implements AfterViewChecked {
     event.preventDefault();
     this.carousel.next();
   }
+  
 }

@@ -30,23 +30,90 @@
 
 .login-container {
     position: absolute;
-    top: 41vh;
-    right: 3vw; 
-    width: 20vw;  
+    top: 50%;
+    right: 3vw;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.8); 
     display: flex;
-    align-items: center; 
-    height: 47vh;
+    align-items: center;
     border-radius: 15px;
+    flex-direction: column;
+    width: 22%;
+}
+
+.login-container .btn-primary {
+    width: 70%;
+    margin-top: 10px;
+    background-color: #00b198;
 }
 
 .login-image {
     position: absolute;
     right: 20vw;
-    top: 34vh;
+    top: 38%;
     display: flex;
-    width: 20vw;
+    width: 20%;
     z-index: 5;
 }
 
+.menu-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: nowrap;
+}
+
+.circle-container {
+    text-align: center; 
+    display: inline-block;
+    margin: 25px;
+}
+
+.outer-circle {
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid #00b198; /* Ajusta el grosor del borde a tus necesidades */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.circle {
+    width: 150px; 
+    height: 150px;
+    background-color: #00b198;
+    border-radius: 50%;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    
+}
+
+.circle:hover{
+    width: 200px;
+    height: 200px;
+}
+
+.circle-container:hover .circle-title {
+    font-weight: bold;
+}
+
+.svg-icon {
+    width: 70%; 
+    height: auto;
+}
+
+.circle-title{
+    color: #00b198;
+    font-size: 20px;
+    text-align: center; 
+    word-wrap: break-word; 
+}
