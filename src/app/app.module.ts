@@ -11,12 +11,14 @@ import { IndexModule } from './pages/index/index.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { FooterComponent } from './shared/footer/footer/footer.component';
+import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NosotrosComponent
   ],
   imports: [
     BrowserModule,
