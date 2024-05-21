@@ -25,7 +25,7 @@
 }
 
 .fc-scroller-liquid-absolute::-webkit-scrollbar-thumb {
-    background: #50c2b3 !important; 
+    background: rgba(80, 194, 179, 0.5) !important;
     border-radius: 10px !important;
 }
 

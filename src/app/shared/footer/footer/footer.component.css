@@ -1,0 +1,52 @@
+.footer {
+    background-color: #68b9ae;
+    position: relative;
+    height: 450px; 
+}
+
+.content-box {
+    background-color: #fff; /* Ajusta esto al color de fondo que desees para el cuadro de contenido */
+    position: absolute;
+    top: -179px; /* Ajusta esto para cambiar cuánto se superpone el cuadro de contenido en el pie de página */
+    left: 50%; /* Centra el cuadro de contenido horizontalmente */
+    transform: translateX(-50%); /* Centra el cuadro de contenido horizontalmente */
+    width: 70%; /* Ajusta esto al ancho que desees para el cuadro de contenido */
+    padding: 50px; /* Ajusta esto al relleno que desees para el cuadro de contenido */
+    border: 5px solid #F6F8F9;
+    color: #4b4b4b;
+    font-size: 1em;
+}
+
+.content-box h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 34px;
+    margin-bottom: 20px;
+    color: #004884;
+}
+
+.content-box img {
+    max-width: 100%;
+    height: auto;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    font-family: "Work Sans";
+    font-size: 17px;
+}
+
+.image-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.redes a{
+    margin-right: 15px;
+    font-size: 20px;
+}
+

@@ -10,11 +10,13 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { IndexModule } from './pages/index/index.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { FooterComponent } from './shared/footer/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
