@@ -1,0 +1,84 @@
+.tittle{
+    background-image: url('../../../../src/assets/img/nosotros.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 170px;
+    padding-right: 20px;
+    margin-top: 0;
+}
+
+.text-tittle1{
+    margin-bottom: 10px;
+}
+
+.text-tittle2{
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 60px;
+    margin-top: -24px;
+}
+
+.content{
+    text-align: justify;
+    font-size: 20px;
+}
+
+.resume{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100px); 
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+  }
+
+.animate-left {
+    animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.animate-right {
+    animation: slideInFromRight 1s ease-out forwards;
+}
+
+.gestion-button{
+    background-color: #00828e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    animation: slideUp 1s ease-out forwards;
+}

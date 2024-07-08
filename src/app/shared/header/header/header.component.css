@@ -87,8 +87,13 @@
   display: block;
   width: 100%;
   padding: 10px;
+  font-size: 24px;
 }
 
 .nav-item-container:hover {
   background-color: #07585c;
+}
+
+.smaller {
+  height: 70px;
 }
