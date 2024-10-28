@@ -26,7 +26,7 @@ export class CalendarComponent {
     //https://fullcalendar.io/docs/event-object
     events: [
       { title: 'TEST', start: '2024-05-16T10:30:00', end: '2024-05-16T12:30:00' },
-      { title: 'Hackaton', start: '2024-05-22T10:30:00', end: '2024-05-25T12:30:00' }
+      { title: 'Hackaton', start: '2024-07-08T10:30:00', end: '2024-07-12T12:30:00' }
     ]
   };
 }
