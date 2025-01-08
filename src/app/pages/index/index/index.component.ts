@@ -38,6 +38,7 @@ export class IndexComponent implements AfterViewChecked {
     const carouselElement = this.carouselElementRef.nativeElement;
     const carouselItems = carouselElement.querySelectorAll('.carousel-item');
     const activeItem = carouselElement.querySelector('.carousel-item.active');
+    // prueba
     
     if (activeItem === carouselItems[0]) {
       return;
