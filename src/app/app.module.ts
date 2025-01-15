@@ -13,13 +13,15 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { FooterComponent } from './shared/footer/footer/footer.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 import { FormsModule } from '@angular/forms';
+import { HeaderLoginComponent } from './shared/header/header-login/header-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    NosotrosComponent
+    NosotrosComponent,
+    HeaderLoginComponent
   ],
   imports: [
     BrowserModule,

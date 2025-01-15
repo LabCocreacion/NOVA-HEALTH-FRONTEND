@@ -1,0 +1,25 @@
+.header-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.left-section .logo {
+  height: 40px;
+}
+
+.right-section .user-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.right-section .user-button:hover {
+  background-color: #0056b3;
+}

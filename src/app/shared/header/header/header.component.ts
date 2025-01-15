@@ -11,7 +11,7 @@ export class HeaderComponent {
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
     let images = this.el.nativeElement.querySelectorAll('img');
-    if (window.pageYOffset > 100) { // Ajusta este valor a la cantidad de scroll que quieras antes de que las imágenes se hagan más pequeñas
+    if (window.pageYOffset > 100) { 
       images.forEach((img: HTMLImageElement) => { // Explicitly type 'img' as 'HTMLImageElement'
         img.classList.add('smaller');
       });
