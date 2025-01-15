@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { FooterComponent } from './shared/footer/footer/footer.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { NosotrosComponent } from './pages/nosotros/nosotros.component';
     CarouselModule.forRoot(),
     ReactiveFormsModule,
     FullCalendarModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

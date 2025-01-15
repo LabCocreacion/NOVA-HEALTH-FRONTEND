@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'index', loadChildren: () => import('./pages/index/index.module').then(m => m.IndexModule) },
   { path: 'nosotros', component: NosotrosComponent },
   { path: 'users', loadChildren: () => import('./pages/user/user.module').then(m => m.UserModule) },
+  { path: 'dashboard', loadChildren: () => import('./pages/projects/dashboard/dashboard.module').then(m => m.DashboardModule) },
 ];
 
 

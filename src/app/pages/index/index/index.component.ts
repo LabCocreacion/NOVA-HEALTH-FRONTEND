@@ -1,6 +1,9 @@
 import { Component, AfterViewChecked, ViewChild, ElementRef } from '@angular/core';
 import { Carousel } from 'bootstrap';
 import { CalendarComponent } from '../calendar/calendar.component';
+import { LoginService } from 'src/app/core/services/login/login.service';
+import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-index',
@@ -12,12 +15,27 @@ export class IndexComponent implements AfterViewChecked {
   carousel!: Carousel;
   carouselInitialized = false;
   calendarOptions: any;
+  email: string = '';
+  password: string = '';
 
 
-  constructor() {
+  constructor( private loginService: LoginService, private router: Router) {
     this.calendarOptions = {
-      // Tus opciones de calendario van aquí
+      // opciones de calendario van aquí
     };
+  }
+
+  onLogin(): void {
+    this.loginService.login(this.email, this.password).subscribe(
+      response => {
+        console.log('Login successful', response);
+        this.router.navigate(['/dashboard']);
+      },
+      error => {
+        console.error('Login failed', error);
+        alert('Invalid credentials');
+      }
+    );
   }
 
   ngAfterViewChecked() {
