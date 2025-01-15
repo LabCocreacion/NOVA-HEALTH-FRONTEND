@@ -28,7 +28,6 @@ export class IndexComponent implements AfterViewChecked {
   onLogin(): void {
     this.loginService.login(this.email, this.password).subscribe(
       response => {
-        console.log('Login successful', response);
         this.router.navigate(['/dashboard']);
       },
       error => {

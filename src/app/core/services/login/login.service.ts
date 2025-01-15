@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -9,6 +9,8 @@ import { map } from 'rxjs/operators';
 export class LoginService {
   private apiUrl = 'http://localhost:5000/api/users/login';
   private isLoggedIn = false;
+  private userName: string | null = null;
+  private userProject: string | null = null;
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +19,11 @@ export class LoginService {
       map(response => {
         if (response && response.token) {
           localStorage.setItem('token', response.token);
+          localStorage.setItem('userName', response.userName); // Ensure this matches the backend response
+          localStorage.setItem('userProject', response.userProject); // Ensure this matches the backend response
           this.isLoggedIn = true;
+          this.userName = response.userName;
+          this.userProject = response.userProject;
         }
         return response;
       })
@@ -26,11 +32,28 @@ export class LoginService {
 
   logout(): void {
     localStorage.removeItem('token');
+    localStorage.removeItem('userName');
+    localStorage.removeItem('userProject');
     this.isLoggedIn = false;
+    this.userName = null;
+    this.userProject = null;
   }
 
   isAuthenticated(): boolean {
     return this.isLoggedIn || !!localStorage.getItem('token');
   }
 
+  getUserName(): string | null {
+    if (!this.userName) {
+      this.userName = localStorage.getItem('userName');
+    }
+    return this.userName;
+  }
+
+  getUserProject(): string | null {
+    if (!this.userProject) {
+      this.userProject = localStorage.getItem('userProject');
+    }
+    return this.userProject;
+  }
 }
