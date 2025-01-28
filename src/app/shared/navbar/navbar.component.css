@@ -1,0 +1,142 @@
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  border: 1px solid rgb(255 255 255 / 8%);
+  background: rgb(0 0 0 / 40%);
+  backdrop-filter: blur(20px);
+  transition: width 0.4s;
+  padding: 10px;
+  width: 20vw; 
+  max-width: 320px; 
+  height: 77vh; 
+  position: fixed;
+  top: 157px;
+  left: 15px;
+  font-size: 22px;
+  overflow-y: auto; 
+  overflow-x: hidden; 
+}
+
+
+.navbar::-webkit-scrollbar {
+  width: 12px; 
+}
+
+.navbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1); 
+  border-radius: 10px; 
+}
+
+.navbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3); 
+  border-radius: 10px; 
+  border: 3px solid rgba(0, 0, 0, 0.4); 
+}
+
+
+.navbar {
+  scrollbar-width: thin; 
+  scrollbar-color: rgba(255, 255, 255, 0.3) rgba(0, 0, 0, 0.4); 
+}
+
+.navbar-header {
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+
+.navbar-header h3 {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.navbar-header .white-hr {
+  border: 0;
+  height: 1px;
+  background: white;
+  margin: 10px 0;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%; 
+  overflow-x: hidden; 
+}
+
+.navbar li {
+  margin-bottom: 10px;
+  width: 100%; 
+  overflow-x: hidden; 
+}
+
+.navbar li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; 
+  box-sizing: border-box; 
+}
+
+.navbar li a i:first-child {
+  margin-right: 10px; 
+}
+
+.navbar li a i:last-child,
+.navbar li a .icon-placeholder {
+  margin-left: auto; 
+}
+
+.navbar li a .icon-placeholder {
+  width: 1em; 
+  height: 1em; 
+  display: inline-block;
+}
+
+.navbar li a:hover {
+  background: rgb(0 0 0 / 30%);
+  border-radius: 10px;
+}
+
+.dropdown {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+  padding-left: 0; 
+  width: 100%; 
+  overflow-x: hidden;
+}
+
+.dropdown-item {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: slideIn 0.7s forwards;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.dropdown-item a {
+  padding: 10px 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.dropdown-item a .small-icon {
+  font-size: 5px;
+  margin-left: 9px;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

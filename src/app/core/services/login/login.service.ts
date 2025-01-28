@@ -19,8 +19,8 @@ export class LoginService {
       map(response => {
         if (response && response.token) {
           localStorage.setItem('token', response.token);
-          localStorage.setItem('userName', response.userName); // Ensure this matches the backend response
-          localStorage.setItem('userProject', response.userProject); // Ensure this matches the backend response
+          localStorage.setItem('userName', response.userName); 
+          localStorage.setItem('userProject', response.userProject); 
           this.isLoggedIn = true;
           this.userName = response.userName;
           this.userProject = response.userProject;

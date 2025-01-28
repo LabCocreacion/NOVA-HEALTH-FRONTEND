@@ -30,7 +30,7 @@
 
 .login-container {
     position: absolute;
-    top: 50%;
+    top: 34%;
     right: 3vw;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.8); 
@@ -50,9 +50,9 @@
 .login-image {
     position: absolute;
     right: 20vw;
-    top: 38%;
+    top: 28%;
     display: flex;
-    width: 20%;
+    width: 16%;
     z-index: 5;
 }
 

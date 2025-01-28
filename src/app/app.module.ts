@@ -14,6 +14,7 @@ import { FooterComponent } from './shared/footer/footer/footer.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderLoginComponent } from './shared/header/header-login/header-login.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HeaderLoginComponent } from './shared/header/header-login/header-login.
     HeaderComponent,
     FooterComponent,
     NosotrosComponent,
-    HeaderLoginComponent
+    HeaderLoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

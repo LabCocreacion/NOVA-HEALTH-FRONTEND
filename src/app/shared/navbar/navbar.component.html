@@ -1,0 +1,156 @@
+<nav *ngIf="loginService.isAuthenticated()" class="navbar">
+  <div class="navbar-header">
+    <h3><i class="fa-regular fa-user"></i>  {{ userName }}</h3>
+    <hr class="white-hr">
+  </div>
+  <ul>
+    <li>
+      <a routerLink="/dashboard">
+        <i class="fa-solid fa-house"></i>
+        Home
+        <span class="icon-placeholder"></span>
+      </a>
+    </li>
+  </ul>
+  <ul *ngIf="userProject === 'mama' || userProject === 'cocreamos'">
+    <li>
+      <a (click)="toggleDropdown(0)">
+        <i class="fa-solid fa-person-breastfeeding"></i>
+        Tam. Mama
+        <i class="fa-solid" [ngClass]="isDropdownOpen[0] ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+      </a>
+      <ul *ngIf="isDropdownOpen[0]" class="dropdown">
+        <li class="dropdown-item">
+          <a routerLink="/option1">
+            <i class="fa-solid fa-circle small-icon"></i>
+            Option 2
+            <span class="icon-placeholder"></span>
+          </a>
+        </li>
+        <li class="dropdown-item">
+          <a routerLink="/option2">
+            <i class="fa-solid fa-circle small-icon"></i>
+            Option 3
+            <span class="icon-placeholder"></span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <ul *ngIf="userProject === 'phantom' || userProject === 'cocreamos'">
+    <li>
+      <a (click)="toggleDropdown(1)">
+        <i class="fa-regular fa-square-full"></i>
+        Phantom
+        <i class="fa-solid" [ngClass]="isDropdownOpen[1] ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+      </a>
+      <ul *ngIf="isDropdownOpen[1]" class="dropdown">
+        <li class="dropdown-item">
+          <a routerLink="/option1">
+            <i class="fa-solid fa-circle small-icon"></i>
+            Diligenciar Informe
+            <span class="icon-placeholder"></span>
+          </a>
+        </li>
+        <li class="dropdown-item">
+          <a routerLink="/option2">
+            <i class="fa-solid fa-circle small-icon"></i>
+            Registrar Institución
+            <span class="icon-placeholder"></span>
+          </a>
+        </li>
+        <li class="dropdown-item">
+          <a routerLink="/option2">
+            <i class="fa-solid fa-circle small-icon"></i>
+            Registrar Mamógrafo
+            <span class="icon-placeholder"></span>
+          </a>
+        </li>
+        <li class="dropdown-item">
+          <a routerLink="/option2">
+            <i class="fa-solid fa-circle small-icon"></i>
+            Registrar Técnologo
+            <span class="icon-placeholder"></span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <ul *ngIf="userProject === 'cancer hereditario' || userProject === 'cocreamos'">
+    <li>
+      <a (click)="toggleDropdown(2)">
+        <i class="fa-solid fa-people-roof"></i>
+        Cancer hereditario
+        <i class="fa-solid" [ngClass]="isDropdownOpen[2] ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+      </a>
+      <ul *ngIf="isDropdownOpen[2]" class="dropdown">
+        <li class="dropdown-item">
+          <a routerLink="/option1">
+            <i class="fa-solid fa-circle small-icon"></i>
+            Option 1
+            <span class="icon-placeholder"></span>
+          </a>
+        </li>
+        <li class="dropdown-item">
+          <a routerLink="/option2">
+            <i class="fa-solid fa-circle small-icon"></i>
+            Option 2
+            <span class="icon-placeholder"></span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <ul *ngIf="userProject === 'cocreamos'">
+    <li>
+      <a routerLink="/chatbot">
+        <i class="fa-solid fa-brain"></i>
+        IA Oncológico
+        <span class="icon-placeholder"></span>
+      </a>
+    </li>
+  </ul>
+  <ul *ngIf="userProject === 'cocreamos'">
+    <li>
+      <a routerLink="/events">
+        <i class="fa-solid fa-calendar-days"></i>
+        Eventos
+        <span class="icon-placeholder"></span>
+      </a>
+    </li>
+  </ul>
+  <ul *ngIf="userProject === 'cocreamos'">
+    <li>
+      <a routerLink="/events">
+        <i class="fa-solid fa-newspaper"></i>
+        Publicaciones
+        <span class="icon-placeholder"></span>
+      </a>
+    </li>
+  </ul>
+  <ul *ngIf="userProject === 'cocreamos'">
+    <li>
+      <a (click)="toggleDropdown(5)">
+        <i class="fa-solid fa-users"></i>
+        Usuarios
+        <i class="fa-solid" [ngClass]="isDropdownOpen[5] ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+      </a>
+      <ul *ngIf="isDropdownOpen[5]" class="dropdown">
+        <li class="dropdown-item">
+          <a routerLink="/option1">
+            <i class="fa-solid fa-circle small-icon"></i>
+            Option 1
+            <span class="icon-placeholder"></span>
+          </a>
+        </li>
+        <li class="dropdown-item">
+          <a routerLink="/option2">
+            <i class="fa-solid fa-circle small-icon"></i>
+            Option 2
+            <span class="icon-placeholder"></span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
