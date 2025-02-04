@@ -1,14 +1,15 @@
-<div class="container mt-5">
+<div class="section">
   <div class="row">
     <div class="col-12 my-5">
-      <button type="button" class="btn btn-success" (click)="onAddUser()">Crear Usuario</button>
+      <button type="button" class="btn btn-create-user" (click)="onAddUser()">
+        <i class="fas fa-user-plus"></i> Crear Usuario
+      </button>
     </div>
     <div class="col-12">
       <!-- <h2>Tabla de Usuarios</h2> -->
       <table class="table">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Nombre</th>
             <th>Email</th>
             <th>Número de Teléfono</th>
@@ -19,19 +20,22 @@
         </thead>
         <tbody>
           <tr *ngFor="let user of users">
-            <td>{{ user.id }}</td>
             <td>{{ user.name }}</td>
             <td>{{ user.email }}</td>
             <td>{{ user.numberphone }}</td>
             <td>{{ user.creationdate }}</td>
             <td>
               <div class="form-check form-switch">
-                <!--<input class="form-check-input" type="checkbox" [(ngModel)]="user.isactive" (change)="toggleActivation(user)"> -->
+                <input class="form-check-input custom-checkbox" type="checkbox" [(ngModel)]="user.isactive" (change)="toggleActivation(user)">
               </div>
             </td>
             <td>
-              <button class="btn btn-primary btn-sm" (click)="editUser(user.id)">Editar</button>
-              <button class="btn btn-danger btn-sm" (click)="deleteUser(user.id)">Eliminar</button>
+              <button class="btn btn-primary btn-sm" (click)="editUser(user.id)">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="btn btn-danger btn-sm" (click)="deleteUser(user.id)">
+                <i class="fas fa-trash-alt"></i>
+              </button>
             </td>
           </tr>
         </tbody>
