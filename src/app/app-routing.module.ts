@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'nosotros', component: NosotrosComponent },
   { path: 'users', loadChildren: () => import('./pages/user/user.module').then(m => m.UserModule) },
   { path: 'dashboard', loadChildren: () => import('./pages/projects/dashboard/dashboard.module').then(m => m.DashboardModule), canActivate: [AuthGuardService] },
+  { path: 'phantom', loadChildren: () => import('./pages/projects/phantom/phantom.module').then(m => m.PhantomModule), canActivate: [AuthGuardService] },
   { path: '', redirectTo: '/index', pathMatch: 'full' },
   { path: '**', redirectTo: '/index' }
 ];
