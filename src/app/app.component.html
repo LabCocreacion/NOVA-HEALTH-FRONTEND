@@ -6,4 +6,5 @@
     <router-outlet></router-outlet>
   </div>
 </div>
-<app-footer class="footer"></app-footer>
+<app-footer class="footer" *ngIf="!loginService.isAuthenticated()"></app-footer>
+<app-footer-login class="footer" *ngIf="loginService.isAuthenticated()"></app-footer-login>

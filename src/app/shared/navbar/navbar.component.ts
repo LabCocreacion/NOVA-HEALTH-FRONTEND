@@ -10,7 +10,7 @@ export class NavbarComponent {
 
   userName: string | null = null
   userProject: string | null = null
-  isDropdownOpen: boolean[] = [false, false];
+  isDropdownOpen: boolean[] = [true, true];
 
   constructor(public loginService: LoginService) { }
 

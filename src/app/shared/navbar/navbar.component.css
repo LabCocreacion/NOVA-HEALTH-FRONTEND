@@ -7,16 +7,37 @@
   transition: width 0.4s;
   padding: 10px;
   width: 20vw; 
-  max-width: 320px; 
-  height: 77vh; 
+  max-width: 320px;
   position: fixed;
   top: 157px;
   left: 15px;
   font-size: 22px;
   overflow-y: auto; 
-  overflow-x: hidden; 
+  overflow-x: hidden;
+  z-index: 1000;
 }
 
+@media (max-height: 800px) {
+  .navbar {
+    height: 70vh;
+  }
+}
+
+.navbar ul li {
+  margin: 0; /* Ajusta el margen según sea necesario */
+  padding: 5px 0; /* Ajusta el padding según sea necesario */
+}
+
+.navbar ul li a {
+  display: flex;
+  align-items: center;
+}
+
+/* Ajustes específicos para el proyecto 'phantom' */
+.navbar ul.phantom-project li {
+  margin: 0; /* Ajusta el margen según sea necesario */
+  padding: 2px 0; /* Ajusta el padding según sea necesario */
+}
 
 .navbar::-webkit-scrollbar {
   width: 12px; 
