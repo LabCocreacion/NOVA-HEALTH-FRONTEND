@@ -1,0 +1,69 @@
+<div class="section mt-5">
+  <div class="card">
+    <div class="card-header">
+      <h3>Agregar Institución</h3>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()">
+        <div class="row mb-4">
+          <div class="form-group col-md-6">
+            <label for="nombre">Nombre de la Institución:</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" ngModel required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="caracter_juridico">Carácter Jurídico:</label>
+            <input type="text" id="caracter_juridico" name="caracter_juridico" class="form-control" ngModel required>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="form-group col-md-6">
+            <label for="nombre_ips">Nombre de la IPS:</label>
+            <input type="text" id="nombre_ips" name="nombre_ips" class="form-control" ngModel required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="codigo_ips">Código de la IPS:</label>
+            <input type="text" id="codigo_ips" name="codigo_ips" class="form-control" ngModel required>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="form-group col-md-6">
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" class="form-control" ngModel required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="zona">Zona:</label>
+            <select id="zona" name="zona" class="form-control" ngModel required>
+              <option value="urbana">Urbana</option>
+              <option value="rural">Rural</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group mb-4">
+          <label for="tipo_servicio">Tipo de Servicio:</label>
+          <div class="btn-group-toggle d-flex justify-content-between" data-toggle="buttons">
+            <div class="button-container">
+              <button 
+                *ngFor="let checkbox of serviceTypeBoxes; let i = index"
+                (click)="toggleSelection(i)"
+                [class.selected]="checkbox.selected"
+                class="checkbox-btn">
+                {{ checkbox.name }}
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="form-group col-md-6">
+            <label for="telefono_gerencia">Teléfono de Gerencia:</label>
+            <input type="text" id="telefono_gerencia" name="telefono_gerencia" class="form-control" ngModel required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="telefono_enlace_tecnico">Teléfono Enlace Técnico:</label>
+            <input type="text" id="telefono_enlace_tecnico" name="telefono_enlace_tecnico" class="form-control" ngModel required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar Institución</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -9,6 +9,7 @@ import { User } from '../models/user.model';
 })
 export class UserService {
 
+  // TODO - replace with environment variable
   private apiUrl = 'http://127.0.0.1:5000/api/users';
 
   constructor(private http: HttpClient) {}

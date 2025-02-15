@@ -1,0 +1,41 @@
+<div class="section">
+    <div class="row">
+      <div class="col-12 my-5">
+        <button type="button" class="btn btn-create" (click)="AddInstitucion()">
+          <i class="fa-solid fa-plus"></i> Registrar Institución
+        </button>
+      </div>
+      <div class="col-12">
+        <!-- <h2>Tabla de Usuarios</h2> -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Nombre IPS</th>
+              <th>Teléfono Gerencia</th>
+              <th>Teléfono  Técnico</th>
+              <th>Tipo Zona</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let institucion of instituciones">
+              <td>{{ institucion.nombre }}</td>
+              <td>{{ institucion.nombre_ips }}</td>
+              <td>{{ institucion.telefono_gerencia }}</td>
+              <td>{{ institucion.telefono_enlace_tecnico }}</td>
+              <td>{{ institucion.zona }}</td>
+              <td>
+                <button class="btn btn-primary btn-sm">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="btn btn-danger btn-sm">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,54 @@
+.section {
+    padding: 63px;
+    background: #f4f4f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 100vh; /* Ensure the section covers the full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    padding-left: 373px;
+}
+
+.w-70 {
+    width: 50%;
+}
+
+.card-header {
+    background: #4D7F9D;
+    border: none;
+    padding: 10;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.btn-group-toggle .btn input[type="checkbox"] {
+    display: none;
+}
+
+.btn-group-toggle .btn.active {
+    background-color: green;
+    border-color: green;
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.checkbox-btn {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.checkbox-btn.selected {
+    background-color: green;
+    color: white;
+    border-color: green;
+}
+  

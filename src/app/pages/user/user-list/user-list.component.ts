@@ -36,7 +36,7 @@ export class UserListComponent {
   }
 
   onAddUser(): void {
-    this.router.navigate(['users/add-user']);
+    this.router.navigate(['/cocreamos-usuarios/add-user']);
   }
 
   deleteUser(id: number): void {
