@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { InstitutosListComponent } from './institutos-list/institutos-list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AddInstitucionesComponent } from './add-instituciones/add-instituciones.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 const routes: Routes = [
   { path: 'list-instituciones', component: InstitutosListComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    GoogleMapsModule
   ]
 })
 export class TmamaModule { }

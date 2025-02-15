@@ -39,17 +39,17 @@
           </div>
         </div>
         <div class="form-group mb-4">
+          <label for="ubicacion">Ubicación:</label>
+          <google-map height="400px" width="100%" [center]="center" [zoom]="zoom" (mapClick)="mapClicked($event)">
+            <map-marker [position]="center" [options]="markerOptions"></map-marker>
+          </google-map>
+        </div>
+        <div class="form-group mb-4">
           <label for="tipo_servicio">Tipo de Servicio:</label>
-          <div class="btn-group-toggle d-flex justify-content-between" data-toggle="buttons">
-            <div class="button-container">
-              <button 
-                *ngFor="let checkbox of serviceTypeBoxes; let i = index"
-                (click)="toggleSelection(i)"
-                [class.selected]="checkbox.selected"
-                class="checkbox-btn">
-                {{ checkbox.name }}
-              </button>
-            </div>
+          <div class="btn-group-toggle d-flex" data-toggle="buttons">
+            <label class="btn btn-outline-primary mr-5" [class.active]="checkbox.selected" *ngFor="let checkbox of serviceTypeBoxes; let i = index" (click)="toggleSelection(i)">
+              <input type="checkbox" [checked]="checkbox.selected" (change)="toggleSelection(i)"> {{ checkbox.name }}
+            </label>
           </div>
         </div>
         <div class="row mb-4">

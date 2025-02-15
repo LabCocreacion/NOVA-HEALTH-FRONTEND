@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { HeaderLoginComponent } from './shared/header/header-login/header-login.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterLoginComponent } from './shared/footer/footer-login/footer-login.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({ declarations: [
         AppComponent,
@@ -28,6 +29,7 @@ import { FooterLoginComponent } from './shared/footer/footer-login/footer-login.
     ],
     bootstrap: [AppComponent], imports: [BrowserModule,
         AppRoutingModule,
+        GoogleMapsModule,
         UserModule,
         BrowserAnimationsModule,
         IndexModule,

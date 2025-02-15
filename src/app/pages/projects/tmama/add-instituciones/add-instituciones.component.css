@@ -13,6 +13,10 @@
     width: 50%;
 }
 
+.mr-5 {
+    margin-right: 10px;
+}
+
 .card-header {
     background: #4D7F9D;
     border: none;
