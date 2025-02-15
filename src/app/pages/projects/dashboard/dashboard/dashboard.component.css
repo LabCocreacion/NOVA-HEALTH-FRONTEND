@@ -76,3 +76,8 @@
     font-size: 1em;
     transition: opacity 0.3s; 
 }
+
+.button-item a {
+    color: inherit;
+    text-decoration: none; 
+}
