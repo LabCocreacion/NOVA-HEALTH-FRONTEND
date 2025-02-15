@@ -2,47 +2,103 @@
     <div class="card-body">
         <h5 class="card-title">Crear Usuario</h5>
         <p class="card-text">Formulario de creación de usuario</p>
-        <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="container mt-5">
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="container mt-5" autocomplete="off">
             <div class="row">
                 <div class="col-md-6">
                     <div class="mb-3 mt-2">
-                        <label class="form-label custom-label ">Nombre</label>
+                        <label class="form-label custom-label">Nombre</label>
                         <input type="text" formControlName="name" class="form-control" placeholder="Nombre">
-                    </div>
-                    <div class="mb-3 mt-2">
-                        <label class="form-label custom-label">Apellido</label>
-                        <input type="text" formControlName="lastname" class="form-control" placeholder="Apellido">
-                    </div>
-                    <div class="mb-3 mt-2">
-                        <label class="form-label custom-label">Email</label>
-                        <input type="email" formControlName="email" class="form-control" placeholder="Email">
-                    </div>
-                    <div class="mb-3 mt-2">
-                        <label class="form-label custom-label">Edad</label>
-                        <input type="number" formControlName="age" class="form-control" placeholder="Edad">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="mb-3 mt-2">
-                        <label class="form-label custom-label">tel. Contacto</label>
+                        <label class="form-label custom-label">Apellido</label>
+                        <input type="text" formControlName="lastname" class="form-control" placeholder="Apellido">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3 mt-2">
+                        <label class="form-label custom-label">N. Identificación</label>
+                        <input type="text" formControlName="identificacion" class="form-control" placeholder="Identificación">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3 mt-2">
+                        <label class="form-label custom-label">Tel. Contacto</label>
                         <input type="text" formControlName="numberphone" class="form-control" placeholder="Número de teléfono">
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
                     <div class="mb-3 mt-2">
-                        <label class="form-label custom-label">Dirección</label>
-                        <input type="text" formControlName="address" class="form-control" placeholder="Dirección">
+                        <label class="form-label custom-label">Email</label>
+                        <input type="email" formControlName="email" class="form-control" placeholder="Email" autocomplete="off">
+                        <!-- <div *ngIf="userForm.get('email')?.hasError('emailExists') && userForm.get('email')?.touched" class="text-danger">
+                            Este email ya se encuentra inscrito.
+                        </div> -->
                     </div>
+                </div>
+                <div class="col-md-6">
                     <div class="mb-3 mt-2">
-                        <label class="form-label custom-label">Fecha de nacimiento</label>
-                        <input type="date" formControlName="birthdate" class="form-control" placeholder="Fecha de nacimiento">
+                        <label class="form-label custom-label">Contraseña</label>
+                        <div class="input-group">
+                            <input type="password" formControlName="password" class="form-control" placeholder="Contraseña" autocomplete="off">
+                            <button type="button" class="btn btn-outline-secondary" (click)="generatePassword()">Generar</button>
+                            <button type="button" class="btn btn-outline-secondary" (click)="copyPassword()">Copiar</button>
+                        </div>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3 mt-2">
+                        <label class="form-label custom-label">Proyecto</label>
+                        <select formControlName="project" class="form-control custom-select">
+                            <option value="" disabled selected>Seleccione el proyecto</option>
+                            <option value="Cocreamos">Cocreamos</option>
+                            <option value="Tamización Mama">Tamización Mama</option>
+                            <option value="Cáncer Hereditario">Cáncer Hereditario</option>
+                            <option value="Phantom">Phantom</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3 mt-2">
+                        <label class="form-label custom-label">Rol</label>
+                        <select formControlName="rol" class="form-control custom-select">
+                            <option value="" disabled selected>Seleccione el rol</option>
+                            <option value="Administrador">Administrador</option>
+                            <option value="Radiologo">Radiologo</option>
+                            <option value="Patologo">Patologo</option>
+                            <option value="Cirujano de mama">Cirujano de mama</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mb-3 mt-2">
+                        <label class="form-label custom-label">Institución</label>
+                        <select formControlName="instituto" class="form-control custom-select">
+                            <option value="" disabled selected>Seleccione la institución a la que está inscrito</option>
+                            <option *ngFor="let institucion of instituciones" [value]="institucion.nombre">{{ institucion.nombre }}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
                     <div class="mb-3 mt-2 form-check">
                         <input type="checkbox" formControlName="isactive" class="form-check-input">
                         <label class="form-check-label">Activo</label>
                     </div>
                 </div>
             </div>
-            <div class="tex-center">
-                <button class="btn btn-secondary">Cancelar</button>
+            <div class="text-center">
+                <button type="button" class="btn btn-secondary">Cancelar</button>
                 <button type="submit" class="btn btn-success">Crear Usuario</button>
             </div>
         </form>

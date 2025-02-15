@@ -44,6 +44,10 @@ export class UserService {
         })
       );
   }
+
+  checkEmailExists(email: string): Observable<boolean> {
+    return this.http.get<boolean>(`${this.apiUrl}/check-email?email=${email}`);
+  }
   
   
 

@@ -3,11 +3,14 @@ export interface User {
     name: string;
     lastname: string;
     email: string;
-    age: number;
+    identificacion: string;
     numberphone: string;
     address: string;
-    birthdate: string;
     creationdate: Date;
     isactive: boolean;
+    password: string;
+    project: string;
+    rol: string;
+    instituto: string;
   }
   
