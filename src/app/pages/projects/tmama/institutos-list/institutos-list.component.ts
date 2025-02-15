@@ -4,9 +4,10 @@ import { Instituto } from 'src/app/core/models/instituto.model';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-institutos-list',
-  templateUrl: './institutos-list.component.html',
-  styleUrls: ['./institutos-list.component.css']
+    selector: 'app-institutos-list',
+    templateUrl: './institutos-list.component.html',
+    styleUrls: ['./institutos-list.component.css'],
+    standalone: false
 })
 export class InstitutosListComponent {
   instituciones: Instituto[] = []

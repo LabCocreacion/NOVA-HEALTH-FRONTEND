@@ -6,9 +6,10 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-index',
-  templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+    selector: 'app-index',
+    templateUrl: './index.component.html',
+    styleUrls: ['./index.component.css'],
+    standalone: false
 })
 export class IndexComponent implements AfterViewChecked {
   @ViewChild('carouselExampleIndicators', { static: false }) carouselElementRef!: ElementRef;

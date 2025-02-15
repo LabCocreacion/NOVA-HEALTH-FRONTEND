@@ -4,9 +4,10 @@ import { InstitucionMamaService } from 'src/app/core/services/intituciones-mama/
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-add-instituciones',
-  templateUrl: './add-instituciones.component.html',
-  styleUrls: ['./add-instituciones.component.css']
+    selector: 'app-add-instituciones',
+    templateUrl: './add-instituciones.component.html',
+    styleUrls: ['./add-instituciones.component.css'],
+    standalone: false
 })
 export class AddInstitucionesComponent {
 

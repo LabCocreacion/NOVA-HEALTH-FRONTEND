@@ -3,9 +3,10 @@ import { LoginService } from 'src/app/core/services/login/login.service'
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-header-login',
-  templateUrl: './header-login.component.html',
-  styleUrls: ['./header-login.component.css']
+    selector: 'app-header-login',
+    templateUrl: './header-login.component.html',
+    styleUrls: ['./header-login.component.css'],
+    standalone: false
 })
 export class HeaderLoginComponent {
   userName: string | null = null;
