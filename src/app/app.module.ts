@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserModule } from './pages/user/user.module';
@@ -17,29 +17,22 @@ import { HeaderLoginComponent } from './shared/header/header-login/header-login.
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterLoginComponent } from './shared/footer/footer-login/footer-login.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    NosotrosComponent,
-    HeaderLoginComponent,
-    NavbarComponent,
-    FooterLoginComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    UserModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    IndexModule,
-    CarouselModule.forRoot(),
-    ReactiveFormsModule,
-    FullCalendarModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HeaderComponent,
+        FooterComponent,
+        NosotrosComponent,
+        HeaderLoginComponent,
+        NavbarComponent,
+        FooterLoginComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        UserModule,
+        BrowserAnimationsModule,
+        IndexModule,
+        CarouselModule.forRoot(),
+        ReactiveFormsModule,
+        FullCalendarModule,
+        FormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
