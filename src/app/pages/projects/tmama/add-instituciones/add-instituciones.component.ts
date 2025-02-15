@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { InstitucionMamaService } from 'src/app/core/services/intituciones-mama/institucion-mama.service';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/core/services/login/login.service';
+import { Instituto } from 'src/app/core/models/instituto.model';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add-instituciones',
@@ -15,11 +18,18 @@ export class AddInstitucionesComponent {
     { id: 3, name: 'Estadificación', selected: false }
   ];
 
+  //INC coordenadas de Bogotá
   center: google.maps.LatLngLiteral = { lat: 4.5882175, lng: -74.0845733 };
   zoom = 12;
   markerOptions: google.maps.MarkerOptions = { draggable: true };
 
-  constructor(private institucionService: InstitucionMamaService, private router: Router) { }
+  userName: string | null = null;
+
+  constructor(private institucionService: InstitucionMamaService, private router: Router, public loginService: LoginService) { }
+
+  ngOnInit(): void {
+    this.userName = this.loginService.getUserName();
+  }
 
   toggleSelection(index: number) {
     this.serviceTypeBoxes[index].selected = !this.serviceTypeBoxes[index].selected;
@@ -34,7 +44,7 @@ export class AddInstitucionesComponent {
     }
   }
 
-  markerDragEnd(event: google.maps.MapMouseEvent) {
+  markerDragEnd(event: any) {
     if (event.latLng) {
       this.center = {
         lat: event.latLng.lat(),
@@ -43,8 +53,35 @@ export class AddInstitucionesComponent {
     }
   }
 
-  onSubmit() {
-    // Aquí puedes agregar la lógica para enviar el formulario
-    // Incluyendo la ubicación seleccionada en el mapa
+  onSubmit(form: NgForm) {
+    if (form.valid) {
+      const selectedServices = this.serviceTypeBoxes
+        .filter(box => box.selected)
+        .map(box => box.name)
+        .join(', ');
+
+      const newInstituto: Instituto = {
+        id: 0,
+        nombre: form.value.nombre,
+        nombre_ips: form.value.nombre_ips,
+        codigo_ips: form.value.codigo_ips,
+        direccion: form.value.direccion,
+        tipo_servicio: selectedServices,
+        caracter_juridico: form.value.caracter_juridico,
+        telefono_gerencia: form.value.telefono_gerencia,
+        telefono_enlace_tecnico: form.value.telefono_enlace_tecnico,
+        zona: form.value.zona,
+        fecha_creacion: new Date(),
+        creation_user: this.userName || 'defaultUser', // Asigna el usuario actual
+        latitud: this.center.lat,
+        longitud: this.center.lng
+      };
+
+      this.institucionService.addInstitucion(newInstituto).subscribe(() => {
+        this.router.navigate(['/tamizacion-mama/list-instituciones']);
+      }, error => {
+        console.error('Error al agregar la institución:', error);
+      });
+    }
   }
 }

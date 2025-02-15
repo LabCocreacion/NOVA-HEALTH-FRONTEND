@@ -23,4 +23,14 @@ export class InstitucionMamaService {
       );
   }
 
+  addInstitucion(institucion: Instituto): Observable<Instituto> {
+    return this.http.post<Instituto>(`${this.apiUrl}/addInstitucion`, institucion, { withCredentials: true })
+      .pipe(
+        catchError(error => {
+          console.error('Error adding instituto:', error);
+          throw error;
+        })
+      );
+  }
+
 }

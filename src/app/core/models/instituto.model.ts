@@ -10,4 +10,7 @@ export interface Instituto {
     telefono_enlace_tecnico: string;
     zona: string;
     fecha_creacion: Date;
+    creation_user: string;
+    latitud: number;
+    longitud: number;
 }

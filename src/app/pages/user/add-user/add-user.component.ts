@@ -34,11 +34,11 @@ export class AddUserComponent implements OnInit{
       this.userService.addUser(newUser).subscribe(
         response => {
           console.log('User added successfully', response);
-          // Aquí puedes manejar la respuesta del servidor
+          // TODO: mostrar popup de éxito y redireccionar al listado de usuarios
         },
         error => {
           console.error('Error adding user:', error);
-          // Aquí puedes manejar el error
+        // TODO: mostrar popup de error
         }
       );
     }
