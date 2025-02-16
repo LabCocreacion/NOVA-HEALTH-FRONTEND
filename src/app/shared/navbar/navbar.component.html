@@ -12,7 +12,7 @@
       </a>
     </li>
   </ul>
-  <ul *ngIf="userProject === 'mama' || userProject === 'cocreamos'">
+  <ul *ngIf="userProject === 'Tamización de Mama' || userProject === 'Cocreamos'">
     <li>
       <a (click)="toggleDropdown(0)">
         <i class="fa-solid fa-person-breastfeeding"></i>
@@ -23,21 +23,28 @@
         <li class="dropdown-item">
           <a routerLink="/option1">
             <i class="fa-solid fa-circle small-icon"></i>
-            Option 2
+            Gestión Usuarios
             <span class="icon-placeholder"></span>
           </a>
         </li>
         <li class="dropdown-item">
           <a routerLink="/option2">
             <i class="fa-solid fa-circle small-icon"></i>
-            Option 3
+            Gestión	Instituciones
+            <span class="icon-placeholder"></span>
+          </a>
+        </li>
+        <li class="dropdown-item">
+          <a routerLink="/option2">
+            <i class="fa-solid fa-circle small-icon"></i>
+            Reportes/Indicadores
             <span class="icon-placeholder"></span>
           </a>
         </li>
       </ul>
     </li>
   </ul>
-  <ul *ngIf="userProject === 'phantom' || userProject === 'cocreamos'">
+  <ul *ngIf="userProject === 'Phantom' || userProject === 'Cocreamos'">
     <li>
       <a (click)="toggleDropdown(1)">
         <i class="fa-regular fa-square-full"></i>
@@ -76,7 +83,7 @@
       </ul>
     </li>
   </ul>
-  <ul *ngIf="userProject === 'cancer hereditario' || userProject === 'cocreamos'">
+  <ul *ngIf="userProject === 'Cáncer Hereditario' || userProject === 'Cocreamos'">
     <li>
       <a (click)="toggleDropdown(2)">
         <i class="fa-solid fa-people-roof"></i>
@@ -101,7 +108,7 @@
       </ul>
     </li>
   </ul>
-  <ul *ngIf="userProject === 'cocreamos'">
+  <ul *ngIf="userProject === 'Cocreamos'">
     <li>
       <a routerLink="/chatbot">
         <i class="fa-solid fa-brain"></i>
@@ -110,7 +117,7 @@
       </a>
     </li>
   </ul>
-  <ul *ngIf="userProject === 'cocreamos'">
+  <ul *ngIf="userProject === 'Cocreamos'">
     <li>
       <a routerLink="/events">
         <i class="fa-solid fa-calendar-days"></i>
@@ -119,7 +126,7 @@
       </a>
     </li>
   </ul>
-  <ul *ngIf="userProject === 'cocreamos'">
+  <ul *ngIf="userProject === 'Cocreamos'">
     <li>
       <a routerLink="/events">
         <i class="fa-solid fa-newspaper"></i>
@@ -128,7 +135,7 @@
       </a>
     </li>
   </ul>
-  <ul *ngIf="userProject === 'cocreamos'">
+  <ul *ngIf="userProject === 'Cocreamos'">
     <li>
       <a (click)="toggleDropdown(5)">
         <i class="fa-solid fa-users"></i>

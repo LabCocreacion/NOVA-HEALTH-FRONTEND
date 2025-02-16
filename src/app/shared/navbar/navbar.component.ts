@@ -18,6 +18,9 @@ export class NavbarComponent {
   ngOnInit(): void {
     this.userName = this.loginService.getUserName();
     this.userProject = this.loginService.getUserProject();
+    let userInfo = this.loginService.getUserInfo()
+    console.log(userInfo)
+    console.log(this.userProject)
   }
 
   toggleDropdown(index: number): void {

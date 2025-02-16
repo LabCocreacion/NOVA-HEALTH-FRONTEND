@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { InstitucionMamaService } from 'src/app/core/services/intituciones-mama/institucion-mama.service';
+import { LoginService } from 'src/app/core/services/login/login.service';
 
 @Component({
     selector: 'app-dashboard',
@@ -9,12 +9,12 @@ import { InstitucionMamaService } from 'src/app/core/services/intituciones-mama/
 })
 export class DashboardComponent {
 
-  constructor(private institucionService: InstitucionMamaService) { }
+  userInfo: any
+
+  constructor(public loginService: LoginService) { }
 
   ngOnInit() {
-    this.institucionService.getInstituciones().subscribe((data: any) => {
-      console.log(data);
-    });
+    this.userInfo = this.loginService.getUserInfo()
   }
 
 }

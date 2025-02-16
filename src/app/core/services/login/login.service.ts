@@ -21,6 +21,10 @@ export class LoginService {
           localStorage.setItem('token', response.token);
           localStorage.setItem('userName', response.userName); 
           localStorage.setItem('userProject', response.userProject); 
+          localStorage.setItem('userRol', response.userRol);
+          localStorage.setItem('userIdent', response.userIdent);
+          localStorage.setItem('userInstitucion', response.userInstitucion);
+          localStorage.setItem('userEmail', response.userEmail);
           this.isLoggedIn = true;
           this.userName = response.userName;
           this.userProject = response.userProject;
@@ -34,6 +38,10 @@ export class LoginService {
     localStorage.removeItem('token');
     localStorage.removeItem('userName');
     localStorage.removeItem('userProject');
+    localStorage.removeItem('userRol');
+    localStorage.removeItem('userIdent');
+    localStorage.removeItem('userInstitucion');
+    localStorage.removeItem('userEmail');
     this.isLoggedIn = false;
     this.userName = null;
     this.userProject = null;
@@ -50,10 +58,22 @@ export class LoginService {
     return this.userName;
   }
 
+  getUserInfo(): any {
+    return {
+      userName: this.getUserName(),
+      userProject: this.getUserProject(),
+      userRol: localStorage.getItem('userRol'),
+      userIdent: localStorage.getItem('userIdent'),
+      userInstitucion: localStorage.getItem('userInstitucion'),
+      userEmail: localStorage.getItem('userEmail')
+    };
+  }
+
   getUserProject(): string | null {
     if (!this.userProject) {
       this.userProject = localStorage.getItem('userProject');
     }
     return this.userProject;
   }
+  
 }

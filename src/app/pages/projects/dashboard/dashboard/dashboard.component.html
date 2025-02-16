@@ -1,7 +1,7 @@
 <div class="section">
-    <h1 class="title">Phantom</h1>
-    <p class="description mb-5">Bienvenido al proyecto Phantom, Tu rol es de Administrador, puedes acceder a los siguientes módulos:</p>
-    <div class="button-container">
+    <h1 class="title">{{ userInfo.userProject }}</h1>
+    <p class="description mb-5">Bienvenido al proyecto {{ userInfo.userProject }}, Tu rol es de {{ userInfo.userRol }}, puedes acceder a los siguientes módulos:</p>
+    <div class="button-container" *ngIf="userInfo.userRol === 'Administrador' && userInfo.userProject === 'Phantom'">
         <div class="button-item" routerLink="/cocreamos-usuarios/users">
             <i class="fa-solid fa-users-gear"></i>
             <span>Usuarios</span>
@@ -27,6 +27,32 @@
                 <i class="fa-solid fa-download"></i> <br>
                 <span>Descarga ATIA</span>
             </a>
+        </div>
+    </div>
+    <div class="button-container" *ngIf="userInfo.userRol === 'Administrador' && userInfo.userProject === 'Tamización de Mama'">
+        <div class="button-item" routerLink="/cocreamos-usuarios/users">
+            <i class="fa-solid fa-users-gear"></i>
+            <span>Usuarios</span>
+        </div>
+        <div class="button-item" routerLink="/tamizacion-mama/list-instituciones">
+            <i class="fa-solid fa-building"></i>
+            <span>Instituciones</span>
+        </div>
+        <div class="button-item" routerLink="/tamizacion-mama/load-files">
+            <i class="fa-solid fa-file-excel"></i>
+            <span>Cargar Datos</span>
+        </div>
+        <div class="button-item">
+            <i class="fa-solid fa-x-ray"></i>
+            <span>Gestión Calidad Mamógrafos</span>
+        </div>
+        <div class="button-item">
+            <i class="fa-solid fa-hospital-user"></i>
+            <span>Pacientes</span>
+        </div>
+        <div class="button-item">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Indicadores</span>
         </div>
     </div>
 </div>
