@@ -1,3 +1,40 @@
 <div class="section">
-    hola
+    <h2 class="title">Carga de Archivos</h2>
+    <p class="description mb-5">Seleccione el formato y la institución para cargar el archivo Excel correspondiente.</p>
+    <div class="button-container">
+        <button class="btn" (click)="openModal()">Formato 1 - ECM</button>
+        <button class="btn" (click)="openModal()">Formato 2 - MM</button>
+        <button class="btn" (click)="openModal()">Formato 3 - Biopsia</button>
+        <button class="btn" (click)="openModal()">Formato 4 - Cirugía de Mama</button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show': isModalOpen}" [ngStyle]="{'display': isModalOpen ? 'block' : 'none'}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Seleccione la Institución</h5>
+                <button type="button" class="close" (click)="closeModal()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="institucion">Institución</label>
+                    <select id="institucion" class="form-control" [(ngModel)]="selectedInstitucion" (change)="onInstitucionChange()">
+                        <option *ngFor="let institucion of instituciones" [value]="institucion.nombre">{{ institucion.nombre }}</option>
+                    </select>
+                </div>
+                <div *ngIf="selectedInstitucion">
+                    <label for="file">Cargar Archivo Excel</label>
+                    <input type="file" id="file" (change)="onFileSelected($event)" accept=".xlsx, .xls" class="form-control">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="closeModal()">Cerrar</button>
+                <button type="button" class="btn btn-primary" (click)="uploadFile()">Cargar</button>
+            </div>
+        </div>
+    </div>
 </div>

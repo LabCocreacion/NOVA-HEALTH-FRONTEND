@@ -33,4 +33,14 @@ export class InstitucionMamaService {
       );
   }
 
+  getPatients(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/patients`, { withCredentials: true })
+      .pipe(
+        catchError(error => {
+          console.error('Error fetching patients:', error);
+          throw error;
+        })
+      );
+  }
+
 }
