@@ -6,18 +6,21 @@ import { AddInstitucionesComponent } from './add-instituciones/add-instituciones
 import { GoogleMapsModule } from '@angular/google-maps';
 import { FormsModule } from '@angular/forms';
 import { LoadFilesComponent } from './load-files/load-files.component';
+import { PacientesListComponent } from './pacientes-list/pacientes-list.component';
 
 const routes: Routes = [
   { path: 'list-instituciones', component: InstitutosListComponent },
   { path: 'add-institucion', component: AddInstitucionesComponent },
   { path: 'load-files', component: LoadFilesComponent },
+  { path: 'list-pacientes', component: PacientesListComponent }
 ];
 
 @NgModule({
   declarations: [
     InstitutosListComponent,
     AddInstitucionesComponent,
-    LoadFilesComponent
+    LoadFilesComponent,
+    PacientesListComponent
   ],
   imports: [
     CommonModule,

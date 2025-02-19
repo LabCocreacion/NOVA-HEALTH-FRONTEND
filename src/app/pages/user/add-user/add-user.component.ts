@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/core/models/user.model';
 import { UserService } from 'src/app/core/services/user.service';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
-import { InstitucionMamaService } from 'src/app/core/services/intituciones-mama/institucion-mama.service';
+import { TamizacionMamaService } from 'src/app/core/services/tamizacion-mama/tamizacion-mama.service';
 import { Instituto } from 'src/app/core/models/instituto.model';
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
@@ -17,7 +17,7 @@ export class AddUserComponent implements OnInit {
   userForm!: FormGroup;
   instituciones: Instituto[] = [];
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService, private institucionService: InstitucionMamaService) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserService, private institucionService: TamizacionMamaService) { }
 
   ngOnInit(): void {
     this.loadInstituciones();

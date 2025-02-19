@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { InstitucionMamaService } from 'src/app/core/services/intituciones-mama/institucion-mama.service';
+import { TamizacionMamaService } from 'src/app/core/services/tamizacion-mama/tamizacion-mama.service';
 import { Instituto } from 'src/app/core/models/instituto.model';
 import { Router } from '@angular/router';
 import { Modal } from 'bootstrap';
@@ -14,7 +14,7 @@ export class InstitutosListComponent {
   instituciones: Instituto[] = [];
   selectedInstitucion: Instituto | null = null;
 
-  constructor(private institucionService: InstitucionMamaService, private router: Router) { }
+  constructor(private institucionService: TamizacionMamaService, private router: Router) { }
 
   ngOnInit() {
     this.loadInstituciones();

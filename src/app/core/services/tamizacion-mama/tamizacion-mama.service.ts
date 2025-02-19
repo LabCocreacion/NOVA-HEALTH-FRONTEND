@@ -7,7 +7,7 @@ import { Instituto } from '../../models/instituto.model';
 @Injectable({
   providedIn: 'root'
 })
-export class InstitucionMamaService {
+export class TamizacionMamaService {
 
   private apiUrl = 'http://localhost:5001/api/tamizacion-mama';
 
@@ -34,10 +34,20 @@ export class InstitucionMamaService {
   }
 
   getPatients(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/patients`, { withCredentials: true })
+    return this.http.get<any>(`${this.apiUrl}/patients/list-patients`, { withCredentials: true })
       .pipe(
         catchError(error => {
           console.error('Error fetching patients:', error);
+          throw error;
+        })
+      );
+  }
+
+  getFormsByPatientId(patientId: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/forms/forms-patient/${patientId}`, { withCredentials: true })
+      .pipe(
+        catchError(error => {
+          console.error('Error fetching forms:', error);
           throw error;
         })
       );

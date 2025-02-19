@@ -1,0 +1,84 @@
+<div class="section">
+  <div class="row">
+    <div class="col-12 my-5">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Buscar paciente..." [(ngModel)]="searchTerm" (input)="searchPaciente()">
+        <button class="btn btn-primary" (click)="searchPaciente()">
+          <i class="fa fa-search"></i> Buscar
+        </button>
+      </div>
+    </div>
+    <div class="col-12 text-center" *ngIf="noResults">
+      <div class="alert alert-warning" role="alert">
+          Paciente no registrado en nuestro sistema.
+      </div>
+      <button type="button" class="btn btn-create">
+        <i class="fa-solid fa-plus"></i> Registrar Formulario Radiólogo
+      </button>
+    </div>
+    <div class="col-12" *ngIf="!noResults">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Número de Documento</th>
+            <th>Régimen</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let paciente of filteredPacientes; let i = index">
+            <tr (click)="toggleRow(i, $event)">
+              <td>{{ paciente.nombres }}</td>
+              <td>{{ paciente.apellidos }}</td>
+              <td>{{ paciente.fecha_nacimiento | date:'dd/MM/yyyy' }}</td>
+              <td>{{ paciente.num_identificacion }}</td>
+              <td>{{ paciente.regimen }}</td>
+              <td>
+                <div (click)="toggleRow(i, $event)">
+                  <i class="fas" [ngClass]="{'fa-chevron-down': expandedRow !== i, 'fa-chevron-up': expandedRow === i}"></i>
+                </div>
+              </td>
+            </tr>
+            <tr *ngIf="expandedRow === i">
+              <td colspan="6">
+                <div class="accordion-content">
+                  <div *ngIf="loadingForms" class="loader"></div>
+                  <table *ngIf="!loadingForms" class="table table-accordion">
+                    <thead>
+                      <tr>
+                        <th>Examen</th>
+                        <th>Institución Prestadora</th>
+                        <th>Fecha de Toma de Examen</th>
+                        <th>Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <ng-container *ngFor="let form of forms">
+                        <tr>
+                          <td>{{ form.examen }}</td>
+                          <td>{{ form.institucion_prestadora }}</td>
+                          <td>{{ form.fecha_toma_examen | date:'dd/MM/yyyy' }}</td>
+                          <td>
+                            <i class="fas fa-eye"></i>
+                          </td>
+                        </tr>
+                      </ng-container>
+                    </tbody>
+                  </table>
+                  <div class="col-12 text-center">
+                    <button type="button" class="btn btn-create">
+                      <i class="fa-solid fa-plus"></i> Registrar Formulario Radiólogo
+                    </button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

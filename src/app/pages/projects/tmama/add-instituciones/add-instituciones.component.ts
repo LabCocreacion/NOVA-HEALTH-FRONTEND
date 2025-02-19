@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { InstitucionMamaService } from 'src/app/core/services/intituciones-mama/institucion-mama.service';
+import { TamizacionMamaService } from 'src/app/core/services/tamizacion-mama/tamizacion-mama.service';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/core/services/login/login.service';
 import { Instituto } from 'src/app/core/models/instituto.model';
@@ -25,7 +25,7 @@ export class AddInstitucionesComponent {
 
   userName: string | null = null;
 
-  constructor(private institucionService: InstitucionMamaService, private router: Router, public loginService: LoginService) { }
+  constructor(private institucionService: TamizacionMamaService, private router: Router, public loginService: LoginService) { }
 
   ngOnInit(): void {
     this.userName = this.loginService.getUserName();

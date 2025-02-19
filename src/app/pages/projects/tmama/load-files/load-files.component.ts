@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InstitucionMamaService } from 'src/app/core/services/intituciones-mama/institucion-mama.service';
+import { TamizacionMamaService } from 'src/app/core/services/tamizacion-mama/tamizacion-mama.service';
 import { Instituto } from 'src/app/core/models/instituto.model';
 
 @Component({
@@ -15,7 +15,7 @@ export class LoadFilesComponent implements OnInit {
   selectedInstitucion: string | null = null;
   selectedFile: File | null = null;
 
-  constructor(private institucionService: InstitucionMamaService) { }
+  constructor(private institucionService: TamizacionMamaService) { }
 
   ngOnInit(): void {
     this.loadInstituciones();
