@@ -4,7 +4,7 @@ import { TamizacionMamaService } from 'src/app/core/services/tamizacion-mama/tam
 import { LoginService } from 'src/app/core/services/login/login.service';
 import { Patient } from 'src/app/core/models/patient.model';
 import { ActivatedRoute } from '@angular/router';
-import { ea } from '@fullcalendar/core/internal-common';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-radiologo-form',
@@ -18,12 +18,14 @@ export class AddRadiologoFormComponent implements OnInit {
   userInfo: any;
   num_identificacion_paciente?: String;
   id_paciente_get?: number;
+  loading: boolean = false;
 
   constructor(
     private fb: FormBuilder,
     private tamizacionMamaService: TamizacionMamaService,
     private loginService: LoginService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {
     this.radiologoForm = this.fb.group({
       fechaTomaExamen: ['', Validators.required],
@@ -90,59 +92,43 @@ export class AddRadiologoFormComponent implements OnInit {
 
   onSubmit(): void {
     if (this.radiologoForm.valid) {
-      if (this.num_identificacion_paciente === null) {
-        console.log('No se ha seleccionado un paciente');
-        const patientData: Patient = {
-          id_paciente: 0,
-          nombres: this.radiologoForm.value.nombres,
-          apellidos: this.radiologoForm.value.apellidos,
-          fecha_nacimiento: new Date(this.radiologoForm.value.fechaNacimiento),
-          edad: this.calculateAge(new Date(this.radiologoForm.value.fechaNacimiento)),
-          tipo_documento: this.radiologoForm.value.tipoDocumento,
-          num_identificacion: this.radiologoForm.value.numIdentificacionPaciente,
-          eapb: this.radiologoForm.value.eapb,
-          regimen: this.radiologoForm.value.regimen
-        };
-        this.tamizacionMamaService.addPatient(patientData).subscribe(
-          response => {
-            console.log('Paciente agregado exitosamente', response);
-  
-          },
-          error => {
-            console.error('Error al agregar el paciente', error);
-          }
-        );
+      this.loading = true;
+      const patientData: Patient = {
+        id_paciente: this.id_paciente_get || 0,
+        nombres: this.radiologoForm.value.nombres,
+        apellidos: this.radiologoForm.value.apellidos,
+        fecha_nacimiento: new Date(this.radiologoForm.value.fechaNacimiento),
+        edad: this.calculateAge(new Date(this.radiologoForm.value.fechaNacimiento)),
+        tipo_documento: this.radiologoForm.value.tipoDocumento,
+        num_identificacion: this.radiologoForm.value.numIdentificacionPaciente,
+        eapb: this.radiologoForm.value.eapb,
+        regimen: this.radiologoForm.value.regimen
+      };
 
-      } else {
-        const patientData: Patient = {
-          id_paciente: this.id_paciente_get!,
-          nombres: this.radiologoForm.value.nombres,
-          apellidos: this.radiologoForm.value.apellidos,
-          fecha_nacimiento: new Date(this.radiologoForm.value.fechaNacimiento),
-          edad: this.calculateAge(new Date(this.radiologoForm.value.fechaNacimiento)),
-          tipo_documento: this.radiologoForm.value.tipoDocumento,
-          num_identificacion: this.radiologoForm.value.numIdentificacionPaciente,
-          eapb: this.radiologoForm.value.eapb,
-          regimen: this.radiologoForm.value.regimen
-        };
-        console.log('Paciente seleccionado:', this.num_identificacion_paciente);
-        console.log('Datos del paciente:', patientData);
-        this.tamizacionMamaService.updatePatient(patientData).subscribe(
-          response => {
-            console.log('Paciente actualizado exitosamente', response);
-          }
-        );
-      }
-      this.tamizacionMamaService.addFormRadiologo(this.radiologoForm.value).subscribe(
+      const patientObservable = this.id_paciente_get
+        ? this.tamizacionMamaService.updatePatient(patientData)
+        : this.tamizacionMamaService.addPatient(patientData);
+      patientObservable.subscribe(
         response => {
-          console.log('Formulario agregado exitosamente', response);
+          console.log(this.id_paciente_get ? 'Paciente actualizado exitosamente' : 'Paciente agregado exitosamente', response);
+          this.id_paciente_get = response.id_paciente || this.id_paciente_get;
+          this.tamizacionMamaService.addFormRadiologo(this.radiologoForm.value).subscribe(
+            response => {
+              console.log('Formulario agregado exitosamente', response);
+              this.loading = false;
+              this.router.navigate(['/tamizacion-mama/list-pacientes']);
+            },
+            error => {
+              console.error('Error al agregar el formulario', error);
+              this.loading = false;
+            }
+          );
         },
         error => {
-          console.error('Error al agregar el formulario', error);
+          console.error(this.id_paciente_get ? 'Error al actualizar el paciente' : 'Error al agregar el paciente', error);
+          this.loading = false;
         }
       );
-
-
     } else {
       console.log('Formulario no válido');
     }
@@ -157,5 +143,4 @@ export class AddRadiologoFormComponent implements OnInit {
     }
     return age;
   }
-
 }

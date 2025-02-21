@@ -49,6 +49,15 @@ export class UserService {
     return this.http.get<boolean>(`${this.apiUrl}/check-email?email=${email}`);
   }
   
+  getUserByIdentification(identification: string): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/getUserByIdentification/${identification}`, { withCredentials: true })
+      .pipe(
+        catchError(error => {
+          console.error(`Error fetching user with identification ${identification}:`, error);
+          throw error;
+        })
+      );
+  }
   
 
 }

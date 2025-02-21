@@ -12,7 +12,7 @@
       </a>
     </li>
   </ul>
-  <ul *ngIf="userProject === 'Tamización de Mama' || userProject === 'Cocreamos'">
+  <ul *ngIf="userProject === 'Tamización Mama' || userProject === 'Cocreamos'">
     <li>
       <a (click)="toggleDropdown(0)">
         <i class="fa-solid fa-person-breastfeeding"></i>
@@ -20,24 +20,38 @@
         <i class="fa-solid" [ngClass]="isDropdownOpen[0] ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
       </a>
       <ul *ngIf="isDropdownOpen[0]" class="dropdown">
-        <li class="dropdown-item">
+        <li class="dropdown-item" *ngIf="userInfo.userRol === 'Administrador'">
           <a routerLink="/option1">
             <i class="fa-solid fa-circle small-icon"></i>
             Gestión Usuarios
             <span class="icon-placeholder"></span>
           </a>
         </li>
-        <li class="dropdown-item">
+        <li class="dropdown-item" *ngIf="userInfo.userRol === 'Administrador'">
           <a routerLink="/option2">
             <i class="fa-solid fa-circle small-icon"></i>
             Gestión	Instituciones
             <span class="icon-placeholder"></span>
           </a>
         </li>
-        <li class="dropdown-item">
+        <li class="dropdown-item" *ngIf="userInfo.userRol === 'Administrador'">
           <a routerLink="/option2">
             <i class="fa-solid fa-circle small-icon"></i>
             Reportes/Indicadores
+            <span class="icon-placeholder"></span>
+          </a>
+        </li>
+        <li class="dropdown-item" *ngIf="userInfo.userRol === 'Radiologo'">
+          <a routerLink="/option2">
+            <i class="fa-solid fa-circle small-icon"></i>
+            Buscar Paciente
+            <span class="icon-placeholder"></span>
+          </a>
+        </li>
+        <li class="dropdown-item" *ngIf="userInfo.userRol === 'Radiologo'">
+          <a routerLink="/option2">
+            <i class="fa-solid fa-circle small-icon"></i>
+            Registrar Examen
             <span class="icon-placeholder"></span>
           </a>
         </li>

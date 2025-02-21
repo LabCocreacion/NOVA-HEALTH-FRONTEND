@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoadFilesComponent } from './load-files/load-files.component';
 import { PacientesListComponent } from './pacientes-list/pacientes-list.component';
 import { AddRadiologoFormComponent } from './add-radiologo-form/add-radiologo-form.component';
+import { DetailRadiologoFormComponent } from './detail-radiologo-form/detail-radiologo-form.component';
 
 const routes: Routes = [
   { path: 'list-instituciones', component: InstitutosListComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'load-files', component: LoadFilesComponent },
   { path: 'list-pacientes', component: PacientesListComponent },
   { path: 'add-radiologo-form', component: AddRadiologoFormComponent },
-  { path: 'add-radiologo-form/:num_identificacion_paciente', component: AddRadiologoFormComponent }
+  { path: 'add-radiologo-form/:num_identificacion_paciente', component: AddRadiologoFormComponent },
+  { path: 'detail-radiologo-form/:idForm/:num_identificacion_paciente/:institucion_prestadora', component: DetailRadiologoFormComponent }
 ];
 
 @NgModule({
@@ -25,7 +27,8 @@ const routes: Routes = [
     AddInstitucionesComponent,
     LoadFilesComponent,
     PacientesListComponent,
-    AddRadiologoFormComponent
+    AddRadiologoFormComponent,
+    DetailRadiologoFormComponent
   ],
   imports: [
     CommonModule,
@@ -34,6 +37,9 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule
   ],
-  exports: [AddRadiologoFormComponent]
+  exports: [
+    AddRadiologoFormComponent,
+    DetailRadiologoFormComponent
+  ]
 })
 export class TmamaModule { }

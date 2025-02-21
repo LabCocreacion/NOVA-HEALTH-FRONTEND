@@ -74,7 +74,7 @@ export class TamizacionMamaService {
       );
   }
 
-  getFormsByPatientId(patientId: string): Observable<any> {
+  getFormsByPatientId(patientId: String): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/forms/forms-patient/${patientId}`, { withCredentials: true })
       .pipe(
         catchError(error => {
@@ -89,6 +89,26 @@ export class TamizacionMamaService {
       .pipe(
         catchError(error => {
           console.error('Error adding form:', error);
+          throw error;
+        })
+      );
+  }
+
+  getRadiologoFormById(formId: String): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/forms/radiologo-form/${formId}`, { withCredentials: true })
+      .pipe(
+        catchError(error => {
+          console.error('Error fetching form:', error);
+          throw error;
+        })
+      );
+  }
+
+  getInstitucionByNames(institucion: String): Observable<Instituto> {
+    return this.http.get<Instituto>(`${this.apiUrl}/detalle-institucion/${institucion}`, { withCredentials: true })
+      .pipe(
+        catchError(error => {
+          console.error('Error fetching instituto:', error);
           throw error;
         })
       );
