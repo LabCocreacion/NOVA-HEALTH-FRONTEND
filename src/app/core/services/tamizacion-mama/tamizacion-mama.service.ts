@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Instituto } from '../../models/instituto.model';
+import { Patient } from '../../models/patient.model';
 
 @Injectable({
   providedIn: 'root'
@@ -43,11 +44,51 @@ export class TamizacionMamaService {
       );
   }
 
+  addPatient(patient: Patient): Observable<Patient> {
+    return this.http.post<Patient>(`${this.apiUrl}/patients/add-patient`, patient, { withCredentials: true })
+      .pipe(
+        catchError(error => {
+          console.error('Error adding patient:', error);
+          throw error;
+        })
+      );
+  }
+
+  updatePatient(patient: Patient): Observable<Patient> {
+    return this.http.put<Patient>(`${this.apiUrl}/patients/update-patient`, patient, { withCredentials: true })
+      .pipe(
+        catchError(error => {
+          console.error('Error updating patient:', error);
+          throw error;
+        })
+      );
+  }
+
+  getPatientById(patientId: String): Observable<Patient> {
+    return this.http.get<Patient>(`${this.apiUrl}/patients/patient/${patientId}`, { withCredentials: true })
+      .pipe(
+        catchError(error => {
+          console.error('Error fetching patient:', error);
+          throw error;
+        })
+      );
+  }
+
   getFormsByPatientId(patientId: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/forms/forms-patient/${patientId}`, { withCredentials: true })
       .pipe(
         catchError(error => {
           console.error('Error fetching forms:', error);
+          throw error;
+        })
+      );
+  }
+
+  addFormRadiologo(form: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/forms/addFormRadiologo`, form, { withCredentials: true })
+      .pipe(
+        catchError(error => {
+          console.error('Error adding form:', error);
           throw error;
         })
       );

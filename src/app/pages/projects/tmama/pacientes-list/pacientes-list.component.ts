@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Patient } from 'src/app/core/models/patient.model';
 import { TamizacionMamaService } from 'src/app/core/services/tamizacion-mama/tamizacion-mama.service';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pacientes-list',
@@ -18,7 +19,7 @@ export class PacientesListComponent implements OnInit {
   forms: any[] = [];
   loadingForms: boolean = false;
 
-  constructor(private tamizacionMamaService: TamizacionMamaService) { }
+  constructor(private tamizacionMamaService: TamizacionMamaService, private router: Router) { }
 
   ngOnInit(): void {
     this.tamizacionMamaService.getPatients().subscribe((data: any) => {
@@ -39,10 +40,11 @@ export class PacientesListComponent implements OnInit {
 
       this.tamizacionMamaService.getFormsByPatientId(this.pacientes[index].num_identificacion).subscribe((data: any) => {
         clearTimeout(loaderTimeout); 
+        console.log(data);
         this.forms = [];
-        this.extractForms(data.cirujanoForms, 'Cirujano');
-        this.extractForms(data.patologoForms, 'Patólogo');
-        this.extractForms(data.radiologoForms, 'Radiólogo');
+        this.extractForms(data.cirujanoForms, 'Cirugía Mama');
+        this.extractForms(data.patologoForms, 'Patología');
+        this.extractForms(data.radiologoForms, 'Radiología');
         this.loadingForms = false; 
       }, error => {
         clearTimeout(loaderTimeout); 
@@ -60,9 +62,17 @@ export class PacientesListComponent implements OnInit {
       this.forms.push({
         examen,
         institucion_prestadora: formData.institucion_prestadora,
-        fecha_toma_examen: formData.fecha_toma_examen
+        fecha_toma_examen: this.adjustDateToLocalTime(formData.fecha_toma_examen),
+        ciudad: formData.ciudad,
+        departamento: formData.departamento,
       });
     });
+  }
+
+  adjustDateToLocalTime(dateString: string): Date {
+    const date = new Date(dateString);
+    const userTimezoneOffset = date.getTimezoneOffset() * 60000;
+    return new Date(date.getTime() + userTimezoneOffset);
   }
 
   searchPaciente(): void {
@@ -72,6 +82,10 @@ export class PacientesListComponent implements OnInit {
       paciente.num_identificacion.includes(this.searchTerm)
     );
     this.noResults = this.filteredPacientes.length === 0;
+  }
+
+  goToRadiologoForm(num_identificacion_paciente: String): void {
+    this.router.navigate(['/tamizacion-mama/add-radiologo-form', num_identificacion_paciente]);
   }
 
 }
