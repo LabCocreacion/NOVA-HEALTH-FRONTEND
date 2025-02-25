@@ -30,13 +30,13 @@
         </div>
     </div>
     <div class="button-container" *ngIf="userInfo.userRol === 'Administrador' && userInfo.userProject === 'Tamización Mama'">
-        <div class="button-item" routerLink="/cocreamos-usuarios/users">
-            <i class="fa-solid fa-users-gear"></i>
-            <span>Usuarios</span>
-        </div>
         <div class="button-item" routerLink="/tamizacion-mama/list-instituciones">
             <i class="fa-solid fa-building"></i>
             <span>Instituciones</span>
+        </div>
+        <div class="button-item" routerLink="/cocreamos-usuarios/users">
+            <i class="fa-solid fa-users-gear"></i>
+            <span>Usuarios</span>
         </div>
         <div class="button-item" routerLink="/tamizacion-mama/load-files">
             <i class="fa-solid fa-file-excel"></i>
