@@ -1,0 +1,460 @@
+<div class="section mt-5">
+    <div class="card">
+        <div class="card-header text-center">
+            <h3>Proyecto Detección y Tamización Cáncer de mama INC 2024</h3>
+            <h4>Formato 2 para Radiólogo</h4>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="radiologoForm">
+                <!-- Sección: Datos Institución -->
+                <div class="form-section">
+                    <h4>Datos toma Examen</h4>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="fechaTomaExamen">Fecha Toma Examen</label>
+                            <input id="fechaTomaExamen" type="date" formControlName="fechaTomaExamen"
+                                class="form-control" readonly>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="institucionPrestadora">Institución Prestadora Servicios de Salud</label>
+                            <input id="institucionPrestadora" type="text" formControlName="institucionPrestadora"
+                                class="form-control" readonly>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="ciudad">Ciudad</label>
+                            <input id="ciudad" type="text" formControlName="ciudad" class="form-control">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="departamento">Departamento</label>
+                            <input id="departamento" type="text" formControlName="departamento" class="form-control">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Zona</label>
+                            <div class="d-flex">
+                                <label>
+                                    <input type="radio" formControlName="zona" value="rural"> Rural
+                                </label>
+                                <label>
+                                    <input type="radio" formControlName="zona" value="urbano"> Urbano
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección: Datos de Identificación -->
+                <div class="form-section">
+                    <h4>Datos de Identificación</h4>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="nombres">Nombres</label>
+                            <input id="nombres" type="text" formControlName="nombres" class="form-control">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="apellidos">Apellidos</label>
+                            <input id="apellidos" type="text" formControlName="apellidos" class="form-control">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                            <input id="fechaNacimiento" type="date" formControlName="fechaNacimiento"
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Tipo de Documento</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>
+                                        <input type="radio" formControlName="tipoDocumento"
+                                            value="Cedula de ciudadania"> Cédula de ciudadanía
+                                    </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>
+                                        <input type="radio" formControlName="tipoDocumento"
+                                            value="Cedula de extranjeria"> Cédula de extranjería
+                                    </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>
+                                        <input type="radio" formControlName="tipoDocumento" value="Pasaporte"> Pasaporte
+                                    </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>
+                                        <input type="radio" formControlName="tipoDocumento"
+                                            value="Permiso temporal de permanencia"> Permiso temporal de permanencia
+                                    </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>
+                                        <input type="radio" formControlName="tipoDocumento" value="Salvoconducto">
+                                        Salvoconducto
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="numIdentificacionPaciente">Número de Identificación</label>
+                            <input id="numIdentificacionPaciente" type="text" formControlName="numIdentificacionPaciente"
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="eapb">EAPB</label>
+                            <input id="eapb" type="text" formControlName="eapb" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Régimen</label>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>
+                                        <input type="radio" formControlName="regimen" value="Contributivo"> Contributivo
+                                    </label>
+                                    <label>
+                                        <input type="radio" formControlName="regimen" value="Subsidiado"> Subsidiado
+                                    </label>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>
+                                        <input type="radio" formControlName="regimen" value="Excepción"> Excepción
+                                    </label>
+                                    <label>
+                                        <input type="radio" formControlName="regimen" value="Vinculado"> Vinculado
+                                    </label>
+                                </div>
+                                <div class="col-md-9">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección: Examen -->
+                <div class="form-section">
+                    <h4>Examen</h4>
+                    <div class="form-group">
+                        <label>1. Tipo de Examen</label>
+                        <div class="row custom-row">
+                            <div class="col-md-6 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="tipoExamen" value="Mamografía de tamización">
+                                    Mamografía de tamización
+                                </label>
+                            </div>
+                            <div class="col-md-6 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="tipoExamen" value="Mamografía diagnóstica">
+                                    Mamografía diagnóstica
+                                </label>
+                            </div>
+                            <div class="col-md-6 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="tipoExamen" value="Mamografía mamaria">
+                                    Mamografía mamaria
+                                </label>
+                            </div>
+                            <div class="col-md-6 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="tipoExamen"
+                                        value="Mamografía y ecografía diagnóstica"> Mamografía y ecografía diagnóstica
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label>2. Resultado de Mamografía de Tamización</label>
+                        <div class="row custom-row">
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoTamizacion" value="BI-RADS 0"> BI-RADS
+                                    0
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoTamizacion" value="BI-RADS 1"> BI-RADS
+                                    1
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoTamizacion" value="BI-RADS 2"> BI-RADS
+                                    2
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoTamizacion" value="BI-RADS 3"> BI-RADS
+                                    3
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoTamizacion" value="BI-RADS 4a">
+                                    BI-RADS 4a
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoTamizacion" value="BI-RADS 4b">
+                                    BI-RADS 4b
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoTamizacion" value="BI-RADS 4c">
+                                    BI-RADS 4c
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoTamizacion" value="BI-RADS 5"> BI-RADS
+                                    5
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoTamizacion" value="No aplica"> No
+                                    aplica
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label>3. Resultado de Mamografía Diagnóstica</label>
+                        <div class="row custom-row">
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoDiagnostica" value="BI-RADS 0">
+                                    BI-RADS 0
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoDiagnostica" value="BI-RADS 1">
+                                    BI-RADS 1
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoDiagnostica" value="BI-RADS 2">
+                                    BI-RADS 2
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoDiagnostica" value="BI-RADS 3">
+                                    BI-RADS 3
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoDiagnostica" value="BI-RADS 4a">
+                                    BI-RADS 4a
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoDiagnostica" value="BI-RADS 4b">
+                                    BI-RADS 4b
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoDiagnostica" value="BI-RADS 4c">
+                                    BI-RADS 4c
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoDiagnostica" value="BI-RADS 5">
+                                    BI-RADS 5
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoDiagnostica" value="No aplica"> No
+                                    aplica
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label>4. Resultado de Ecografía Mamaria</label>
+                        <div class="row custom-row">
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoEcografia" value="BI-RADS 0"> BI-RADS
+                                    0
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoEcografia" value="BI-RADS 1"> BI-RADS
+                                    1
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoEcografia" value="BI-RADS 2"> BI-RADS
+                                    2
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoEcografia" value="BI-RADS 3"> BI-RADS
+                                    3
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoEcografia" value="BI-RADS 4a"> BI-RADS
+                                    4a
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoEcografia" value="BI-RADS 4b"> BI-RADS
+                                    4b
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoEcografia" value="BI-RADS 4c"> BI-RADS
+                                    4c
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoEcografia" value="BI-RADS 5"> BI-RADS
+                                    5
+                                </label>
+                            </div>
+                            <div class="col-md-4 custom-col">
+                                <label>
+                                    <input type="radio" formControlName="resultadoEcografia" value="No aplica"> No
+                                    aplica
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label>5. Conducta Sugerida por el Radiólogo</label>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>
+                                    <input type="radio" formControlName="conductaSugerida"
+                                        value="Solicitud mamografía diagnóstica"> Solicitud mamografía diagnóstica
+                                </label>
+                            </div>
+                            <div class="col-md-6">
+                                <label>
+                                    <input type="radio" formControlName="conductaSugerida"
+                                        value="Solicitud ecografía mamaria complementaria"> Solicitud ecografía mamaria
+                                    complementaria
+                                </label>
+                            </div>
+                            <div class="col-md-6">
+                                <label>
+                                    <input type="radio" formControlName="conductaSugerida"
+                                        value="Biopsia trucut guiada por ecografía"> Biopsia trucut guiada por ecografía
+                                </label>
+                            </div>
+                            <div class="col-md-6">
+                                <label>
+                                    <input type="radio" formControlName="conductaSugerida"
+                                        value="Biopsia guiada por mamografía (Estereotaxia o estadia al vacío)"> Biopsia
+                                    guiada por mamografía (Estereotaxia o estadia al vacío)
+                                </label>
+                            </div>
+                            <div class="col-md-6">
+                                <label>
+                                    <input type="radio" formControlName="conductaSugerida"
+                                        value="Toma de proyecciones adicionales y ecografía mamaria"> Toma de
+                                    proyecciones adicionales y ecografía mamaria
+                                </label>
+                            </div>
+                            <div class="col-md-6">
+                                <label>
+                                    <input type="radio" formControlName="conductaSugerida"
+                                        value="Toma de proyecciones adicionales"> Toma de proyecciones adicionales
+                                </label>
+                            </div>
+                            <div class="col-md-6">
+                                <label>
+                                    <input type="radio" formControlName="conductaSugerida"
+                                        value="Control en 6 meses con mamografía"> Control en 6 meses con mamografía
+                                </label>
+                            </div>
+                            <div class="col-md-6">
+                                <label>
+                                    <input type="radio" formControlName="conductaSugerida"
+                                        value="Control en 6 meses con ecografía mamaria"> Control en 6 meses con
+                                    ecografía mamaria
+                                </label>
+                            </div>
+                            <div class="col-md-6">
+                                <label>
+                                    <input type="radio" formControlName="conductaSugerida"
+                                        value="Continuar esquema de tamización"> Continuar esquema de tamización
+                                </label>
+                            </div>
+                            <div class="col-md-6">
+                                <label>
+                                    <input type="radio" formControlName="conductaSugerida" value="Ninguna"> Ninguna
+                                </label>
+                            </div>
+                            <div class="col-md-6">
+                                <label>
+                                    <input type="radio" formControlName="conductaSugerida" value="Otra"> Otra
+                                </label>
+                                <!-- <div *ngIf="radiologoForm.get('conductaSugerida')?.value === 'Otra'">
+                                    <input type="text" formControlName="otraConducta" class="form-control"
+                                        placeholder="Especifique otra conducta">
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- Sección: Quien Diligenció -->
+                <div class="form-section">
+                    <h4>Quien Diligenció</h4>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="nombreCompleto">Nombre Completo</label>
+                            <input id="nombreCompleto" type="text" formControlName="nombreCompleto"
+                                class="form-control" readonly>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="cargo">Cargo</label>
+                            <input id="cargo" type="text" formControlName="cargo" class="form-control" readonly>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="correoElectronico">Correo Electrónico</label>
+                            <input id="correoElectronico" type="email" formControlName="correoElectronico"
+                                class="form-control" readonly>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="telefonoContacto">Teléfono de Contacto</label>
+                            <input id="telefonoContacto" type="text" formControlName="telefonoContacto"
+                                class="form-control" readonly>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

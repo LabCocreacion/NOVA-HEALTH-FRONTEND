@@ -25,6 +25,7 @@ export class LoginService {
           localStorage.setItem('userIdent', response.userIdent);
           localStorage.setItem('userInstitucion', response.userInstitucion);
           localStorage.setItem('userEmail', response.userEmail);
+          localStorage.setItem('userPhone', response.userPhone);
           this.isLoggedIn = true;
           this.userName = response.userName;
           this.userProject = response.userProject;
@@ -42,6 +43,7 @@ export class LoginService {
     localStorage.removeItem('userIdent');
     localStorage.removeItem('userInstitucion');
     localStorage.removeItem('userEmail');
+    localStorage.removeItem('userPhone');
     this.isLoggedIn = false;
     this.userName = null;
     this.userProject = null;
@@ -65,7 +67,8 @@ export class LoginService {
       userRol: localStorage.getItem('userRol'),
       userIdent: localStorage.getItem('userIdent'),
       userInstitucion: localStorage.getItem('userInstitucion'),
-      userEmail: localStorage.getItem('userEmail')
+      userEmail: localStorage.getItem('userEmail'),
+      userPhone: localStorage.getItem('userPhone')
     };
   }
 
