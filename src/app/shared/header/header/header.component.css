@@ -5,6 +5,12 @@
   padding-right: 20px;
 }
 
+@media (min-width: 1205px) {
+  .nav-item-container .nav-item a {
+    font-size: 10px;
+  }
+}
+
 .blue-line {
   height: 5px;
   background-color: rgb(48, 2, 108);
@@ -87,7 +93,7 @@
   display: block;
   width: 100%;
   padding: 10px;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .nav-item-container:hover {

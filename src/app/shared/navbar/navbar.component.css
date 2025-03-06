@@ -17,12 +17,6 @@
   z-index: 1000;
 }
 
-@media (max-height: 800px) {
-  .navbar {
-    height: 70vh;
-  }
-}
-
 .navbar ul li {
   margin: 0; /* Ajusta el margen según sea necesario */
   padding: 5px 0; /* Ajusta el padding según sea necesario */
