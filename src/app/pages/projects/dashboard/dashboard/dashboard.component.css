@@ -1,24 +1,20 @@
 :host {
     display: block;
-    background-image: url('/assets/img/bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    height: 100vh;
 }
 
 .section{
-    margin-top: 97px;
     margin-left: 351px;
     border: 1px solid rgb(255 255 255 / 8%);
-    background: rgb(0 0 0 / 62%); 
     backdrop-filter: blur(20px);
     color: white;
     padding: 20px;
-    width: calc(100% - 368px);
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 30px;
+    height: 70vh;
+    margin-right: 47px;
 }
 
 .title, .description {
@@ -41,7 +37,7 @@
     justify-content: center;
     width: 150px;
     height: 150px;
-    background: #4D7F9D;
+    background: #C8A2C8;
     border-radius: 10px;
     text-align: center;
     color: white;
@@ -57,7 +53,7 @@
 }
 
 .button-item:hover i {
-    transform: scale(3.1);
+    transform: scale(2);
 }
 
 .button-item:hover span {

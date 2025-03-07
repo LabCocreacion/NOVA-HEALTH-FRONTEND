@@ -69,7 +69,7 @@
 }
 
 .table tbody tr:hover td {
-    background-color: #4D7F9D; /* Change background color on hover */
+    background-color: #C8A2C8; /* Change background color on hover */
     color: #fff; /* Change text color on hover */
     cursor: pointer;
 }
