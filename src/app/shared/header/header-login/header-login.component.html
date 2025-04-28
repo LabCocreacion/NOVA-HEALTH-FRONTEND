@@ -1,7 +1,7 @@
 <header class="header-login" [ngStyle]="{'background-color': getBackgroundColor()}">
     <div class="left-section">
-      <img *ngIf="userInfo.userProject === 'Phantom'" src="/assets/img/logo-cocreamos.svg" width="370" height="110" alt="Cocreamos">
-      <img *ngIf="userInfo.userProject === 'Tamización Mama'" src="/assets/img/logo-inc.svg" width="370" height="110" alt="Cocreamos">
+      <img *ngIf="userInfo.userProject === 'Phantom'" src="/assets/img/logo-cocreamos.svg" width="370" height="90" alt="Cocreamos">
+      <img *ngIf="userInfo.userProject === 'Tamización Mama'" src="/assets/img/logo-inc.svg" width="370" height="90" alt="Cocreamos">
     </div>
     <div class="right-section">
       <button class="user-button" [ngStyle]="{'background-color': getBackgroundColorButton()}" (click)="logout()"> Cerrar Sesión</button>

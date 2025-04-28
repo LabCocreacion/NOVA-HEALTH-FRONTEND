@@ -6,7 +6,7 @@
   backdrop-filter: blur(20px);
   transition: width 0.4s;
   padding: 10px;
-  width: 20vw; 
+  width: 25vw; 
   max-width: 320px;
   position: fixed;
   top: 157px;
