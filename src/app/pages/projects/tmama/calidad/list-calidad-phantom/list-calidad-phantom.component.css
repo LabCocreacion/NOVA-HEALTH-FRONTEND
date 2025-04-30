@@ -1,0 +1,30 @@
+.calendar-container {
+    text-align: center;
+    margin: 20px;
+    margin-top: 100px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas para los meses */
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.month {
+    background: #ffc0cb;
+    color: white;
+    padding: 36px;
+    border-radius: 8px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.month:hover {
+    background: #ff8ba0;
+    transform: scale(1.05);
+}

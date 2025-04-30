@@ -12,6 +12,7 @@
     flex-direction: column;
     align-items: center;
     margin-right: 47px;
+    height: 75vh;
 }
 
 .title, .description {

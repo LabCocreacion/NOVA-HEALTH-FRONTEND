@@ -10,6 +10,9 @@ import { LoadFilesComponent } from './load-files/load-files.component';
 import { PacientesListComponent } from './pacientes-list/pacientes-list.component';
 import { AddRadiologoFormComponent } from './add-radiologo-form/add-radiologo-form.component';
 import { DetailRadiologoFormComponent } from './detail-radiologo-form/detail-radiologo-form.component';
+import { MenuCalidadComponent } from './calidad/menu-calidad/menu-calidad.component';
+import { ListCalidadPhantomComponent } from './calidad/list-calidad-phantom/list-calidad-phantom.component';
+import { FormCalidadPhantomComponent } from './calidad/form-calidad-phantom/form-calidad-phantom.component';
 
 const routes: Routes = [
   { path: 'list-instituciones', component: InstitutosListComponent },
@@ -18,7 +21,10 @@ const routes: Routes = [
   { path: 'list-pacientes', component: PacientesListComponent },
   { path: 'add-radiologo-form', component: AddRadiologoFormComponent },
   { path: 'add-radiologo-form/:num_identificacion_paciente', component: AddRadiologoFormComponent },
-  { path: 'detail-radiologo-form/:idForm/:num_identificacion_paciente/:institucion_prestadora', component: DetailRadiologoFormComponent }
+  { path: 'detail-radiologo-form/:idForm/:num_identificacion_paciente/:institucion_prestadora', component: DetailRadiologoFormComponent },
+  { path: 'dashboard-calidad', component: MenuCalidadComponent },
+  { path: 'dashboard-calidad/01-calidad-phantom', component: ListCalidadPhantomComponent },
+  { path: 'dashboard-calidad/add-form-calidad', component: FormCalidadPhantomComponent },
 ];
 
 @NgModule({
@@ -28,7 +34,10 @@ const routes: Routes = [
     LoadFilesComponent,
     PacientesListComponent,
     AddRadiologoFormComponent,
-    DetailRadiologoFormComponent
+    DetailRadiologoFormComponent,
+    MenuCalidadComponent,
+    ListCalidadPhantomComponent,
+    FormCalidadPhantomComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +48,7 @@ const routes: Routes = [
   ],
   exports: [
     AddRadiologoFormComponent,
-    DetailRadiologoFormComponent
+    DetailRadiologoFormComponent,
   ]
 })
 export class TmamaModule { }
