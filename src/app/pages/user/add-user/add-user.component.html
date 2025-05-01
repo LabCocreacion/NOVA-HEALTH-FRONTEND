@@ -56,7 +56,7 @@
                 <div class="col-md-6">
                     <div class="mb-3 mt-2">
                         <label class="form-label custom-label">Proyecto</label>
-                        <select formControlName="project" class="form-control custom-select">
+                        <select formControlName="project" class="form-control custom-select" (change)="onProjectChange($event)">
                             <option value="" disabled selected>Seleccione el proyecto</option>
                             <option value="Cocreamos">Cocreamos</option>
                             <option value="Tamización Mama">Tamización Mama</option>
@@ -70,10 +70,7 @@
                         <label class="form-label custom-label">Rol</label>
                         <select formControlName="rol" class="form-control custom-select">
                             <option value="" disabled selected>Seleccione el rol</option>
-                            <option value="Administrador">Administrador</option>
-                            <option value="Radiologo">Radiologo</option>
-                            <option value="Patologo">Patologo</option>
-                            <option value="Cirujano de mama">Cirujano de mama</option>
+                            <option *ngFor="let rol of availableRoles" [value]="rol">{{ rol }}</option>
                         </select>
                     </div>
                 </div>

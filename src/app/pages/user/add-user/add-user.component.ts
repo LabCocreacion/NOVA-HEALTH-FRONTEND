@@ -16,6 +16,7 @@ import { map, catchError } from 'rxjs/operators';
 export class AddUserComponent implements OnInit {
   userForm!: FormGroup;
   instituciones: Instituto[] = [];
+  availableRoles: string[] = [];
 
   constructor(private formBuilder: FormBuilder, private userService: UserService, private institucionService: TamizacionMamaService) { }
 
@@ -59,6 +60,17 @@ export class AddUserComponent implements OnInit {
           // TODO: mostrar popup de error
         }
       );
+    }
+  }
+
+  onProjectChange(event: any): void {
+    const selectedProject = event.target.value;
+    if (selectedProject === 'Tamización Mama') {
+      this.availableRoles = ['Administrador', 'Radiólogo', 'Patólogo', 'Cirujano de mama'];
+    } else if (selectedProject === 'Phantom') {
+      this.availableRoles = ['Administrador', 'Técnico', 'Monitor'];
+    } else {
+      this.availableRoles = [];
     }
   }
 
