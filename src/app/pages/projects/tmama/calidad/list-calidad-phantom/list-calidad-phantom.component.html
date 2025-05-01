@@ -1,0 +1,8 @@
+<div class="calendar-container">
+    <h1>Selecciona un Mes</h1>
+    <div class="calendar-grid mt-5">
+      <div class="month" *ngFor="let month of months" (click)="selectMonth(month)">
+        {{ month }}
+        </div>
+    </div>
+</div>

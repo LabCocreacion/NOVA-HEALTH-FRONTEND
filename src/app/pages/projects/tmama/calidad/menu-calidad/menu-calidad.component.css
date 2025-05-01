@@ -1,0 +1,66 @@
+/* body {
+  background: #f5f7fa;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+} */
+
+.gestion-calidad{
+    margin-top: 97px;
+    margin-left: 500px;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.menu-button {
+    position: relative;
+    background: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    padding-left: 60px; /* Espacio para que el texto no se superponga con el ::before */
+}
+
+.menu-button::before {
+    content: attr(data-number); /* Inserta el número desde el atributo data-number */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px; /* Ajusta el ancho inicial del fondo rosado */
+    height: 100%;
+    background: #ffc0cb; /* Fondo rosado */
+    color: #fff; /* Color del texto del número */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    z-index: 1; /* Asegura que el ::before esté detrás del texto principal */
+    transition: all 0.3s ease; /* Transición suave para el hover */
+}
+
+.menu-button:hover::before {
+    width: 100%; /* El pseudo-elemento cubre todo el botón */
+    border-radius: 16px; /* Redondea las esquinas completamente */
+}
+
+.menu-button:hover {
+    color: #fff; /* Cambia el color del texto a blanco */
+}
