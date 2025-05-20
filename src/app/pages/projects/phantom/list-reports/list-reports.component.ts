@@ -19,7 +19,7 @@ export class ListReportsComponent {
 
   selectedInstitucion: string = '';
   selectedFecha: string = '';
-  selectedTecnologo: string = '';
+  selectedAtia: string = '';
 
   get instituciones(): string[] {
     return Array.from(new Set(this.reports.map(r => r.institucion)));
@@ -29,7 +29,7 @@ export class ListReportsComponent {
     return this.reports.filter(report =>
       (!this.selectedInstitucion || report.institucion === this.selectedInstitucion) &&
       (!this.selectedFecha || report.fechaCreacion === this.selectedFecha) &&
-      (!this.selectedTecnologo || report.tecnologo.toLowerCase().includes(this.selectedTecnologo.toLowerCase()))
+      (!this.selectedAtia || report.atia === this.selectedAtia)
     );
   }
 }

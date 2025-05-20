@@ -6,7 +6,11 @@
             <option *ngFor="let inst of instituciones" [value]="inst">{{ inst }}</option>
           </select>
           <input type="date" [(ngModel)]="selectedFecha" class="filter-input" />
-          <input type="text" [(ngModel)]="selectedTecnologo" class="filter-input" placeholder="Tecnólogo" />
+          <select [(ngModel)]="selectedAtia" class="filter-select">
+            <option value="">Todos</option>
+            <option value="true">Con Atia</option>
+            <option value="false">Sin Atia</option>
+          </select>
         </div>
         <div *ngFor="let report of filteredReports()" class="report-card">
           <div class="report-card-content">
