@@ -1,0 +1,140 @@
+.section {
+    padding: 63px;
+    min-height: 100vh; 
+    padding-left: 17px;
+}
+
+.reports-bg {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.report-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.08);
+  margin-bottom: 2rem;
+  padding: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+
+.report-card-content {
+  flex: 1;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 180px; /* Ajusta según el contenido */
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.report-id {
+  font-weight: bold;
+  color: #4a90e2;
+  font-size: 1.1rem;
+}
+
+.report-mamografo {
+  background: #eaf6ff;
+  color: #2176ae;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.report-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-weight: 500;
+  color: #2d3a4b;
+  margin-right: 0.5rem;
+}
+
+.atia-true {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.atia-false {
+  color: #c0392b;
+  font-weight: bold;
+}
+
+.diligenciar-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 1.5rem 2rem;
+  background: transparent;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.diligenciar-btn {
+  margin-top: 0.7rem;
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(90deg, #4a90e2 0%, #50e3c2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.diligenciar-btn:hover {
+  background: linear-gradient(90deg, #357ab8 0%, #38bfa7 100%);
+  box-shadow: 0 4px 16px rgba(44,62,80,0.12);
+}
+
+.report-date {
+  margin-bottom: 1rem;
+  color: #888;
+  font-size: 0.98rem;
+}
+
+.filters-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 451px;
+}
+
+.filter-select,
+.filter-input {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #c3cfe2;
+  font-size: 1rem;
+  background: #fff;
+  color: #2d3a4b;
+  min-width: 180px;
+}
+
+.filter-input[type="date"] {
+  min-width: 150px;
+}

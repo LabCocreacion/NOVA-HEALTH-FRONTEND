@@ -1,0 +1,43 @@
+<div class="reports-bg">
+    <div class="section">
+        <div class="filters-container">
+          <select [(ngModel)]="selectedInstitucion" class="filter-select">
+            <option value="">Todas las instituciones</option>
+            <option *ngFor="let inst of instituciones" [value]="inst">{{ inst }}</option>
+          </select>
+          <input type="date" [(ngModel)]="selectedFecha" class="filter-input" />
+          <input type="text" [(ngModel)]="selectedTecnologo" class="filter-input" placeholder="Tecnólogo" />
+        </div>
+        <div *ngFor="let report of filteredReports()" class="report-card">
+          <div class="report-card-content">
+            <div class="report-header">
+              <span class="report-id">#{{ report.id }}</span>
+              <span class="report-mamografo">Mamógrafo: {{ report.mamografo }}</span>
+            </div>
+            <div class="report-date">
+              <span class="label">Fecha de creación:</span>
+              <span>{{ report.fechaCreacion }}</span>
+            </div>
+            <div class="report-info">
+              <div>
+                <span class="label">Institución:</span>
+                <span>{{ report.institucion }}</span>
+              </div>
+              <div>
+                <span class="label">Tecnólogo:</span>
+                <span>{{ report.tecnologo }}</span>
+              </div>
+              <div>
+                <span class="label">Atia:</span>
+                <span [ngClass]="{'atia-true': report.atia === 'true', 'atia-false': report.atia === 'false'}">
+                  {{ report.atia === 'true' ? 'Sí' : 'No' }}
+                </span>
+              </div>
+            </div>
+            <div *ngIf="report.atia === 'false'" class="diligenciar-btn-container">
+              <button class="diligenciar-btn">Diligenciar</button>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

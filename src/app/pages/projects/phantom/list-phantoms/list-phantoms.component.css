@@ -1,0 +1,144 @@
+.section {
+    padding: 63px;
+    background: #f4f4f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    padding-left: 373px;
+}
+
+.btn-create-phantom {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-create-phantom i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.btn-create-phantom:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.btn-create-phantom:active {
+    background-color: #1e7e34;
+    transform: translateY(0);
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    background-color: #fff;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table th,
+.table td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+    background-color: #343a40;
+    color: #fff;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody tr:nth-of-type(odd) {
+    background-color: #f8f9fa;
+}
+
+.table tbody tr:hover td {
+    background-color: #C8A2C8; 
+    color: #fff; 
+}
+
+.table .form-check-input {
+    cursor: pointer;
+}
+
+.table .btn {
+    margin-right: 5px;
+    background: none; /* Remove background color */
+    border: none; /* Remove border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.table .btn i {
+    color: #343a40; /* Icon color */
+    font-size: 1.2em; /* Icon size */
+    transition: color 0.3s ease; /* Smooth transition for icon color */
+}
+
+.table .btn:hover {
+    background: #007bff; /* Background color on hover */
+    color: #fff; /* Text color on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.table .btn:hover i {
+    color: #fff; /* Change icon color to white on hover */
+}
+
+.table .btn-primary:hover {
+    background: #007bff; /* Background color on hover for primary button */
+}
+
+.table .btn-danger:hover {
+    background: #dc3545; /* Background color on hover for danger button */
+}
+
+/* Custom checkbox styles */
+.custom-checkbox {
+    appearance: none;
+    width: 40px;
+    height: 20px;
+    background: #c6c6c6;
+    border-radius: 10px;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.custom-checkbox:checked {
+    background: #2af35c;
+    border: #2af35c;
+}
+
+.custom-checkbox:before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    top: 1px;
+    left: 1px;
+    transition: transform 0.3s;
+}
+
+.custom-checkbox:checked:before {
+    transform: translateX(20px);
+}

@@ -1,0 +1,36 @@
+<div class="section">
+  <div class="row">
+    <div class="col-12 my-5">
+      <button type="button" class="btn btn-create-phantom" (click)="onAddPhantom()">
+        <i class="fas fa-user-plus"></i> Crear Phantom
+      </button>
+    </div>
+    <div class="col-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Institución</th>
+            <th>Fecha de Creación</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let phantom of phantoms">
+            <td>{{ phantom.codigo }}</td>
+            <td>{{ phantom.Institucion }}</td>
+            <td>{{ phantom.fechaCreacion }}</td>
+            <td>
+              <button class="btn btn-primary btn-sm">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="btn btn-danger btn-sm">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

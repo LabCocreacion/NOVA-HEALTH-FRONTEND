@@ -1,55 +1,126 @@
-<div class="form-container">
-    <form >
-      <div class="form-group">
-        <label for="date">Fecha</label>
-        <input type="date" id="date" name="date"  required>
-      </div>
-      <div class="form-group">
-        <label for="comment">Comentario</label>
-        <textarea id="comment" name="comment"  required></textarea>
-      </div>
-      <div class="form-group">
-        <label for="exposureMode">Modo Exposición</label>
-        <select id="exposureMode" name="exposureMode" required>
-          <option value="yes">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="anodeCombination">Combinación Ánodo</label>
-        <input type="text" id="anodeCombination" name="anodeCombination"  required>
-      </div>
-      <div class="form-group">
-        <label for="kilovoltage">Kilovoltaje</label>
-        <input type="number" id="kilovoltage" name="kilovoltage" required>
-      </div>
-      <div class="form-group">
-        <label for="charge">Carga</label>
-        <input type="number" id="charge" name="charge"required>
-      </div>
-      <div class="form-group">
-        <label for="ggm">Ggm</label>
-        <input type="number" step="0.01" id="ggm" name="ggm" required>
-      </div>
-      <div class="form-group">
-        <label for="thickness">Espesor Mam</label>
-        <input type="number" step="0.01" id="thickness" name="thickness" required>
-      </div>
-      <div class="form-group">
-        <label for="artifacts">Artefactos</label>
-        <select id="artifacts" name="artifacts" required>
-          <option value="yes">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="excelReport">Reporte de Excel</label>
-        <input type="file" id="excelReport" name="excelReport" required>
-      </div>
-      <div class="form-group">
-        <label for="compressionForce">Fuerza de Compresión</label>
-        <input type="number" id="compressionForce" name="compressionForce" required>
-      </div>
-      <button type="submit" class="btn-submit">Enviar</button>
-    </form>
+<div class="section mt-4">
+  <div class="card">
+    <div class="card-header">
+      <h2>Crear Reporte</h2>
+      <p>Por favor, complete el siguiente formulario para crear un nuevo reporte.</p>
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="row">
+          <!-- Fecha -->
+          <div class="col-2 mb-3">
+            <div class="form-group">
+              <label for="date">Fecha</label>
+              <input type="date" id="date" name="date" [value]="today" readonly>
+            </div>
+          </div>
+          <div class="col-5"></div>
+          <div class="col-5"></div>
+
+          <!-- Modo Exposición -->
+          <div class="col-3">
+            <div class="form-group">
+              <label>Modo Exposición</label>
+              <div class="custom-radio-group">
+                <input type="radio" id="exposureYes" name="exposureMode" value="yes" required>
+                <label for="exposureYes" class="custom-radio">Sí</label>
+                <input type="radio" id="exposureNo" name="exposureMode" value="no" required>
+                <label for="exposureNo" class="custom-radio">No</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Artefactos -->
+          <div class="col-3">
+            <div class="form-group">
+              <label>Artefactos</label>
+              <div class="custom-radio-group">
+                <input type="radio" id="artifactsYes" name="artifacts" value="yes" required>
+                <label for="artifactsYes" class="custom-radio">Sí</label>
+                <input type="radio" id="artifactsNo" name="artifacts" value="no" required>
+                <label for="artifactsNo" class="custom-radio">No</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fuerza de Compresión -->
+          <div class="col-6">
+            <div class="form-group">
+              <label for="compressionForce">Fuerza de Compresión</label>
+              <input type="number" id="compressionForce" name="compressionForce" required>
+            </div>
+          </div>
+
+          <!-- Combinación Ánodo y Kilovoltaje -->
+          <div class="col-6">
+            <div class="form-group">
+              <label for="anodeCombination">Combinación Ánodo/Filtro</label>
+              <input type="text" id="anodeCombination" name="anodeCombination" required>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label for="kilovoltage">Kilovoltaje (kVp)</label>
+              <input type="number" id="kilovoltage" name="kilovoltage" required>
+            </div>
+          </div>
+
+          <!-- Carga, Ggm y Espesor Mam -->
+          <div class="col-4">
+            <div class="form-group">
+              <label for="charge">Carga (mAs)</label>
+              <input type="number" id="charge" name="charge" required>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="ggm">Dosis (DGM)</label>
+              <input type="number" step="0.01" id="ggm" name="ggm" required>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="thickness">Espesor Mama</label>
+              <input type="number" step="0.01" id="thickness" name="thickness" required>
+            </div>
+          </div>
+
+          <!-- Reporte -->
+          <div class="col-12 mt-5">
+            <div class="form-group">
+              <label for="dicomFiles">Estudios (Archivos DICOM)</label>
+              <div class="custom-file-upload">
+                <input type="file" id="dicomFiles" name="dicomFiles" multiple (change)="displayFiles($event)">
+                <label for="dicomFiles" class="upload-label">
+                  <span class="upload-icon">📁</span>
+                  <span class="upload-text">Seleccionar Archivos</span>
+                </label>
+                <p class="upload-instructions">Arrastre y suelte archivos aquí o haga clic para cargar</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- File List -->
+          <div class="col-12">
+            <div class="form-group">
+              <label>Archivos Cargados:</label>
+              <ul id="fileList" class="file-list"></ul>
+            </div>
+          </div>
+
+          <!-- Comentario -->
+          <div class="col-12">
+            <div class="form-group">
+              <label for="comment">Comentario</label>
+              <textarea id="comment" name="comment" required></textarea>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <button type="submit" class="btn-submit">Enviar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>

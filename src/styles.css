@@ -81,3 +81,23 @@ body {
     border: 2px solid #FFFFFF !important;
     align-items: center !important;
 }
+
+.file-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
+
+.file-list li {
+  padding: 5px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.file-list li:last-child {
+  border-bottom: none;
+}
