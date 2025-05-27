@@ -1,0 +1,30 @@
+<div class="section">
+  <div class="add-mamografo-btn-container">
+    <button class="add-mamografo-btn" [routerLink]="['/phantom/create-mamografo']">
+      <i class="fa-solid fa-plus"></i> Agregar mamógrafo
+    </button>
+  </div>
+  <div class="mamografos-grid">
+    <div *ngFor="let mamografo of mamografos" class="mamografo-card">
+      <img src="../../../../../assets/img/mamografo.png" alt="Mamógrafo" class="mamografo-img" />
+      <div class="mamografo-card-content">
+        <div class="mamografo-header">
+          <h3 class="mamografo-title">{{ mamografo.nombre }}</h3>
+          <span class="mamografo-serial">Serie: {{ mamografo.num_serie }}</span>
+        </div>
+        <div class="mamografo-details">
+          <span class="mamografo-label">Modelo:</span>
+          <span>{{ mamografo.modelo }}</span>
+        </div>
+        <div class="mamografo-details">
+          <span class="mamografo-label">Institución:</span>
+          <span>{{ mamografo.institucion }}</span>
+        </div>
+        <div class="mamografo-details">
+          <span class="mamografo-label">Marca:</span>
+          <span>{{ mamografo.marca }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

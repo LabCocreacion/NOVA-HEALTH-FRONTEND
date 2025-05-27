@@ -1,0 +1,41 @@
+<div class="create-mamografo-bg">
+    <form class="mamografo-form" (ngSubmit)="submit()">
+        <h2 class="form-title">Agregar Mamógrafo</h2>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="modelo">Modelo</label>
+                <input id="modelo" type="text" [(ngModel)]="mamografo.modelo" name="modelo" required maxlength="50" />
+            </div>
+            <div class="form-group">
+                <label for="serie">Serie</label>
+                <input id="serie" type="text" [(ngModel)]="mamografo.num_serie" name="serie" required maxlength="50" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="marca">Marca</label>
+                <input id="marca" type="text" [(ngModel)]="mamografo.marca" name="marca" required maxlength="50" />
+            </div>
+            <div class="form-group">
+                <label for="proveedor">Proveedor</label>
+                <input id="proveedor" type="text" [(ngModel)]="mamografo.proveedor" name="proveedor" required
+                    maxlength="50" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="distanciaFocoSoporte">Distancia foco soporte (cm)</label>
+                <input id="distanciaFocoSoporte" type="number" step="0.01" min="0"
+                    [(ngModel)]="mamografo.distancia_foco_soporte" name="distanciaFocoSoporte" required />
+            </div>
+            <div class="form-group">
+                <label for="tamanoReceptor">Tamaño de receptor de imagen (cm)</label>
+                <input id="tamanoReceptor" type="number" step="0.01" min="0" [(ngModel)]="mamografo.tama_receptor_imagen"
+                    name="tamanoReceptor" required />
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="submit-btn">Guardar</button>
+        </div>
+    </form>
+</div>

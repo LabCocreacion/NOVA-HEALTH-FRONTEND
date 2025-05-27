@@ -1,0 +1,99 @@
+.create-mamografo-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.mamografo-form {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+  padding: 2.5rem 2rem;
+  max-width: 520px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  /* Evita que los inputs se desborden */
+  box-sizing: border-box;
+}
+
+.form-title {
+  text-align: center;
+  color: #2176ae;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #2d3a4b;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #c3cfe2;
+  font-size: 1rem;
+  background: #f8fafc;
+  color: #2d3a4b;
+  outline: none;
+  transition: border 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+  /* Evita que sobresalgan de la card */
+  min-width: 0;
+  max-width: 100%;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border: 1.5px solid #43e97b;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.2rem;
+}
+
+.submit-btn {
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.10);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
+  box-shadow: 0 4px 18px rgba(44,62,80,0.15);
+}
+
+.form-row {
+  display: flex;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.form-row .form-group {
+  flex: 1 1 0;
+  min-width: 0;
+}

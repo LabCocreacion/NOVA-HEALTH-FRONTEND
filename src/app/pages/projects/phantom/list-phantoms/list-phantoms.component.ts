@@ -3,9 +3,9 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-phantoms',
-  imports: [],
   templateUrl: './list-phantoms.component.html',
-  styleUrl: './list-phantoms.component.css'
+  styleUrl: './list-phantoms.component.css',
+  standalone: false
 })
 export class ListPhantomsComponent {
 

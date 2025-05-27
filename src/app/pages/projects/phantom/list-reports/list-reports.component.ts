@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-list-reports',
-  imports: [CommonModule, FormsModule],
   templateUrl: './list-reports.component.html',
-  styleUrl: './list-reports.component.css'
+  styleUrl: './list-reports.component.css',
+  standalone: false
 })
 export class ListReportsComponent {
 
