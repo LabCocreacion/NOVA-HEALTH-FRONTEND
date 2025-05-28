@@ -1,177 +1,34 @@
-<nav *ngIf="loginService.isAuthenticated()" class="navbar">
-  <div class="navbar-header">
-    <h3><i class="fa-regular fa-user"></i>  {{ userName }}</h3>
-    <hr class="white-hr">
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <div class="profile-img">
+      <img src="../../../assets/icons/avatars/medical-staff-characters/png-1024/doctor-2087835.png" alt="Avatar" />
+    </div>
+    <div class="profile-text">
+      <span>{{ userName }}</span>
+    </div>
   </div>
-  <ul>
-    <li>
-      <a routerLink="/dashboard">
-        <i class="fa-solid fa-house"></i>
-        Home
-        <span class="icon-placeholder"></span>
+
+  <div class="sidebar-section-title">HOME</div>
+  <ul class="sidebar-nav">
+    <li *ngFor="let item of navItems">
+      <a [routerLink]="item.route">
+        <div class="nav-content">
+          <i [class]="item.icon"></i>
+          <span>{{ item.label }}</span>
+        </div>
       </a>
     </li>
   </ul>
-  <ul *ngIf="userProject === 'Tamización Mama' || userProject === 'Cocreamos'">
-    <li>
-      <a (click)="toggleDropdown(0)">
-        <i class="fa-solid fa-person-breastfeeding"></i>
-        Tam. Mama
-        <i class="fa-solid" [ngClass]="isDropdownOpen[0] ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-      </a>
-      <ul *ngIf="isDropdownOpen[0]" class="dropdown">
-        <li class="dropdown-item" *ngIf="userInfo.userRol === 'Administrador'">
-          <a routerLink="/option1">
-            <i class="fa-solid fa-circle small-icon"></i>
-            Gestión Usuarios
-            <span class="icon-placeholder"></span>
-          </a>
-        </li>
-        <li class="dropdown-item" *ngIf="userInfo.userRol === 'Administrador'">
-          <a routerLink="/option2">
-            <i class="fa-solid fa-circle small-icon"></i>
-            Gestión	Instituciones
-            <span class="icon-placeholder"></span>
-          </a>
-        </li>
-        <li class="dropdown-item" *ngIf="userInfo.userRol === 'Administrador'">
-          <a routerLink="/option2">
-            <i class="fa-solid fa-circle small-icon"></i>
-            Reportes/Indicadores
-            <span class="icon-placeholder"></span>
-          </a>
-        </li>
-        <li class="dropdown-item" *ngIf="userInfo.userRol === 'Radiologo'">
-          <a routerLink="/option2">
-            <i class="fa-solid fa-circle small-icon"></i>
-            Buscar Paciente
-            <span class="icon-placeholder"></span>
-          </a>
-        </li>
-        <li class="dropdown-item" *ngIf="userInfo.userRol === 'Radiologo'">
-          <a routerLink="/option2">
-            <i class="fa-solid fa-circle small-icon"></i>
-            Registrar Examen
-            <span class="icon-placeholder"></span>
-          </a>
-        </li>
-      </ul>
-    </li>
-  </ul>
-  <ul *ngIf="userProject === 'Phantom' || userProject === 'Cocreamos'">
-    <li>
-      <a (click)="toggleDropdown(1)">
-        <i class="fa-regular fa-square-full"></i>
-        Phantom
-        <i class="fa-solid" [ngClass]="isDropdownOpen[1] ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-      </a>
-      <ul *ngIf="isDropdownOpen[1]" class="dropdown">
-        <li class="dropdown-item">
-          <a routerLink="/option1">
-            <i class="fa-solid fa-circle small-icon"></i>
-            Diligenciar Informe
-            <span class="icon-placeholder"></span>
-          </a>
-        </li>
-        <li class="dropdown-item">
-          <a routerLink="/option2">
-            <i class="fa-solid fa-circle small-icon"></i>
-            Registrar Institución
-            <span class="icon-placeholder"></span>
-          </a>
-        </li>
-        <li class="dropdown-item">
-          <a routerLink="/option2">
-            <i class="fa-solid fa-circle small-icon"></i>
-            Registrar Mamógrafo
-            <span class="icon-placeholder"></span>
-          </a>
-        </li>
-        <li class="dropdown-item">
-          <a routerLink="/option2">
-            <i class="fa-solid fa-circle small-icon"></i>
-            Registrar Técnologo
-            <span class="icon-placeholder"></span>
-          </a>
-        </li>
-      </ul>
-    </li>
-  </ul>
-  <ul *ngIf="userProject === 'Cáncer Hereditario' || userProject === 'Cocreamos'">
-    <li>
-      <a (click)="toggleDropdown(2)">
-        <i class="fa-solid fa-people-roof"></i>
-        Cancer hereditario
-        <i class="fa-solid" [ngClass]="isDropdownOpen[2] ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-      </a>
-      <ul *ngIf="isDropdownOpen[2]" class="dropdown">
-        <li class="dropdown-item">
-          <a routerLink="/option1">
-            <i class="fa-solid fa-circle small-icon"></i>
-            Option 1
-            <span class="icon-placeholder"></span>
-          </a>
-        </li>
-        <li class="dropdown-item">
-          <a routerLink="/option2">
-            <i class="fa-solid fa-circle small-icon"></i>
-            Option 2
-            <span class="icon-placeholder"></span>
-          </a>
-        </li>
-      </ul>
-    </li>
-  </ul>
-  <ul *ngIf="userProject === 'Cocreamos'">
-    <li>
-      <a routerLink="/chatbot">
-        <i class="fa-solid fa-brain"></i>
-        IA Oncológico
-        <span class="icon-placeholder"></span>
+
+  <div class="sidebar-section-title">APPS</div>
+  <ul class="sidebar-nav">
+    <li *ngFor="let item of appItems">
+      <a [routerLink]="item.route">
+        <div class="nav-content">
+          <i [class]="item.icon"></i>
+          <span>{{ item.label }}</span>
+        </div>
       </a>
     </li>
   </ul>
-  <ul *ngIf="userProject === 'Cocreamos'">
-    <li>
-      <a routerLink="/events">
-        <i class="fa-solid fa-calendar-days"></i>
-        Eventos
-        <span class="icon-placeholder"></span>
-      </a>
-    </li>
-  </ul>
-  <ul *ngIf="userProject === 'Cocreamos'">
-    <li>
-      <a routerLink="/events">
-        <i class="fa-solid fa-newspaper"></i>
-        Publicaciones
-        <span class="icon-placeholder"></span>
-      </a>
-    </li>
-  </ul>
-  <ul *ngIf="userProject === 'Cocreamos'">
-    <li>
-      <a (click)="toggleDropdown(5)">
-        <i class="fa-solid fa-users"></i>
-        Usuarios
-        <i class="fa-solid" [ngClass]="isDropdownOpen[5] ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-      </a>
-      <ul *ngIf="isDropdownOpen[5]" class="dropdown">
-        <li class="dropdown-item">
-          <a routerLink="/option1">
-            <i class="fa-solid fa-circle small-icon"></i>
-            Option 1
-            <span class="icon-placeholder"></span>
-          </a>
-        </li>
-        <li class="dropdown-item">
-          <a routerLink="/option2">
-            <i class="fa-solid fa-circle small-icon"></i>
-            Option 2
-            <span class="icon-placeholder"></span>
-          </a>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+</aside>

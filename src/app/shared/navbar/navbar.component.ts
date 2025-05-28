@@ -14,6 +14,21 @@ export class NavbarComponent {
   isDropdownOpen: boolean[] = [true, true];
   userInfo: any;
 
+   navItems = [
+    { label: 'Dashboard', route: '/dashboard', icon: 'fas fa-th-large', pro: false },
+    { label: 'General', route: '/general', icon: 'fas fa-chart-pie', pro: true },
+    { label: 'Classic', route: '/classic', icon: 'fas fa-mug-hot', pro: true },
+    { label: 'Analytical', route: '/analytical', icon: 'fas fa-chart-line', pro: true },
+    { label: 'Ecommerce', route: '/ecommerce', icon: 'fas fa-globe', pro: true },
+  ];
+
+  appItems = [
+    { label: 'Calendar', route: '/calendar', icon: 'fas fa-calendar-alt' },
+    { label: 'Email', route: '/email', icon: 'fas fa-envelope' },
+    { label: 'Kanban', route: '/kanban', icon: 'fas fa-columns' },
+    { label: 'Contacts', route: '/contacts', icon: 'fas fa-address-book' },
+  ];
+
   constructor(public loginService: LoginService) { }
 
   ngOnInit(): void {
