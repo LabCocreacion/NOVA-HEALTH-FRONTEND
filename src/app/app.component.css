@@ -12,8 +12,8 @@ body, html {
 .main-container {
   display: flex;
   flex-direction: row;
-  flex-grow: 1;
-  margin-top: 60px; /* Adjust this value based on the height of your header */
+  margin-top: 60px;
+  min-height: 0;
 }
 
 .fixed-header {
@@ -24,11 +24,10 @@ body, html {
 }
 
 .content {
-  /* margin-left: 220px; /* Adjust this value based on the width of your navbar */
-  /* padding: 20px;  */
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
+  flex: 1 1 auto; /* Asegura que crece solo si hay contenido */
+  min-height: 0;
 }
 
 .footer {
