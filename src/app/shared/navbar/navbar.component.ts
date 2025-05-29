@@ -5,7 +5,8 @@ import { LoginService } from 'src/app/core/services/login/login.service';
     selector: 'app-navbar',
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.css'],
-    standalone: false
+    standalone: false,
+    
 })
 export class NavbarComponent {
 
@@ -14,11 +15,12 @@ export class NavbarComponent {
   isDropdownOpen: boolean[] = [true, true];
   userInfo: any;
 
+  
+
    navItems = [
     { label: 'Dashboard', route: '/dashboard', icon: 'fas fa-th-large', pro: false },
     { label: 'General', route: '/general', icon: 'fas fa-chart-pie', pro: true },
-    { label: 'Classic', route: '/classic', icon: 'fas fa-mug-hot', pro: true },
-    { label: 'Analytical', route: '/analytical', icon: 'fas fa-chart-line', pro: true },
+    { label: 'Analítica', route: '/analytical', icon: 'fas fa-chart-line', pro: true },
     { label: 'Ecommerce', route: '/ecommerce', icon: 'fas fa-globe', pro: true },
   ];
 

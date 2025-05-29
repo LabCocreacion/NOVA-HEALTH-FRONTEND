@@ -10,6 +10,7 @@
         <div class="background-black" [ngStyle]="{ 'background-color': getBackgroundColor() }">
             <h1 class="title">{{ userInfo.userProject }}</h1>
             <p class="description mb-5">Bienvenido al proyecto {{ userInfo.userProject }}, Tu rol es de {{ userInfo.userRol }}, puedes acceder a los siguientes módulos:</p>
+            <!-- <app-radiologist-animation></app-radiologist-animation> -->
             <div class="button-container" *ngIf="userInfo.userRol === 'Administrador' && userInfo.userProject === 'Phantom'">
                 <div class="button-item" routerLink="/cocreamos-usuarios/users">
                     <i class="fa-solid fa-users-gear"></i>

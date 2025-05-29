@@ -17,6 +17,8 @@ import { HeaderLoginComponent } from './shared/header/header-login/header-login.
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterLoginComponent } from './shared/footer/footer-login/footer-login.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { provideLottieOptions } from 'ngx-lottie';
+import { MamographyComponent } from './shared/animations/mamography/mamography.component';
 
 @NgModule({ declarations: [
         AppComponent,
@@ -36,5 +38,12 @@ import { GoogleMapsModule } from '@angular/google-maps';
         CarouselModule.forRoot(),
         ReactiveFormsModule,
         FullCalendarModule,
-        FormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        FormsModule,
+        MamographyComponent], 
+    providers: [
+        provideHttpClient(withInterceptorsFromDi()),
+        provideLottieOptions({
+            player: () => import('lottie-web'),
+        }),
+    ] })
 export class AppModule { }
