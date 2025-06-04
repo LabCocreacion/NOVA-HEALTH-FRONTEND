@@ -3,7 +3,7 @@
   width: 334px;
   min-width: 334px;
   max-width: 334px;
-  height: 105vh;
+  height: auto;
   background-color: #ffffff;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
   display: flex;
@@ -27,6 +27,7 @@
   padding: 12px 0;
   box-shadow: 0 4px 8px rgba(0,0,0,0.08);
   height: 100vh;
+  /* Asegura que ocupe toda la altura de la ventana */
   z-index: 100;
   animation: sidebarCompactIn 1s cubic-bezier(0.4,0,0.2,1);
 }
@@ -36,10 +37,14 @@
 }
 
 .sidebar-compact-icons {
+  flex: 1 1 auto;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 18px;
+  width: 100%;
+  /* Permite el scroll vertical solo en los íconos */
 }
 
 .compact-icon {
@@ -225,7 +230,7 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  background: transparent;
+  background-color: #FFFFFF;
 }
 
 .navbar-footer-img img {

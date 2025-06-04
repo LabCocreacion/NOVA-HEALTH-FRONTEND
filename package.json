@@ -26,6 +26,7 @@
     "@fullcalendar/interaction": "^6.1.11",
     "@fullcalendar/timegrid": "^6.1.11",
     "bootstrap": "^5.3.3",
+    "chart.js": "^4.4.9",
     "jquery": "^3.7.1",
     "lottie-web": "^5.13.0",
     "ngx-bootstrap": "^19.0.2",

@@ -1,43 +1,39 @@
 <div class="section">
-    <div class="card-container" style="max-width: 1400px; width: 100%;">
-        <div class="card" style="background-color: rgb(231 237 255); border: none;">
+    <div class="card-container">
+        <div class="card card-users">
             <img src="assets/icons/dashboard/icon-user-male.svg" alt="Users" class="card-icon" />
-            <div class="card-title" style="color: #3b82f6;">Usuarios</div>
-            <div class="card-value" style="color: #3b82f6;">10</div>
+            <div class="card-title">Usuarios</div>
+            <div class="card-value">10</div>
         </div>
-
-        <div class="card" style="background-color: #fff4db; border: none;">
+        <div class="card card-instituciones">
             <img src="assets/icons/dashboard/icon-briefcase.svg" alt="Clients" class="card-icon" />
-            <div class="card-title" style="color: #f59e0b;">Instituciones</div>
-            <div class="card-value" style="color: #f59e0b;">5</div>
+            <div class="card-title">Instituciones</div>
+            <div class="card-value">5</div>
         </div>
-
-        <div class="card" style="background-color: #e5f6ff; border: none;">
+        <div class="card card-phantoms1">
             <img src="assets/icons/dashboard/icon-mailbox.svg" alt="Projects" class="card-icon" />
-            <div class="card-title" style="color: #3b82f6;">Phantoms</div>
-            <div class="card-value" style="color: #3b82f6;">20</div>
+            <div class="card-title">Phantoms</div>
+            <div class="card-value">20</div>
         </div>
-
-        <div class="card" style="background-color: #ffe9eb; border: none;">
+        <div class="card card-reportes">
             <img src="assets/icons/dashboard/icon-favorites.svg" alt="Events" class="card-icon" />
-            <div class="card-title" style="color: #ef4444;">Reportes</div>
-            <div class="card-value" style="color: #ef4444;">20</div>
+            <div class="card-title">Reportes</div>
+            <div class="card-value">20</div>
         </div>
-
-        <div class="card" style="background-color: #e0f2fe; border: none;">
+        <div class="card card-phantoms2">
             <img src="assets/icons/dashboard/icon-connect.svg" alt="Reports" class="card-icon" />
-            <div class="card-title" style="color: #3b82f6;">Phantoms</div>
-            <div class="card-value" style="color: #3b82f6;">10</div>
+            <div class="card-title">Phantoms</div>
+            <div class="card-value">10</div>
         </div>
     </div>
-    <div style="display: flex; flex-direction: row; justify-content: center; align-items: flex-start; gap: 2rem; width: 100%;">
-        <div class="card-container mt-5" style="justify-content: center; max-width: 650px; width: 100%;">
-            <div style="width: 600px;">
+    <div class="dashboard-charts-row">
+        <div class="card-container mt-5 dashboard-chart-line">
+            <div class="dashboard-chart-inner">
                 <canvas id="dashboardLineChart"></canvas>
             </div>
         </div>
-        <div class="card-container mt-5" style="justify-content: center; max-width: 450px; width: 100%;">
-            <div style="width: 400px;">
+        <div class="card-container mt-5 dashboard-chart-pie">
+            <div class="dashboard-chart-inner">
                 <canvas id="dashboardPieChart"></canvas>
             </div>
         </div>

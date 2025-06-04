@@ -23,6 +23,8 @@
   border-radius: 2rem;
   padding: 2.5rem 2rem;
   box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .card {
@@ -35,7 +37,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* Elimina border si existe */
   border: none !important;
   transition: transform 0.2s;
   margin: 0.5rem 0;
@@ -56,7 +57,6 @@
   font-weight: 600;
   margin-bottom: 0.5rem;
   text-align: center;
-  /* El color se pondrá igual que el value usando una clase dinámica */
 }
 
 .card-value {
@@ -66,8 +66,154 @@
   margin-bottom: 0;
 }
 
-/* Centrado vertical y horizontal */
 .card, .card-container {
   justify-content: center;
   align-items: center;
+}
+
+.card-users {
+  background-color: rgb(231 237 255);
+}
+.card-users .card-title,
+.card-users .card-value {
+  color: #3b82f6;
+}
+
+.card-instituciones {
+  background-color: #fff4db;
+}
+.card-instituciones .card-title,
+.card-instituciones .card-value {
+  color: #f59e0b;
+}
+
+.card-phantoms1 {
+  background-color: #e5f6ff;
+}
+.card-phantoms1 .card-title,
+.card-phantoms1 .card-value {
+  color: #3b82f6;
+}
+
+.card-reportes {
+  background-color: #ffe9eb;
+}
+.card-reportes .card-title,
+.card-reportes .card-value {
+  color: #ef4444;
+}
+
+.card-phantoms2 {
+  background-color: #e0f2fe;
+}
+.card-phantoms2 .card-title,
+.card-phantoms2 .card-value {
+  color: #3b82f6;
+}
+
+/* Charts row layout */
+.dashboard-charts-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.dashboard-chart-line {
+  justify-content: center;
+  max-width: 650px;
+  width: 100%;
+  min-width: 280px;
+  flex: 1 1 350px;
+  box-sizing: border-box;
+}
+
+.dashboard-chart-pie {
+  justify-content: center;
+  max-width: 450px;
+  width: 100%;
+  min-width: 220px;
+  flex: 1 1 250px;
+  box-sizing: border-box;
+}
+
+.dashboard-chart-inner {
+  width: 100%;
+  max-width: 600px;
+  min-width: 220px;
+}
+
+.dashboard-chart-pie .dashboard-chart-inner {
+  max-width: 400px;
+  min-width: 180px;
+}
+
+/* Responsive styles */
+@media (max-width: 1100px) {
+  .dashboard-charts-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1rem !important;
+  }
+  .card-container.mt-5 {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .card-container {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 1.2rem 0.5rem;
+    gap: 1rem;
+  }
+  .card {
+    min-width: 0 !important;
+    width: 100% !important;
+    height: auto;
+    margin: 0.5rem 0;
+  }
+  .section {
+    margin-right: 0;
+    padding: 10px;
+  }
+  .dashboard-chart-inner {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .card {
+    width: 149px;
+    height: 150px;
+    padding: 10px;
+  }
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.7rem;
+  }
+  .card-title {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+  .card-value {
+    font-size: 1.3rem;
+  }
+  .card-container {
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+  }
+  .dashboard-chart-inner {
+    max-width: 400px;
+    min-width: 120px;
+  }
+  .dashboard-chart-pie .dashboard-chart-inner {
+    max-width: 300px;
+    min-width: 100px;
+  }
 }
