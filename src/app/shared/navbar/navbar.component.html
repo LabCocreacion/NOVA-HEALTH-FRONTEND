@@ -1,39 +1,65 @@
-<aside class="sidebar">
-  <div class="sidebar-header">
-    <div class="profile-img">
-      <img src="../../../assets/icons/avatars/medical-staff-characters/png-1024/doctor-2087835.png" alt="Avatar" />
+<div [@slideInOut]="visible ? 'in' : 'out'" style="display: flex;">
+  <aside class="sidebar" *ngIf="visible">
+    <div class="sidebar-header">
+      <div class="profile-img">
+        <img src="../../../assets/icons/avatars/medical-staff-characters/png-1024/doctor-2087835.png" alt="Avatar" />
+      </div>
+      <div class="profile-text">
+        <span>{{ userName }}</span>
+      </div>
     </div>
-    <div class="profile-text">
-      <span>{{ userName }}</span>
+
+    <div class="sidebar-section-title">HOME</div>
+    <ul class="sidebar-nav">
+      <li *ngFor="let item of navItems">
+        <a [routerLink]="item.route" class="sidebar-link">
+          <div class="nav-content">
+            <i [class]="item.icon"></i>
+            <span>{{ item.label }}</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-section-title">APPS</div>
+    <ul class="sidebar-nav">
+      <li *ngFor="let item of appItems">
+        <a [routerLink]="item.route" class="sidebar-link">
+          <div class="nav-content">
+            <ng-container *ngIf="item.svg; else iconTpl">
+              <img [src]="item.svg" alt="{{item.label}}" style="width: 40px; height: 40px; margin-right: 1rem;" />
+            </ng-container>
+            <ng-template #iconTpl>
+              <i [class]="item.icon"></i>
+            </ng-template>
+            <span>{{ item.label }}</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+
+    <div class="navbar-footer-img">
+      <img src="../../../assets/img/logo-inc.svg" alt="Footer Logo" />
+    </div>
+  </aside>
+</div>
+<div *ngIf="!visible" class="sidebar-compact">
+  <div class="sidebar-compact-icons">
+    <div class="compact-icon profile-img">
+      <img src="../../../assets/icons/avatars/medical-staff-characters/png-1024/doctor-2087835.png" alt="Avatar" style="width:40px;height:40px;border-radius:50%;" />
+    </div>
+    <div class="compact-icon" *ngFor="let item of navItems">
+      <a [routerLink]="item.route" title="{{item.label}}">
+        <i [class]="item.icon"></i>
+      </a>
+    </div>
+    <div class="compact-icon" *ngFor="let item of appItems">
+      <a [routerLink]="item.route" title="{{item.label}}">
+        <i [class]="item.icon"></i>
+      </a>
+    </div>
+    <div class="compact-icon">
+      <img src="../../../assets/img/logo-inc.svg" alt="Footer Logo" style="width:40px;height:40px;" />
     </div>
   </div>
-
-  <div class="sidebar-section-title">HOME</div>
-  <ul class="sidebar-nav">
-    <li *ngFor="let item of navItems">
-      <a [routerLink]="item.route">
-        <div class="nav-content">
-          <i [class]="item.icon"></i>
-          <span>{{ item.label }}</span>
-        </div>
-      </a>
-    </li>
-  </ul>
-
-  <div class="sidebar-section-title">APPS</div>
-  <ul class="sidebar-nav">
-    <li *ngFor="let item of appItems">
-      <a [routerLink]="item.route">
-        <div class="nav-content">
-          <i [class]="item.icon"></i>
-          <span>{{ item.label }}</span>
-        </div>
-      </a>
-    </li>
-  </ul>
-  <app-mamography></app-mamography>
-  <div class="navbar-footer-img">
-    <img src="../../../assets/img/logo-inc.svg" alt="Footer Logo" />
-    
-  </div>
-</aside>
+</div>

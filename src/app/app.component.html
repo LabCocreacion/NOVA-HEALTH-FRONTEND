@@ -1,6 +1,6 @@
 <app-header class="fixed-header" *ngIf="!loginService.isAuthenticated()"></app-header>
-<app-header-login class="fixed-header" *ngIf="loginService.isAuthenticated()"></app-header-login>
 <div class="main-container">
+  <app-header-login class="fixed-header" *ngIf="loginService.isAuthenticated()"></app-header-login>
   <app-navbar *ngIf="loginService.isAuthenticated()" class="navbar"></app-navbar>
   <div class="content">
     <router-outlet></router-outlet>

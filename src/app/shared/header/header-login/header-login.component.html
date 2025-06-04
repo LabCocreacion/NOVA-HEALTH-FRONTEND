@@ -1,10 +1,27 @@
-<header class="header-login" [ngStyle]="{'background-color': getBackgroundColor()}">
-    <div class="left-section">
-      <img *ngIf="userInfo.userProject === 'Phantom'" src="/assets/img/logo-cocreamos.svg" width="370" height="90" alt="Cocreamos">
-      <img *ngIf="userInfo.userProject === 'Tamización Mama'" src="/assets/img/logo-inc.svg" width="370" height="90" alt="Cocreamos">
+<header class="header-login">
+  <div class="left-section">
+    <img *ngIf="userInfo.userProject === 'Phantom'" src="/assets/img/logo-cocreamos.svg" width="200" height="60"
+    alt="Cocreamos">
+    <img *ngIf="userInfo.userProject === 'Tamización Mama'" src="/assets/img/logo-inc.svg" width="200" height="60"
+    alt="Cocreamos">
+    <button class="navbar-toggle-btn" (click)="toggleNavbar()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+  <div class="right-section">
+    <button class="icon-btn">
+      <i class="fa-regular fa-bell"></i>
+    </button>
+    <button class="icon-btn" (click)="toggleTheme()">
+      <i class="fa-duotone fa-regular fa-sunglasses"></i>
+    </button>
+    <div class="avatar-menu-container" (click)="toggleMenu()">
+      <img src="../../../assets/icons/avatars/medical-staff-characters/png-1024/doctor-2087835.png" alt="Avatar" />
     </div>
-    <div class="right-section">
-      <img src="../../../../assets/icons/avatars/medical-staff-characters/png-48/doctor-48x48-2087858.png" alt="Avatar" />
-      <button class="user-button" [ngStyle]="{'background-color': getBackgroundColorButton()}" (click)="logout()"> Cerrar Sesión</button>
+    <div *ngIf="menuOpen" class="avatar-dropdown-menu">
+      <button (click)="goToAccount(); $event.stopPropagation()">Mi cuenta</button>
+      <button (click)="goToReports(); $event.stopPropagation()">Mis reportes</button>
+      <button class="logout-btn" (click)="logout(); $event.stopPropagation()">Cerrar sesión</button>
     </div>
+  </div>
 </header>

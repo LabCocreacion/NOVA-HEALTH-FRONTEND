@@ -12,8 +12,8 @@ body, html {
 .main-container {
   display: flex;
   flex-direction: row;
-  margin-top: 60px;
   min-height: 0;
+  background-color: #f0f5f9;
 }
 
 .fixed-header {
@@ -26,8 +26,8 @@ body, html {
 .content {
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto; /* Asegura que crece solo si hay contenido */
-  min-height: 0;
+  flex: 1 1 auto; 
+  margin-top: 155px;
 }
 
 .footer {
