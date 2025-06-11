@@ -1,15 +1,6 @@
-.section {
-    padding: 63px;
-    min-height: 100vh; 
-    padding-left: 17px;
-}
-
 .reports-bg {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  min-height: 100vh;
-  padding: 2rem;
+  margin-top: 3rem;
 }
-
 .report-card {
   background: #fff;
   border-radius: 18px;
@@ -121,7 +112,7 @@
   margin-bottom: 2rem;
   align-items: center;
   flex-wrap: wrap;
-  margin-left: 451px;
+  justify-content: center;
 }
 
 .filter-select,
@@ -137,4 +128,32 @@
 
 .filter-input[type="date"] {
   min-width: 150px;
+}
+
+.diligenciar-top-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.diligenciar-btn-top {
+  background: linear-gradient(90deg, #4a90e2 0%, #50e3c2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 0.8rem 2.5rem;
+  box-shadow: 0 4px 16px rgba(44,62,80,0.10);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  letter-spacing: 0.5px;
+  outline: none;
+}
+
+.diligenciar-btn-top:hover, .diligenciar-btn-top:focus {
+  background: linear-gradient(90deg, #357ab8 0%, #38bfa7 100%);
+  box-shadow: 0 6px 24px rgba(44,62,80,0.16);
+  transform: translateY(-2px) scale(1.03);
 }

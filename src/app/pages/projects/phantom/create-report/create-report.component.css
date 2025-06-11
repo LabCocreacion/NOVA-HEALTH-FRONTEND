@@ -2,7 +2,6 @@
     max-width: 600px;
     margin: 97px auto;
     padding: 20px;
-    background: #f4f4f9;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     top: 157px;
@@ -63,24 +62,22 @@
   }
 
   .section {
-    padding: 63px;
-    background: #f4f4f9;
+    padding-left: 63px;
+    padding-right: 63px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-height: 100vh; /* Ensure the section covers the full height of the viewport */
     display: flex;
     flex-direction: column;
-    padding-left: 373px;
+    padding-bottom: 70px;
 }
 
 .form-section h4 {
-  background-color: #5DA3A4; /* Color de fondo */
-  padding: 10px 20px; /* Espaciado interno */
-  border-radius: 0 50px 0 0; /* Esquinas redondeadas: superior derecha */
-  margin-top: 0; /* Eliminar margen superior */
-  margin-bottom: 20px; /* Margen inferior */
+  background-color: #5DA3A4; 
+  padding: 10px 20px; 
+  border-radius: 0 50px 0 0; 
+  margin-top: 0;
+  margin-bottom: 20px;
   color: white;
-  position: relative; /* Posicionamiento relativo para el pseudo-elemento */
+  position: relative;
 }
 
 .form-section h4::after {

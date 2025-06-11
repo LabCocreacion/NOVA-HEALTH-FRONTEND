@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-reports',
@@ -21,6 +22,8 @@ export class ListReportsComponent {
   selectedFecha: string = '';
   selectedAtia: string = '';
 
+  constructor(private router: Router) {}
+
   get instituciones(): string[] {
     return Array.from(new Set(this.reports.map(r => r.institucion)));
   }
@@ -31,5 +34,9 @@ export class ListReportsComponent {
       (!this.selectedFecha || report.fechaCreacion === this.selectedFecha) &&
       (!this.selectedAtia || report.atia === this.selectedAtia)
     );
+  }
+
+  onDiligenciarTop() {
+    this.router.navigate(['/phantom/create-report']);
   }
 }
