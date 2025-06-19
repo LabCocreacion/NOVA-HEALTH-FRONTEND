@@ -115,3 +115,166 @@
   .btn-submit:hover {
     background: #ffc0cb;
   }
+
+  .phantom-form-container {
+    background: #f5f8fa;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+  }
+
+  .phantom-form-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(59,130,246,0.07), 0 1.5px 6px rgba(0,0,0,0.04);
+    width: 80%;
+    padding: 0 0 48px 0; /* Más padding inferior */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .phantom-form-header {
+    background-color: #ffc0cb;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    padding: 32px 0 24px 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    letter-spacing: 1px;
+  }
+
+  .phantom-form-header i {
+    font-size: 2.2rem;
+    color: #fff;
+    background: #ffb6c1;
+    border-radius: 50%;
+    padding: 12px;
+    box-shadow: 0 2px 8px rgba(255,192,203,0.13);
+  }
+
+  .phantom-form-body {
+    padding: 48px 64px 0 64px; /* Más padding lateral */
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .phantom-form-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Más columnas */
+    gap: 24px 32px;
+  }
+
+  .phantom-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .phantom-form-group label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 2px;
+  }
+
+  .phantom-form-group input,
+  .phantom-form-group select,
+  .phantom-form-group textarea {
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 1rem;
+    background: #f9fafb;
+    transition: border 0.2s;
+    outline: none;
+    resize: none;
+  }
+
+  .phantom-form-group input:focus,
+  .phantom-form-group select:focus,
+  .phantom-form-group textarea:focus {
+    border-color: #ffc0cb;
+    background: #fff;
+  }
+
+  .phantom-form-group-full {
+    grid-column: 1 / -1;
+  }
+
+  .phantom-form-group textarea {
+    min-height: 60px;
+    max-height: 120px;
+  }
+
+  .phantom-form-submit {
+    margin-top: 24px;
+    width: 300px; 
+    background: linear-gradient(90deg, #34d399 60%, #3b82f6 100%);
+    color: #fff;
+    font-size: 1.7rem; 
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(52,211,153,0.08);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .phantom-form-submit:hover {
+    background: linear-gradient(90deg, #3b82f6 60%, #34d399 100%);
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  @media (max-width: 1200px) {
+    .phantom-form-card {
+      max-width: 98vw;
+      min-width: 0;
+    }
+    .phantom-form-body {
+      padding: 24px 12px 0 12px;
+    }
+    .phantom-form-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px 12px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .phantom-form-card {
+      max-width: 98vw;
+    }
+    .phantom-form-body {
+      padding: 18px 8px 0 8px;
+    }
+    .phantom-form-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 12px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .phantom-form-header {
+      font-size: 1.2rem;
+      padding: 18px 0 12px 0;
+      gap: 8px;
+    }
+    .phantom-form-body {
+      padding: 10px 2vw 0 2vw;
+    }
+    .phantom-form-grid {
+      grid-template-columns: 1fr;
+      gap: 10px 0;
+    }
+  }

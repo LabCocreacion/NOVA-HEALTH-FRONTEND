@@ -1,7 +1,7 @@
 .calendar-container {
     text-align: center;
     margin: 20px;
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 .calendar-grid {
@@ -27,4 +27,82 @@
 .month:hover {
     background: #ff8ba0;
     transform: scale(1.05);
+}
+
+.calendar-grid-modern {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 32px;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.month-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(255,192,203,0.13), 0 1.5px 6px rgba(0,0,0,0.04);
+    padding: 32px 12px 24px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+    border: 2px solid transparent;
+    min-height: 140px;
+    position: relative;
+}
+
+.month-card:hover {
+    box-shadow: 0 8px 32px rgba(255,192,203,0.23), 0 2px 8px rgba(0,0,0,0.08);
+    border-color: #ffc0cb;
+    background: #fff0f5;
+    transform: translateY(-4px) scale(1.04);
+}
+
+.month-icon {
+    font-size: 2.2rem;
+    color: #ffc0cb;
+    margin-bottom: 18px;
+    background: #ffc0cb38;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(255,192,203,0.08);
+}
+
+.month-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #263a4b;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 700px) {
+    .calendar-grid-modern {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+    .month-card {
+        padding: 18px 6px 14px 6px;
+        min-height: 90px;
+    }
+    .month-icon {
+        font-size: 1.4rem;
+        width: 34px;
+        height: 34px;
+        margin-bottom: 10px;
+    }
+    .month-name {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .calendar-grid-modern {
+        grid-template-columns: 1fr;
+    }
 }

@@ -13,6 +13,7 @@ import { DetailRadiologoFormComponent } from './detail-radiologo-form/detail-rad
 import { MenuCalidadComponent } from './calidad/menu-calidad/menu-calidad.component';
 import { ListCalidadPhantomComponent } from './calidad/list-calidad-phantom/list-calidad-phantom.component';
 import { FormCalidadPhantomComponent } from './calidad/form-calidad-phantom/form-calidad-phantom.component';
+import { FormCalidadImagenComponent } from './calidad/form-calidad-imagen/form-calidad-imagen.component';
 
 const routes: Routes = [
   { path: 'list-instituciones', component: InstitutosListComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'dashboard-calidad', component: MenuCalidadComponent },
   { path: 'dashboard-calidad/01-calidad-phantom', component: ListCalidadPhantomComponent },
   { path: 'dashboard-calidad/add-form-calidad', component: FormCalidadPhantomComponent },
+  { path: 'dashboard-calidad/add-form-calidad-imagen', component: FormCalidadImagenComponent },
 ];
 
 @NgModule({
@@ -37,7 +39,8 @@ const routes: Routes = [
     DetailRadiologoFormComponent,
     MenuCalidadComponent,
     ListCalidadPhantomComponent,
-    FormCalidadPhantomComponent
+    FormCalidadPhantomComponent,
+    FormCalidadImagenComponent
   ],
   imports: [
     CommonModule,

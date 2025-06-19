@@ -1,0 +1,170 @@
+.imagen-form-container {
+  min-height: 100vh;
+  background: #f5f8fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 0;
+}
+
+.imagen-form-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(59,130,246,0.07), 0 1.5px 6px rgba(0,0,0,0.04);
+  width: 90%;
+  padding: 0 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.imagen-form-header {
+  background-color: #ffc0cb;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  padding: 32px 0 24px 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  letter-spacing: 1px;
+}
+
+.imagen-form-header i {
+  font-size: 2.2rem;
+  color: #fff;
+  background: #ffb6c1;
+  border-radius: 50%;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(255,192,203,0.13);
+}
+
+.imagen-form-body {
+  padding: 32px 32px 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.imagen-form-section {
+  margin-bottom: 32px;
+}
+
+.imagen-form-section-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #e86a92;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+}
+
+.imagen-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 32px;
+}
+
+.imagen-form-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 32px;
+  margin-bottom: 24px;
+}
+
+.imagen-form-grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px 32px;
+  margin: 32px 0 0 0;
+}
+
+.imagen-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 14px 12px;
+  border: 1.5px solid #e5e7eb;
+}
+
+.imagen-form-group label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 2px;
+}
+
+.imagen-form-options {
+  display: flex;
+  gap: 18px;
+  margin-top: 4px;
+}
+
+.imagen-form-options label {
+  font-weight: 500;
+  color: #6b7280;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.imagen-form-options input[type="radio"] {
+  accent-color: #e86a92;
+  width: 18px;
+  height: 18px;
+}
+
+.imagen-form-submit {
+  margin-top: 24px;
+  width: 180px;
+  background: linear-gradient(90deg, #34d399 60%, #3b82f6 100%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(52,211,153,0.08);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imagen-form-submit:hover {
+  background: linear-gradient(90deg, #3b82f6 60%, #34d399 100%);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.imagen-form-promedio {
+  margin: 32px auto 0 auto;
+  font-size: 1.2rem;
+  color: #e86a92;
+  font-weight: 700;
+  text-align: center;
+  background: #fff0f5;
+  border-radius: 8px;
+  padding: 12px 0;
+  width: 220px;
+  box-shadow: 0 1px 4px rgba(232,106,146,0.06);
+}
+
+@media (max-width: 900px) {
+  .imagen-form-card {
+    max-width: 98vw;
+  }
+  .imagen-form-body {
+    padding: 18px 8px 0 8px;
+  }
+  .imagen-form-grid {
+    grid-template-columns: 1fr;
+    gap: 14px 0;
+  }
+}

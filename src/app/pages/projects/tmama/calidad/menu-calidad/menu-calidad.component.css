@@ -6,9 +6,9 @@
   padding: 50px;
 } */
 
-.gestion-calidad{
-    margin-top: 97px;
-    margin-left: 500px;
+.gestion-calidad {
+    margin-top: 30px;
+    margin-left: 100px;
 }
 
 .menu {
@@ -63,4 +63,93 @@
 
 .menu-button:hover {
     color: #fff; /* Cambia el color del texto a blanco */
+}
+
+.menu-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.menu-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(59,130,246,0.07), 0 1.5px 6px rgba(0,0,0,0.04);
+    padding: 32px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+    border: 2px solid transparent;
+    min-height: 210px;
+}
+
+.menu-card:hover {
+    box-shadow: 0 8px 32px rgba(59,130,246,0.13), 0 2px 8px rgba(0,0,0,0.08);
+    border-color: #ffc0cb;
+    transform: translateY(-4px) scale(1.03);
+}
+
+.menu-card-icon {
+    font-size: 2.5rem;
+    color: #ffc0cb;
+    margin-bottom: 18px;
+    background: #ffc0cb38;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(59,130,246,0.08);
+}
+
+.menu-card-title {
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: #263a4b;
+    margin-bottom: 0.5rem;
+}
+
+.menu-card-desc {
+    font-size: 1rem;
+    color: #6b7280;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+    .gestion-calidad {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .menu-cards {
+        gap: 18px;
+    }
+    .menu-card {
+        padding: 22px 12px 16px 12px;
+        min-height: 170px;
+    }
+    .menu-card-icon {
+        font-size: 2rem;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media (max-width: 600px) {
+    .gestion-calidad {
+        margin-top: 60px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .menu-cards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
 }

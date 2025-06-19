@@ -1,0 +1,127 @@
+<div class="imagen-form-container">
+  <div class="imagen-form-card">
+    <div class="imagen-form-header">
+      <i class="fas fa-image"></i>
+      <span>Formulario de Calidad de Imagen</span>
+    </div>
+    <form [formGroup]="formCalidadImagen" (ngSubmit)="onSubmit()" class="imagen-form-body">
+      <div class="imagen-form-grid imagen-form-grid-2col">
+        <div class="imagen-form-group">
+          <label for="estudioId">ID del Estudio</label>
+          <input type="text" id="estudioId" formControlName="estudioId" />
+        </div>
+        <div class="imagen-form-group">
+          <label for="fechaHoy">Fecha</label>
+          <input type="date" id="fechaHoy" formControlName="fechaHoy" />
+        </div>
+      </div>
+      <div class="imagen-form-section">
+        <div class="imagen-form-section-title">Proyección Cráneo Caudal</div>
+        <div class="imagen-form-grid">
+          <div class="imagen-form-group" *ngFor="let q of ccQuestions">
+            <label>{{ q.label }}</label>
+            <div class="imagen-form-options">
+              <label *ngFor="let opt of options">
+                <input type="radio" [formControlName]="q.control" [value]="opt" /> {{ opt }}
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="imagen-form-section">
+        <div class="imagen-form-section-title">Proyección Medio Lateral Oblicua</div>
+        <div class="imagen-form-grid">
+          <div class="imagen-form-group" *ngFor="let q of mloQuestions">
+            <label>{{ q.label }}</label>
+            <div class="imagen-form-options">
+              <label *ngFor="let opt of options">
+                <input type="radio" [formControlName]="q.control" [value]="opt" /> {{ opt }}
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="imagen-form-section">
+        <div class="imagen-form-section-title">Criterios de Exposición</div>
+        <div class="imagen-form-grid">
+          <div class="imagen-form-group" *ngFor="let q of criteriosExposicionQuestions">
+            <label>{{ q.label }}</label>
+            <div class="imagen-form-options">
+              <label *ngFor="let opt of options">
+                <input type="radio" [formControlName]="q.control" [value]="opt" /> {{ opt }}
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="imagen-form-promedio">
+        <strong>Promedio total:</strong> {{ promedioTotal }}
+      </div>
+
+      <div class="imagen-form-section">
+        <div class="imagen-form-grid imagen-form-grid-3col">
+          <div class="imagen-form-group">
+            <label>Aceptable para diagnóstico</label>
+            <div class="imagen-form-options">
+              <label>
+                <input type="radio" formControlName="aceptableDiagnostico" [value]="1" /> Sí
+              </label>
+              <label>
+                <input type="radio" formControlName="aceptableDiagnostico" [value]="0" /> No
+              </label>
+            </div>
+          </div>
+          <div class="imagen-form-group">
+            <label>Densidad mamaria</label>
+            <div class="imagen-form-options">
+              <label><input type="radio" formControlName="densidadMamaria" value="A" /> A</label>
+              <label><input type="radio" formControlName="densidadMamaria" value="B" /> B</label>
+              <label><input type="radio" formControlName="densidadMamaria" value="C" /> C</label>
+              <label><input type="radio" formControlName="densidadMamaria" value="D" /> D</label>
+            </div>
+          </div>
+          <div class="imagen-form-group">
+            <label>BIRADS</label>
+            <div class="imagen-form-options">
+              <label><input type="radio" formControlName="birads" value="1" /> 1</label>
+              <label><input type="radio" formControlName="birads" value="2" /> 2</label>
+              <label><input type="radio" formControlName="birads" value="3" /> 3</label>
+              <label><input type="radio" formControlName="birads" value="4A" /> 4A</label>
+              <label><input type="radio" formControlName="birads" value="4B" /> 4B</label>
+              <label><input type="radio" formControlName="birads" value="4C" /> 4C</label>
+              <label><input type="radio" formControlName="birads" value="5" /> 5</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="imagen-form-section">
+        <div class="imagen-form-grid imagen-form-grid-2col">
+          <div class="imagen-form-group">
+            <label for="hallazgoPredominante">Hallazgo predominante</label>
+            <select id="hallazgoPredominante" formControlName="hallazgoPredominante">
+              <option value="" disabled selected>Seleccione una opción</option>
+              <option value="asimetria focal">Asimetría focal</option>
+              <option value="asimetria global">Asimetría global</option>
+              <option value="nodulo">Nódulo</option>
+              <option value="microcalcificaciones">Microcalcificaciones</option>
+              <option value="engrosamiento de la piel">Engrosamiento de la piel</option>
+              <option value="adenopatia axilar">Adenopatía axilar</option>
+              <option value="distorsion de arquitectura">Distorsión de arquitectura</option>
+            </select>
+          </div>
+          <div class="imagen-form-group">
+            <label>Lateralidad</label>
+            <div class="imagen-form-options">
+              <label><input type="radio" formControlName="lateralidad" value="bilateral" /> Bilateral</label>
+              <label><input type="radio" formControlName="lateralidad" value="izquierda" /> Izquierda</label>
+              <label><input type="radio" formControlName="lateralidad" value="derecha" /> Derecha</label>
+              <label><input type="radio" formControlName="lateralidad" value="NA" /> NA</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="imagen-form-submit">Enviar</button>
+    </form>
+  </div>
+</div>

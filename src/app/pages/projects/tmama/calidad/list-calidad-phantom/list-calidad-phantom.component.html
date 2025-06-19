@@ -1,8 +1,9 @@
 <div class="calendar-container">
     <h1>Selecciona un Mes</h1>
-    <div class="calendar-grid mt-5">
-      <div class="month" *ngFor="let month of months" (click)="selectMonth(month)">
-        {{ month }}
-        </div>
+    <div class="calendar-grid-modern mt-5">
+      <div class="month-card" *ngFor="let month of months" (click)="selectMonth(month)">
+        <div class="month-icon"><i class="fas fa-calendar-alt"></i></div>
+        <div class="month-name">{{ month }}</div>
+      </div>
     </div>
 </div>

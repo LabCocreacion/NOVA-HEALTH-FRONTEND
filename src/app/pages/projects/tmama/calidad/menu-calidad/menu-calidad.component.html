@@ -1,18 +1,58 @@
 <div class="gestion-calidad">
     <div>
-        <h1>Gestión Calidad</h1>
-        <p>Seleccione una opción del menú para ver los resultados de calidad.</p>
+        <h1>Gestión de Calidad</h1>
+        <p>Seleccione una opción para ver los resultados de calidad.</p>
     </div>
-    <div class="menu mt-5">
-        <div class="menu-button" data-number="1" routerLink="/tamizacion-mama/dashboard-calidad/01-calidad-phantom/">Calidad Phantom</div>
-        <div class="menu-button" data-number="2">Calidad de Imagen</div>
-        <div class="menu-button" data-number="3">Doble Lectura</div>
-        <div class="menu-button" data-number="4">Nivel de Referencia</div>
-        <div class="menu-button" data-number="5">Índice de Rechazo</div>
-        <div class="menu-button" data-number="6">Control de Calidad Unidad</div>
-        <div class="menu-button" data-number="7">Proporción BIRADS</div>
-        <div class="menu-button" data-number="8">Número Biopsias Res. Positivas</div>
-        <div class="menu-button" data-number="9">Rellenado</div>
-        <div class="menu-button" data-number="10">Hoja Radar</div>
+    <div class="menu-cards">
+        <div class="menu-card" routerLink="/tamizacion-mama/dashboard-calidad/01-calidad-phantom/">
+            <div class="menu-card-icon"><i class="fas fa-vial"></i></div>
+            <div class="menu-card-title">Calidad Phantom</div>
+            <div class="menu-card-desc">Resultados de pruebas de phantom.</div>
+        </div>
+        <div class="menu-card" routerLink="/tamizacion-mama/dashboard-calidad/add-form-calidad-imagen">
+            <div class="menu-card-icon"><i class="fas fa-image"></i></div>
+            <div class="menu-card-title">Calidad de Imagen</div>
+            <div class="menu-card-desc">Evaluación de la calidad de imagen.</div>
+        </div>
+        <div class="menu-card">
+            <div class="menu-card-icon"><i class="fas fa-user-friends"></i></div>
+            <div class="menu-card-title">Doble Lectura</div>
+            <div class="menu-card-desc">Resultados de doble lectura.</div>
+        </div>
+        <div class="menu-card">
+            <div class="menu-card-icon"><i class="fas fa-bullseye"></i></div>
+            <div class="menu-card-title">Nivel de Referencia</div>
+            <div class="menu-card-desc">Nivel de referencia nacional.</div>
+        </div>
+        <div class="menu-card">
+            <div class="menu-card-icon"><i class="fas fa-percentage"></i></div>
+            <div class="menu-card-title">Índice de Rechazo</div>
+            <div class="menu-card-desc">Porcentaje de imágenes rechazadas.</div>
+        </div>
+        <div class="menu-card">
+            <div class="menu-card-icon"><i class="fas fa-cogs"></i></div>
+            <div class="menu-card-title">Control de Calidad Unidad</div>
+            <div class="menu-card-desc">Control de calidad de la unidad.</div>
+        </div>
+        <div class="menu-card">
+            <div class="menu-card-icon"><i class="fas fa-chart-pie"></i></div>
+            <div class="menu-card-title">Proporción BIRADS</div>
+            <div class="menu-card-desc">Distribución de BIRADS.</div>
+        </div>
+        <div class="menu-card">
+            <div class="menu-card-icon"><i class="fas fa-vials"></i></div>
+            <div class="menu-card-title">N° Biopsias Res. Positivas</div>
+            <div class="menu-card-desc">Biopsias con resultados positivos.</div>
+        </div>
+        <div class="menu-card">
+            <div class="menu-card-icon"><i class="fas fa-edit"></i></div>
+            <div class="menu-card-title">Rellenado</div>
+            <div class="menu-card-desc">Estado de formularios rellenados.</div>
+        </div>
+        <div class="menu-card">
+            <div class="menu-card-icon"><i class="fas fa-radar"></i></div>
+            <div class="menu-card-title">Hoja Radar</div>
+            <div class="menu-card-desc">Visualización tipo radar.</div>
+        </div>
     </div>
 </div>
