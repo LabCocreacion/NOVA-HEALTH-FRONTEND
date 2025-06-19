@@ -1,6 +1,6 @@
 <div [@slideInOut]="visible ? 'in' : 'out'" style="display: flex;">
   <aside class="sidebar" *ngIf="visible" style="display: flex; flex-direction: column; height: 100vh; position: relative;">
-    <div class="sidebar-header">
+    <div class="sidebar-header" [ngStyle]="{'background-image': 'url(' + sidebarHeaderBg + ')'}">
       <div class="profile-img">
         <img src="../../../assets/icons/avatars/medical-staff-characters/png-1024/doctor-2087835.png" alt="Avatar" />
       </div>
@@ -42,7 +42,7 @@
     </div>
   </aside>
 </div>
-<div *ngIf="!visible" class="sidebar-compact" style="display: flex; flex-direction: column; height: 100vh;">
+<div *ngIf="!visible" class="sidebar-compact" [ngStyle]="{'background': sidebarCompactBg}" style="display: flex; flex-direction: column; height: 100vh;">
   <div class="sidebar-compact-icons" style="flex: 1 1 auto; overflow-y: auto; padding-bottom: 60px;">
     <div class="compact-icon profile-img">
       <img src="../../../assets/icons/avatars/medical-staff-characters/png-1024/doctor-2087835.png" alt="Avatar" style="width:40px;height:40px;border-radius:50%;" />

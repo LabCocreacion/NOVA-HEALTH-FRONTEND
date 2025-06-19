@@ -1,4 +1,4 @@
-<div class="section">
+<div class="section" *ngIf="userInfo.userProject == 'Phantom'">
     <div class="card-container">
         <div class="card card-users">
             <img src="assets/icons/dashboard/icon-user-male.svg" alt="Users" class="card-icon" />
@@ -27,14 +27,83 @@
         </div>
     </div>
     <div class="dashboard-charts-row">
-        <div class="card-container mt-5 dashboard-chart-line">
-            <div class="dashboard-chart-inner">
-                <canvas id="dashboardLineChart"></canvas>
+        <div class="dashboard-charts-col">
+            <div class="card-container mt-5 dashboard-chart-line">
+                <div class="dashboard-chart-inner">
+                    <div class="chart-title">Evolución de Reportes</div>
+                    <canvas id="dashboardLineChart"></canvas>
+                </div>
+            </div>
+            <div class="card-container mt-5 dashboard-chart-bar">
+                <div class="dashboard-chart-inner">
+                    <div class="chart-title">Pacientes por Mes</div>
+                    <canvas id="dashboardBarChart"></canvas>
+                </div>
             </div>
         </div>
         <div class="card-container mt-5 dashboard-chart-pie">
             <div class="dashboard-chart-inner">
+                <div class="chart-title">Distribución por Institución</div>
                 <canvas id="dashboardPieChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section" *ngIf="userInfo.userProject == 'Tamización Mama'">
+    <div class="card-container">
+        <div class="card card-users">
+            <img src="assets/icons/dashboard/icon-user-male.svg" alt="Users" class="card-icon" />
+            <div class="card-title">Usuarios</div>
+            <div class="card-value">10</div>
+        </div>
+        <div class="card card-instituciones">
+            <img src="assets/icons/dashboard/icon-briefcase.svg" alt="Clients" class="card-icon" />
+            <div class="card-title">Instituciones</div>
+            <div class="card-value">3</div>
+        </div>
+        <!-- <div class="card card-phantoms1">
+            <img src="assets/icons/dashboard/icon-mailbox.svg" alt="Projects" class="card-icon" />
+            <div class="card-title">Mamógrafos</div>
+            <div class="card-value">20</div>
+        </div> -->
+        <div class="card card-reportes">
+            <img src="assets/icons/dashboard/icon-favorites.svg" alt="Events" class="card-icon" />
+            <div class="card-title">Exámenes</div>
+            <div class="card-value">14</div>
+        </div>
+        <div class="card card-phantoms2">
+            <img src="assets/icons/dashboard/icon-connect.svg" alt="Reports" class="card-icon" />
+            <div class="card-title">Pacientes</div>
+            <div class="card-value">10</div>
+        </div>
+    </div>
+    <div class="dashboard-charts-row mt-5">
+        <div class="dashboard-charts-col">
+            <div class="card-container mt-5 dashboard-chart-line">
+                <div class="dashboard-chart-inner">
+                    <div class="chart-title">Registro de Exámenes</div>
+                    <canvas id="dashboardLineChart"></canvas>
+                </div>
+            </div>
+            <div class="card-container mt-4 dashboard-chart-bar">
+                <div class="dashboard-chart-inner">
+                    <div class="chart-title">Pacientes por Mes</div>
+                    <canvas id="dashboardBarChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-charts-col">
+            <div class="card-container dashboard-chart-pie mt-5">
+                <div class="dashboard-chart-inner">
+                    <div class="chart-title">Exámenes por Institución</div>
+                    <canvas id="dashboardPieChart"></canvas>
+                </div>
+            </div>
+            <div class="card-container mt-5 dashboard-chart-horizontal-bar" *ngIf="userInfo.userProject == 'Tamización Mama'">
+                <div class="dashboard-chart-inner">
+                    <div class="chart-title">Exámenes por Especialista</div>
+                    <canvas id="dashboardHorizontalBarChart"></canvas>
+                </div>
             </div>
         </div>
     </div>

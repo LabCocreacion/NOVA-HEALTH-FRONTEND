@@ -79,6 +79,78 @@ export class DashboardComponent implements AfterViewInit {
         }
       }
     });
+
+    // Agrega el gráfico de barras
+    new Chart('dashboardBarChart', {
+      type: 'bar',
+      data: {
+        labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+        datasets: [{
+          label: 'Pacientes',
+          data: [8, 15, 12, 6, 9, 13],
+          backgroundColor: '#f59e0b',
+          borderRadius: 6,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: true,
+            position: 'top'
+          }
+        },
+        scales: {
+          x: {
+            grid: {
+              display: false
+            }
+          },
+          y: {
+            beginAtZero: true,
+            grid: {
+              color: '#e5e7eb'
+            }
+          }
+        }
+      }
+    });
+
+    // Gráfica de barras horizontal para cantidad de exámenes por tipo de especialista
+    new Chart('dashboardHorizontalBarChart', {
+      type: 'bar',
+      data: {
+        labels: ['Radiólogo', 'Cirujano de mama', 'Patólogo'],
+        datasets: [{
+          label: 'Cantidad de exámenes',
+          data: [25, 12, 8], // Ajusta los valores según tus datos reales
+          backgroundColor: ['#3b82f6', '#f59e0b', '#ef4444'],
+          borderRadius: 8,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          x: {
+            beginAtZero: true,
+            grid: {
+              color: '#e5e7eb'
+            }
+          },
+          y: {
+            grid: {
+              display: false
+            }
+          }
+        }
+      }
+    });
   }
 
   getBackgroundImage(): string {
