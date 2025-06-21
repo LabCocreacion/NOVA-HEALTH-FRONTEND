@@ -18,6 +18,11 @@ import { FormDobleLecturaComponent } from './calidad/form-doble-lectura/form-dob
 import { FormNivelReferenciaComponent } from './calidad/form-nivel-referencia/form-nivel-referencia.component';
 import { FormIndiceRechazoComponent } from './calidad/form-indice-rechazo/form-indice-rechazo.component';
 import { ListMesesCalidadComponent } from './calidad/list-meses-calidad/list-meses-calidad.component';
+import { FormControlCalidadComponent } from './calidad/form-control-calidad/form-control-calidad.component';
+import { FormProporcionBiradsComponent } from './calidad/form-proporcion-birads/form-proporcion-birads.component';
+import { FormReporteBiopsiasComponent } from './calidad/form-reporte-biopsias/form-reporte-biopsias.component';
+import { FormRellenadoComponent } from './calidad/form-rellenado/form-rellenado.component';
+import { FormHojaRadarComponent } from './calidad/form-hoja-radar/form-hoja-radar.component';
 
 const routes: Routes = [
   { path: 'list-instituciones', component: InstitutosListComponent },
@@ -34,7 +39,12 @@ const routes: Routes = [
   { path: 'dashboard-calidad/form-doble-lectura', component: FormDobleLecturaComponent },
   { path: 'dashboard-calidad/form-nivel-referencia', component: FormNivelReferenciaComponent },
   { path: 'dashboard-calidad/form-indice-rechazo', component: FormIndiceRechazoComponent },
-  { path: 'dashboard-calidad/list-meses-calidad', component: ListMesesCalidadComponent }
+  { path: 'dashboard-calidad/list-meses-calidad', component: ListMesesCalidadComponent },
+  { path: 'dashboard-calidad/form-control-calidad', component: FormControlCalidadComponent },
+  { path: 'dashboard-calidad/form-proporcion-birads', component: FormProporcionBiradsComponent },
+  { path: 'dashboard-calidad/form-reporte-biopsias', component: FormReporteBiopsiasComponent },
+  { path: 'dashboard-calidad/form-rellenado', component: FormRellenadoComponent },
+  { path: 'dashboard-calidad/form-hoja-radar', component: FormHojaRadarComponent }
 
 ];
 
@@ -53,7 +63,12 @@ const routes: Routes = [
     FormDobleLecturaComponent,
     FormNivelReferenciaComponent,
     FormIndiceRechazoComponent,
-    ListMesesCalidadComponent
+    ListMesesCalidadComponent,
+    FormControlCalidadComponent,
+    FormProporcionBiradsComponent,
+    FormReporteBiopsiasComponent,
+    FormRellenadoComponent,
+    FormHojaRadarComponent
   ],
   imports: [
     CommonModule,

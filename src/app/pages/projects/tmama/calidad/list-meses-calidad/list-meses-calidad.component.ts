@@ -25,12 +25,15 @@ export class ListMesesCalidadComponent {
 
   selectMonth(month: string): void {
     if (this.tipo === 'calidadPhantom'){
-      // Redirigir a la ruta exacta definida en el módulo
       this.router.navigate(['/tamizacion-mama/dashboard-calidad/add-form-calidad'], { queryParams: { month } });
     } else if (this.tipo === 'indiceRechazo') {
-      // Redirigir a la ruta exacta definida en el módulo
       this.router.navigate(['/tamizacion-mama/dashboard-calidad/form-indice-rechazo'], { queryParams: { month } });
+    } else if (this.tipo === 'proporcionBirads') {
+      this.router.navigate(['/tamizacion-mama/dashboard-calidad/form-proporcion-birads'], { queryParams: { month } });
+    } else if (this.tipo === 'reportesBoipsias') {
+      this.router.navigate(['/tamizacion-mama/dashboard-calidad/form-reporte-biopsias'], { queryParams: { month } });
+    } else if (this.tipo === 'formulariosRellenado') {
+      this.router.navigate(['/tamizacion-mama/dashboard-calidad/form-rellenado'], { queryParams: { month } });
     }
   }
-
 }

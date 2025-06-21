@@ -1,0 +1,70 @@
+<div class="control-calidad-form-container">
+  <div class="control-calidad-form-card">
+    <h2 class="control-calidad-form-title">Formulario Control de Calidad</h2>
+    <form>
+      <div class="control-calidad-section">
+        <h3>Datos Generales</h3>
+        <div class="control-calidad-grid">
+          <div class="control-calidad-form-group">
+            <label>Fecha</label>
+            <input type="date" [value]="today" disabled />
+          </div>
+          <div class="control-calidad-form-group">
+            <label>Empresa que realiza las pruebas</label>
+            <input type="text" />
+          </div>
+          <div class="control-calidad-form-group">
+            <label>Resolución de la empresa</label>
+            <input type="text" />
+          </div>
+          <div class="control-calidad-form-group">
+            <label>Responsable de ejecutar las pruebas</label>
+            <input type="text" />
+          </div>
+          <div class="control-calidad-form-group">
+            <label>Título profesional (ejecutor)</label>
+            <input type="text" />
+          </div>
+          <div class="control-calidad-form-group">
+            <label>Correo (ejecutor)</label>
+            <input type="email" />
+          </div>
+          <div class="control-calidad-form-group">
+            <label>Número de contacto (ejecutor)</label>
+            <input type="text" />
+          </div>
+          <div class="control-calidad-form-group">
+            <label>Responsable de recibir el informe</label>
+            <input type="text" />
+          </div>
+          <div class="control-calidad-form-group">
+            <label>Título profesional (receptor)</label>
+            <input type="text" />
+          </div>
+          <div class="control-calidad-form-group">
+            <label>Correo (receptor)</label>
+            <input type="email" />
+          </div>
+          <div class="control-calidad-form-group">
+            <label>Número de contacto (receptor)</label>
+            <input type="text" />
+          </div>
+        </div>
+      </div>
+      <div class="control-calidad-section">
+        <h3>Preguntas de Control de Calidad</h3>
+        <div class="control-calidad-preguntas">
+          <div class="control-calidad-pregunta" *ngFor="let pregunta of preguntas; let i = index">
+            <label>{{ pregunta }}</label>
+            <div class="control-calidad-opciones">
+              <label><input type="radio" name="pregunta_{{i}}" value="Si" /> Sí</label>
+              <label><input type="radio" name="pregunta_{{i}}" value="No" /> No</label>
+              <label><input type="radio" name="pregunta_{{i}}" value="N/A" /> N/A</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="control-calidad-form-submit">Enviar</button>
+    </form>
+  </div>
+</div>

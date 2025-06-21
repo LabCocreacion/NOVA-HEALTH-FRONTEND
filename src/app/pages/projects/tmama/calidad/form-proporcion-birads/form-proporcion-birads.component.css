@@ -1,0 +1,109 @@
+
+.proporcion-birads-form-container {
+  background: #f5f8fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.proporcion-birads-form-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(59,130,246,0.07), 0 1.5px 6px rgba(0,0,0,0.04);
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.proporcion-birads-form-title {
+  background-color: #ffc0cb;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  padding: 32px 0 24px 0;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.proporcion-birads-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 32px;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+.proporcion-birads-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 14px 12px;
+  border: 1.5px solid #e5e7eb;
+}
+
+.proporcion-birads-form-group label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 2px;
+}
+
+.proporcion-birads-form-group input {
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 1rem;
+  background: #fff;
+  transition: border 0.2s;
+  outline: none;
+}
+
+.proporcion-birads-form-group input:focus {
+  border-color: #ffc0cb;
+  background: #fff0f5;
+}
+
+.proporcion-birads-form-submit {
+  margin-top: 24px;
+  width: 180px;
+  background: linear-gradient(90deg, #34d399 60%, #3b82f6 100%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(52,211,153,0.08);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.proporcion-birads-form-submit:hover {
+  background: linear-gradient(90deg, #3b82f6 60%, #34d399 100%);
+  transform: translateY(-2px) scale(1.02);
+}
+
+@media (max-width: 700px) {
+  .proporcion-birads-form-title {
+    font-size: 1.2rem;
+    padding: 18px 0 12px 0;
+  }
+  .proporcion-birads-form-card {
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  .proporcion-birads-form-grid {
+    grid-template-columns: 1fr;
+    gap: 10px 0;
+  }
+}

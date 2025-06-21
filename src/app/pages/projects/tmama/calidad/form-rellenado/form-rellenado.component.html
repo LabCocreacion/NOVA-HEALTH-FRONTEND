@@ -1,0 +1,23 @@
+<div class="rellenado-form-container">
+  <div class="rellenado-form-card">
+    <h2 class="rellenado-form-title">Formulario de Rellamados</h2>
+    <form style="padding: 0 32px 32px 32px;">
+      <div class="rellenado-form-grid">
+        <div class="rellenado-form-group">
+          <label>N° total de estudios de mamografía de tamizaje</label>
+          <input type="number" min="0" [(ngModel)]="totalEstudios" name="totalEstudios" />
+        </div>
+        <div class="rellenado-form-group">
+          <label>N° de rellamados por mes</label>
+          <input type="number" min="0" [(ngModel)]="rellamados" name="rellamados" />
+        </div>
+        <div class="rellenado-form-group">
+          <label>Porcentaje de rellamados</label>
+          <input type="text" [value]="totalEstudios && rellamados ? ((rellamados/totalEstudios*100) | number:'1.2-2') + '%' : ''" disabled />
+        </div>
+      </div>
+      <button type="submit" class="rellenado-form-submit">Enviar</button>
+    </form>
+  </div>
+</div>
+

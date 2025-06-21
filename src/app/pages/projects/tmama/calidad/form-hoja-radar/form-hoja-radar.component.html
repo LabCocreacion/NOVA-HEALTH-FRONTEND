@@ -1,0 +1,90 @@
+<div class="hoja-radar-form-container">
+  <div class="hoja-radar-form-card">
+    <h2 class="hoja-radar-form-title">Hoja Radar - Aseguramiento de la Calidad en Mamografía</h2>
+    <div class="hoja-radar-grupos">
+      <button *ngFor="let grupo of grupos; let i = index"
+              [class.active]="grupoActivo === i"
+              (click)="grupoActivo = i">
+        <i [class]="grupo.icon"></i> {{ grupo.nombre }}
+      </button>
+    </div>
+    <form style="padding: 0 32px 32px 32px;">
+      <div class="hoja-radar-section" *ngIf="grupoActivo === 0">
+        <h3>{{ grupos[0].nombre }}</h3>
+        <div class="hoja-radar-preguntas">
+          <div class="hoja-radar-pregunta" *ngFor="let pregunta of preguntasInfraestructura; let i = index">
+            <label>{{ pregunta }}</label>
+            <div class="hoja-radar-opciones">
+              <label><input type="radio" [(ngModel)]="respuestasInfraestructura[i]" [value]="'noCumple'" name="infraestructura_{{i}}" /> No se cuenta con el cumplimiento del elemento</label>
+              <label><input type="radio" [(ngModel)]="respuestasInfraestructura[i]" [value]="'documentado'" name="infraestructura_{{i}}" /> Elemento documentado</label>
+              <label><input type="radio" [(ngModel)]="respuestasInfraestructura[i]" [value]="'desplegado'" name="infraestructura_{{i}}" /> Elemento desplegado</label>
+              <label><input type="radio" [(ngModel)]="respuestasInfraestructura[i]" [value]="'implementado'" name="infraestructura_{{i}}" /> Elemento implementado</label>
+              <label><input type="radio" [(ngModel)]="respuestasInfraestructura[i]" [value]="'medido'" name="infraestructura_{{i}}" /> Elemento medido</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hoja-radar-section" *ngIf="grupoActivo === 1">
+        <h3>{{ grupos[1].nombre }}</h3>
+        <div class="hoja-radar-preguntas">
+          <div class="hoja-radar-pregunta" *ngFor="let pregunta of preguntasTalento; let i = index">
+            <label>{{ pregunta }}</label>
+            <div class="hoja-radar-opciones">
+              <label><input type="radio" [(ngModel)]="respuestasTalento[i]" [value]="'noCumple'" name="talento_{{i}}" /> No se cuenta con el cumplimiento del elemento</label>
+              <label><input type="radio" [(ngModel)]="respuestasTalento[i]" [value]="'documentado'" name="talento_{{i}}" /> Elemento documentado</label>
+              <label><input type="radio" [(ngModel)]="respuestasTalento[i]" [value]="'desplegado'" name="talento_{{i}}" /> Elemento desplegado</label>
+              <label><input type="radio" [(ngModel)]="respuestasTalento[i]" [value]="'implementado'" name="talento_{{i}}" /> Elemento implementado</label>
+              <label><input type="radio" [(ngModel)]="respuestasTalento[i]" [value]="'medido'" name="talento_{{i}}" /> Elemento medido</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hoja-radar-section" *ngIf="grupoActivo === 2">
+        <h3>{{ grupos[2].nombre }}</h3>
+        <div class="hoja-radar-preguntas">
+          <div class="hoja-radar-pregunta" *ngFor="let pregunta of preguntasTecnicos; let i = index">
+            <label>{{ pregunta }}</label>
+            <div class="hoja-radar-opciones">
+              <label><input type="radio" [(ngModel)]="respuestasTecnicos[i]" [value]="'noCumple'" name="tecnicos_{{i}}" /> No se cuenta con el cumplimiento del elemento</label>
+              <label><input type="radio" [(ngModel)]="respuestasTecnicos[i]" [value]="'documentado'" name="tecnicos_{{i}}" /> Elemento documentado</label>
+              <label><input type="radio" [(ngModel)]="respuestasTecnicos[i]" [value]="'desplegado'" name="tecnicos_{{i}}" /> Elemento desplegado</label>
+              <label><input type="radio" [(ngModel)]="respuestasTecnicos[i]" [value]="'implementado'" name="tecnicos_{{i}}" /> Elemento implementado</label>
+              <label><input type="radio" [(ngModel)]="respuestasTecnicos[i]" [value]="'medido'" name="tecnicos_{{i}}" /> Elemento medido</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hoja-radar-section" *ngIf="grupoActivo === 3">
+        <h3>{{ grupos[3].nombre }}</h3>
+        <div class="hoja-radar-preguntas">
+          <div class="hoja-radar-pregunta" *ngFor="let pregunta of preguntasClinicos; let i = index">
+            <label>{{ pregunta }}</label>
+            <div class="hoja-radar-opciones">
+              <label><input type="radio" [(ngModel)]="respuestasClinicos[i]" [value]="'noCumple'" name="clinicos_{{i}}" /> No se cuenta con el cumplimiento del elemento</label>
+              <label><input type="radio" [(ngModel)]="respuestasClinicos[i]" [value]="'documentado'" name="clinicos_{{i}}" /> Elemento documentado</label>
+              <label><input type="radio" [(ngModel)]="respuestasClinicos[i]" [value]="'desplegado'" name="clinicos_{{i}}" /> Elemento desplegado</label>
+              <label><input type="radio" [(ngModel)]="respuestasClinicos[i]" [value]="'implementado'" name="clinicos_{{i}}" /> Elemento implementado</label>
+              <label><input type="radio" [(ngModel)]="respuestasClinicos[i]" [value]="'medido'" name="clinicos_{{i}}" /> Elemento medido</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hoja-radar-section" *ngIf="grupoActivo === 4">
+        <h3>{{ grupos[4].nombre }}</h3>
+        <div class="hoja-radar-preguntas">
+          <div class="hoja-radar-pregunta" *ngFor="let pregunta of preguntasSeguimiento; let i = index">
+            <label>{{ pregunta }}</label>
+            <div class="hoja-radar-opciones">
+              <label><input type="radio" [(ngModel)]="respuestasSeguimiento[i]" [value]="'noCumple'" name="seguimiento_{{i}}" /> No se cuenta con el cumplimiento del elemento</label>
+              <label><input type="radio" [(ngModel)]="respuestasSeguimiento[i]" [value]="'documentado'" name="seguimiento_{{i}}" /> Elemento documentado</label>
+              <label><input type="radio" [(ngModel)]="respuestasSeguimiento[i]" [value]="'desplegado'" name="seguimiento_{{i}}" /> Elemento desplegado</label>
+              <label><input type="radio" [(ngModel)]="respuestasSeguimiento[i]" [value]="'implementado'" name="seguimiento_{{i}}" /> Elemento implementado</label>
+              <label><input type="radio" [(ngModel)]="respuestasSeguimiento[i]" [value]="'medido'" name="seguimiento_{{i}}" /> Elemento medido</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="hoja-radar-form-submit">Enviar</button>
+    </form>
+  </div>
+</div>

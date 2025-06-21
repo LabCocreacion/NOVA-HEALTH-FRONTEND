@@ -29,27 +29,27 @@
             <div class="menu-card-title">Índice de Rechazo</div>
             <div class="menu-card-desc">Porcentaje de imágenes rechazadas.</div>
         </div>
-        <div class="menu-card" *ngIf="!opcionSeleccionada">
+        <div class="menu-card" *ngIf="!opcionSeleccionada" routerLink="/tamizacion-mama/dashboard-calidad/form-control-calidad">
             <div class="menu-card-icon"><i class="fas fa-cogs"></i></div>
             <div class="menu-card-title">Control de Calidad Unidad</div>
             <div class="menu-card-desc">Control de calidad de la unidad.</div>
         </div>
-        <div class="menu-card" *ngIf="!opcionSeleccionada">
+        <div class="menu-card" *ngIf="!opcionSeleccionada" (click)="seleccionarOpcion('proporcionBirads')">
             <div class="menu-card-icon"><i class="fas fa-chart-pie"></i></div>
             <div class="menu-card-title">Proporción BIRADS</div>
             <div class="menu-card-desc">Distribución de BIRADS.</div>
         </div>
-        <div class="menu-card" *ngIf="!opcionSeleccionada">
+        <div class="menu-card" *ngIf="!opcionSeleccionada" (click)="seleccionarOpcion('reportesBoipsias')">
             <div class="menu-card-icon"><i class="fas fa-vials"></i></div>
             <div class="menu-card-title">N° Biopsias Res. Positivas</div>
             <div class="menu-card-desc">Biopsias con resultados positivos.</div>
         </div>
-        <div class="menu-card" *ngIf="!opcionSeleccionada">
+        <div class="menu-card" *ngIf="!opcionSeleccionada" (click)="seleccionarOpcion('formulariosRellenado')">
             <div class="menu-card-icon"><i class="fas fa-edit"></i></div>
             <div class="menu-card-title">Rellenado</div>
             <div class="menu-card-desc">Estado de formularios rellenados.</div>
         </div>
-        <div class="menu-card" *ngIf="!opcionSeleccionada">
+        <div class="menu-card" *ngIf="!opcionSeleccionada" routerLink="/tamizacion-mama/dashboard-calidad/form-hoja-radar">
             <div class="menu-card-icon"><i class="fas fa-radar"></i></div>
             <div class="menu-card-title">Hoja Radar</div>
             <div class="menu-card-desc">Visualización tipo radar.</div>

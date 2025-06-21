@@ -1,0 +1,177 @@
+.hoja-radar-form-container {
+  background: #f5f8fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.hoja-radar-form-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(59,130,246,0.07), 0 1.5px 6px rgba(0,0,0,0.04);
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.hoja-radar-form-title {
+  background-color: #ffc0cb;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.hoja-radar-section {
+  margin-bottom: 32px;
+}
+
+.hoja-radar-section h3 {
+  color: #e86a92;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+
+.hoja-radar-preguntas {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.hoja-radar-pregunta {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 14px 12px;
+  border: 1.5px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hoja-radar-pregunta label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.hoja-radar-opciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 4px;
+}
+
+.hoja-radar-opciones label {
+  font-weight: 500;
+  color: #6b7280;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hoja-radar-opciones input[type="radio"] {
+  accent-color: #e86a92;
+  width: 18px;
+  height: 18px;
+}
+
+.hoja-radar-form-submit {
+  margin-top: 24px;
+  width: 180px;
+  background: linear-gradient(90deg, #34d399 60%, #3b82f6 100%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(52,211,153,0.08);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hoja-radar-form-submit:hover {
+  background: linear-gradient(90deg, #3b82f6 60%, #34d399 100%);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.hoja-radar-grupos {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 32px 0 24px 0;
+  flex-wrap: wrap;
+}
+.hoja-radar-grupos button {
+  background: #f9fafb;
+  color: #e86a92;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
+  outline: none;
+  box-shadow: 0 1px 4px rgba(59,130,246,0.04);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hoja-radar-grupos button.active {
+  background: #ffc0cb;
+  color: #fff;
+  border-color: #ffc0cb;
+  box-shadow: 0 4px 16px rgba(255,192,203,0.10);
+  z-index: 2;
+}
+.hoja-radar-grupos button:hover:not(.active) {
+  background: #ffe4ed;
+  color: #3b82f6;
+  border-color: #ffc0cb;
+}
+.hoja-radar-grupos i {
+  font-size: 1.3rem;
+  margin-right: 4px;
+}
+@media (max-width: 1100px) {
+  .hoja-radar-form-card {
+    max-width: 98vw;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hoja-radar-form-title {
+    font-size: 1.2rem;
+    padding: 18px 0 12px 0;
+  }
+  .hoja-radar-form-card {
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  .hoja-radar-grupos {
+    gap: 6px;
+  }
+  .hoja-radar-grupos button {
+    font-size: 0.98rem;
+    padding: 10px 10px;
+  }
+  .hoja-radar-grupos i {
+    font-size: 1.1rem;
+  }
+}

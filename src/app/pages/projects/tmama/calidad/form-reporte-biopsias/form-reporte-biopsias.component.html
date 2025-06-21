@@ -1,0 +1,55 @@
+<div class="reporte-biopsias-form-container">
+  <div class="reporte-biopsias-form-card">
+    <h2 class="reporte-biopsias-form-title">Reporte de Biopsias</h2>
+    <form (ngSubmit)="send()" style="padding: 0 32px 32px 32px;">
+      <div class="reporte-biopsias-form-grid">
+        <div class="reporte-biopsias-form-group">
+          <label>N° total de estudios de mamografía por tamizaje</label>
+          <input type="number" min="0" [(ngModel)]="totalEstudios" name="totalEstudios" />
+        </div>
+        <div class="reporte-biopsias-form-group">
+          <label>N° pacientes con BIRADS 4A</label>
+          <input type="number" min="0" [(ngModel)]="birads4A" name="birads4A" />
+        </div>
+        <div class="reporte-biopsias-form-group">
+          <label>N° pacientes con BIRADS 4B</label>
+          <input type="number" min="0" [(ngModel)]="birads4B" name="birads4B" />
+        </div>
+        <div class="reporte-biopsias-form-group">
+          <label>N° pacientes con BIRADS 4C</label>
+          <input type="number" min="0" [(ngModel)]="birads4C" name="birads4C" />
+        </div>
+        <div class="reporte-biopsias-form-group">
+          <label>N° pacientes con BIRADS 5</label>
+          <input type="number" min="0" [(ngModel)]="birads5" name="birads5" />
+        </div>
+        <div class="reporte-biopsias-form-group">
+          <label>N° de biopsias realizadas</label>
+          <input type="number" min="0" [(ngModel)]="biopsias" name="biopsias" />
+        </div>
+        <div class="reporte-biopsias-form-group">
+          <label>Porcentaje de biopsias realizadas</label>
+          <input type="text" [value]="totalEstudios && biopsias ? ((biopsias/totalEstudios*100) | number:'1.2-2') + '%' : ''" disabled />
+        </div>
+        <div class="reporte-biopsias-form-group">
+          <label>N° de resultados positivos</label>
+          <input type="number" min="0" [(ngModel)]="resultadosPositivos" name="resultadosPositivos" />
+        </div>
+        <div class="reporte-biopsias-form-group">
+          <label>Porcentaje de resultados positivos</label>
+          <input type="text" [value]="totalEstudios && resultadosPositivos ? ((resultadosPositivos/totalEstudios*100) | number:'1.2-2') + '%' : ''" disabled />
+        </div>
+        <div class="reporte-biopsias-form-group">
+          <label>N° pacientes que no se realizaron biopsia</label>
+          <input type="number" min="0" [(ngModel)]="noBiopsia" name="noBiopsia" />
+        </div>
+        <div class="reporte-biopsias-form-group">
+          <label>N° pacientes positivas con seguimiento hasta tratamiento</label>
+          <input type="number" min="0" [(ngModel)]="seguimiento" name="seguimiento" />
+        </div>
+      </div>
+      <button type="submit" class="reporte-biopsias-form-submit">Enviar</button>
+    </form>
+  </div>
+</div>
+
