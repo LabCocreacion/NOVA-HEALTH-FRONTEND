@@ -1,0 +1,50 @@
+<p>form-nivel-referencia works!</p>
+<div class="nivel-referencia-form-container">
+  <div class="nivel-referencia-form-card">
+    <h2 class="nivel-referencia-form-title">Formulario Nivel de Referencia</h2>
+    <div class="carousel-tabs">
+      <button *ngFor="let espesor of espesores; let i = index"
+              [class.active]="activeTab === i"
+              (click)="activeTab = i">
+        {{ espesor.label }}
+      </button>
+    </div>
+    <form (ngSubmit)="send()">
+      <div *ngFor="let espesor of espesores; let r = index">
+        <div *ngIf="activeTab === r" class="nivel-referencia-section">
+          <h3>Estudios para espesor de mama {{ espesor.label }}</h3>
+          <div class="nivel-referencia-grid">
+            <ng-container *ngFor="let estudio of estudiosPorEspesor[r]; let idx = index">
+              <div class="nivel-referencia-estudio" [class.error]="errores[idx] && (errores[idx]['fecha'] || errores[idx]['id'] || errores[idx]['dosis'] || errores[idx]['imagenes'])">
+                <div class="nivel-referencia-estudio-title">Estudio {{ idx + 1 }}</div>
+                <div class="nivel-referencia-estudio-fields">
+                  <div class="nivel-referencia-form-group">
+                    <label>Fecha de toma de estudio</label>
+                    <input type="date" [(ngModel)]="estudiosPorEspesor[r][idx].fecha" name="fecha_{{r}}_{{idx}}" />
+                    <div class="input-error" *ngIf="errores[idx]?.['fecha']">Campo obligatorio</div>
+                  </div>
+                  <div class="nivel-referencia-form-group">
+                    <label>ID del estudio</label>
+                    <input type="text" [(ngModel)]="estudiosPorEspesor[r][idx].id" name="id_{{r}}_{{idx}}" />
+                    <div class="input-error" *ngIf="errores[idx]?.['id']">Campo obligatorio</div>
+                  </div>
+                  <div class="nivel-referencia-form-group">
+                    <label>Dosis glandular</label>
+                    <input type="number" step="0.01" min="0" [(ngModel)]="estudiosPorEspesor[r][idx].dosis" name="dosis_{{r}}_{{idx}}" />
+                    <div class="input-error" *ngIf="errores[idx]?.['dosis']">Campo obligatorio</div>
+                  </div>
+                  <div class="nivel-referencia-form-group">
+                    <label>N° imágenes tamizaje</label>
+                    <input type="number" min="1" [(ngModel)]="estudiosPorEspesor[r][idx].imagenes" name="imagenes_{{r}}_{{idx}}" />
+                    <div class="input-error" *ngIf="errores[idx]?.['imagenes']">Campo obligatorio</div>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="nivel-referencia-form-submit">Enviar</button>
+    </form>
+  </div>
+</div>

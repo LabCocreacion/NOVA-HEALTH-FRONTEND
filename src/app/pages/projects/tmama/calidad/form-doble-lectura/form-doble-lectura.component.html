@@ -1,0 +1,82 @@
+<div class="doble-lectura-form-container">
+  <div class="doble-lectura-form-card">
+    <h2 class="doble-lectura-form-title">Formulario Doble Lectura</h2>
+    <form>
+      <div class="doble-lectura-form-section" style="padding: 0 20px 20px 20px;">
+        <h3>Primer archivo DICOM</h3>
+        <div class="doble-lectura-form-grid">
+          <div class="doble-lectura-form-group">
+            <label for="dicom1">Archivo DICOM</label>
+            <label class="custom-file-upload">
+              <input type="file" id="dicom1" accept=".dcm" style="display:none" (change)="onFileChange1($event)" />
+              <div class="file-dropzone">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <span>Seleccionar o arrastrar archivo DICOM</span>
+              </div>
+            </label>
+            <div class="file-name" *ngIf="fileName1">{{ fileName1 }}</div>
+          </div>
+          <div class="doble-lectura-form-group">
+            <label for="estudio1">ID del Estudio</label>
+            <input type="text" id="estudio1" />
+          </div>
+          <div class="doble-lectura-form-group">
+            <label for="imagenes1">Núm. Imágenes Enviadas</label>
+            <input type="number" id="imagenes1" min="1" />
+          </div>
+          <div class="doble-lectura-form-group">
+            <label for="birads1">Notificación BIRADS</label>
+            <select id="birads1">
+              <option value="">Seleccione</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4A">4A</option>
+              <option value="4B">4B</option>
+              <option value="4C">4C</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="doble-lectura-form-section" style="padding: 0 20px 20px 20px;">
+        <h3>Segundo archivo DICOM</h3>
+        <div class="doble-lectura-form-grid">
+          <div class="doble-lectura-form-group">
+            <label for="dicom2">Archivo DICOM</label>
+            <label class="custom-file-upload">
+              <input type="file" id="dicom2" accept=".dcm" style="display:none" (change)="onFileChange2($event)" />
+              <div class="file-dropzone">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <span>Seleccionar o arrastrar archivo DICOM</span>
+              </div>
+            </label>
+            <div class="file-name" *ngIf="fileName2">{{ fileName2 }}</div>
+          </div>
+          <div class="doble-lectura-form-group">
+            <label for="estudio2">ID del Estudio</label>
+            <input type="text" id="estudio2" />
+          </div>
+          <div class="doble-lectura-form-group">
+            <label for="imagenes2">Núm. Imágenes Enviadas</label>
+            <input type="number" id="imagenes2" min="1" />
+          </div>
+          <div class="doble-lectura-form-group">
+            <label for="birads2">Notificación BIRADS</label>
+            <select id="birads2">
+              <option value="">Seleccione</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4A">4A</option>
+              <option value="4B">4B</option>
+              <option value="4C">4C</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="doble-lectura-form-submit mb-5">Enviar</button>
+    </form>
+  </div>
+</div>

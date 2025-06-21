@@ -1,0 +1,17 @@
+<div class="trimestres-container">
+  <h2>Trimestres {{ currentYear }}</h2>
+  <div class="trimestres-cards">
+    <div *ngFor="let t of trimestres; let i = index" class="trimestre-card" routerLink="/tamizacion-mama/dashboard-calidad/form-doble-lectura/">
+      <div class="trimestre-icon">
+        <i [ngClass]="[
+          i === 0 ? 'fas fa-seedling' : '',
+          i === 1 ? 'fas fa-sun' : '',
+          i === 2 ? 'fas fa-leaf' : '',
+          i === 3 ? 'fas fa-snowflake' : ''
+        ]"></i>
+      </div>
+      <div class="trimestre-label">{{ t.label }}</div>
+      <div class="trimestre-year">{{ currentYear }}</div>
+    </div>
+  </div>
+</div>

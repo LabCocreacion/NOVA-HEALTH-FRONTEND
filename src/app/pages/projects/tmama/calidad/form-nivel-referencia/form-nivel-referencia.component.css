@@ -1,0 +1,214 @@
+.nivel-referencia-form-container {
+  min-height: 100vh;
+  background: #f5f8fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.nivel-referencia-form-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(59,130,246,0.07), 0 1.5px 6px rgba(0,0,0,0.04);
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 32px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.nivel-referencia-form-title {
+  background: linear-gradient(90deg, #ffc0cb 60%, #f3f4f6 100%);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  padding: 32px 0 24px 0;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.nivel-referencia-section {
+  margin-bottom: 40px;
+}
+
+.nivel-referencia-section h3 {
+  color: #e86a92;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+
+.nivel-referencia-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: flex-start;
+}
+
+.nivel-referencia-estudio {
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(59,130,246,0.04);
+  padding: 18px 14px 14px 14px;
+  min-width: 260px;
+  max-width: 270px;
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.nivel-referencia-estudio-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #3b82f6;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.nivel-referencia-estudio-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nivel-referencia-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nivel-referencia-form-group label {
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 1px;
+}
+
+.nivel-referencia-form-group input {
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 1rem;
+  background: #fff;
+  transition: border 0.2s;
+  outline: none;
+}
+
+.nivel-referencia-form-group input:focus {
+  border-color: #ffc0cb;
+  background: #fff0f5;
+}
+
+.nivel-referencia-form-submit {
+  margin-top: 32px;
+  width: 180px;
+  background: linear-gradient(90deg, #34d399 60%, #3b82f6 100%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(52,211,153,0.08);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nivel-referencia-form-submit:hover {
+  background: linear-gradient(90deg, #3b82f6 60%, #34d399 100%);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.carousel-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 32px 0 24px 0;
+}
+.carousel-tabs button {
+  background: #f9fafb;
+  color: #e86a92;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px 8px 0 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 32px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  outline: none;
+  box-shadow: 0 1px 4px rgba(59,130,246,0.04);
+}
+.carousel-tabs button.active {
+  background: #ffc0cb;
+  color: #fff;
+  border-bottom: 2px solid #ffc0cb;
+  box-shadow: 0 4px 16px rgba(255,192,203,0.10);
+  z-index: 2;
+}
+.carousel-tabs button:hover:not(.active) {
+  background: #ffe4ed;
+  color: #3b82f6;
+  border-color: #ffc0cb;
+}
+.nivel-referencia-estudio.error {
+  border: 2px solid #e53935 !important;
+  box-shadow: 0 2px 8px rgba(229,57,53,0.08);
+}
+.input-error {
+  color: #e53935;
+  font-size: 0.92rem;
+  margin-top: 2px;
+  font-weight: 500;
+}
+@media (max-width: 1200px) {
+  .nivel-referencia-form-card {
+    max-width: 98vw;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .nivel-referencia-grid {
+    gap: 14px;
+  }
+  .nivel-referencia-estudio {
+    min-width: 180px;
+    max-width: 100%;
+    flex: 1 1 180px;
+  }
+}
+
+@media (max-width: 700px) {
+  .nivel-referencia-form-title {
+    font-size: 1.2rem;
+    padding: 18px 0 12px 0;
+  }
+  .nivel-referencia-form-card {
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  .nivel-referencia-grid {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .nivel-referencia-estudio {
+    min-width: 0;
+    max-width: 100%;
+    padding: 10px 4px 8px 4px;
+  }
+  .carousel-tabs {
+    gap: 6px;
+  }
+  .carousel-tabs button {
+    font-size: 0.98rem;
+    padding: 8px 10px;
+  }
+}
