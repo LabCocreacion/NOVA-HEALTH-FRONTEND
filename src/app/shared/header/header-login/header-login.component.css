@@ -3,8 +3,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    box-shadow: 0 2px 6px rgba(37, 83, 185, .1);
-    background-color: #fff;
+    box-shadow: 0 6px 32px 0 rgba(37, 83, 185, 0.10), 0 1.5px 8px 0 rgba(37, 83, 185, 0.08);
+    background: linear-gradient(90deg, #fff 80%, #f4f8fb 100%);
     margin-top: 1rem;
     margin-right: 4rem;
     margin-left: 4rem;
