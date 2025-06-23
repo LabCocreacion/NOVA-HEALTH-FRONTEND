@@ -9,11 +9,12 @@ import { Instituto } from 'src/app/core/models/instituto.model';
   standalone: false
 })
 export class LoadFilesComponent implements OnInit {
-
   isModalOpen = false;
   instituciones: Instituto[] = [];
   selectedInstitucion: string | null = null;
   selectedFile: File | null = null;
+  selectedFileName: string = '';
+  isDragOver = false;
 
   constructor(private institucionService: TamizacionMamaService) { }
 
@@ -43,6 +44,7 @@ export class LoadFilesComponent implements OnInit {
 
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
+    this.selectedFileName = this.selectedFile ? this.selectedFile.name : '';
   }
 
   uploadFile() {
@@ -53,5 +55,40 @@ export class LoadFilesComponent implements OnInit {
       // Aquí puedes agregar la lógica para enviar el archivo al servidor
     }
     this.closeModal();
+    this.selectedFileName = '';
+  }
+
+  onDragOver(event: DragEvent) {
+    event.preventDefault();
+    this.isDragOver = true;
+    this.setDropzoneClass(true);
+  }
+
+  onDragLeave(event: DragEvent) {
+    event.preventDefault();
+    this.isDragOver = false;
+    this.setDropzoneClass(false);
+  }
+
+  onDrop(event: DragEvent) {
+    event.preventDefault();
+    this.isDragOver = false;
+    this.setDropzoneClass(false);
+    if (event.dataTransfer && event.dataTransfer.files.length > 0) {
+      this.onFileSelected({ target: { files: event.dataTransfer.files } });
+    }
+  }
+
+  setDropzoneClass(isOver: boolean) {
+    setTimeout(() => {
+      const dropzone = document.querySelector('.custom-file-upload.dropzone');
+      if (dropzone) {
+        if (isOver) {
+          dropzone.classList.add('dragover');
+        } else {
+          dropzone.classList.remove('dragover');
+        }
+      }
+    });
   }
 }

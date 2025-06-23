@@ -1,22 +1,25 @@
 .section {
-    padding: 63px;
-    background: #f4f4f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-height: 100vh; /* Ensure the section covers the full height of the viewport */
-    display: flex;
-    flex-direction: column;
-    padding-left: 373px;
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-section h4 {
-  background-color: #5DA3A4; /* Color de fondo */
-  padding: 10px 20px; /* Espaciado interno */
-  border-radius: 0 50px 0 0; /* Esquinas redondeadas: superior derecha */
-  margin-top: 0; /* Eliminar margen superior */
-  margin-bottom: 20px; /* Margen inferior */
-  color: white;
-  position: relative; /* Posicionamiento relativo para el pseudo-elemento */
+  background-color: #fff5e1;
+  /* Color de fondo */
+  padding: 10px 20px;
+  /* Espaciado interno */
+  border-radius: 0 50px 0 0;
+  /* Esquinas redondeadas: superior derecha */
+  margin-top: 0;
+  /* Eliminar margen superior */
+  margin-bottom: 20px;
+  /* Margen inferior */
+  color: rgb(134, 132, 132);
+  position: relative;
+  /* Posicionamiento relativo para el pseudo-elemento */
 }
 
 .form-section h4::after {
@@ -26,13 +29,16 @@
   right: 0;
   width: 50px;
   height: 50px;
-  background-color: #5DA3A4; /* Mismo color de fondo */
-  border-radius: 0 100px 0 0; /* Esquinas redondeadas: superior derecha */
-  z-index: -1; /* Colocar detrás del contenido */
+  background-color: #d8b7dd;
+  /* Mismo color de fondo */
+  border-radius: 0 100px 0 0;
+  /* Esquinas redondeadas: superior derecha */
+  z-index: -1;
+  /* Colocar detrás del contenido */
 }
 
 .card-header {
-  background: #C8A2C8;
+  background: #ffc0cb;
   border: none;
   padding: 10;
   margin-bottom: 20px;
@@ -80,7 +86,7 @@
   width: auto;
 }
 
-.form-group input[type="radio"] + label {
+.form-group input[type="radio"]+label {
   display: inline-block;
   margin-right: 20px;
 }

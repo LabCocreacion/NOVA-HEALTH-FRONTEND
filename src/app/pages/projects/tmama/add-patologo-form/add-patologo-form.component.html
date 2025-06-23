@@ -1,1 +1,296 @@
-<p>add-patologo-form works!</p>
+<div class="section mt-5">
+  <div class="card">
+    <div class="card-header text-center">
+      <h3>Proyecto Detección y Tamización Cáncer de mama INC 2024</h3>
+      <h4>Formato 3 para Patólogo</h4>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="patologoForm" (ngSubmit)="onSubmit()">
+        <!-- Sección: Datos toma Examen -->
+        <div class="form-section">
+          <h4>Datos toma Examen</h4>
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label for="fechaTomaExamen">Fecha Toma Examen</label>
+              <input id="fechaTomaExamen" type="date" formControlName="fechaTomaExamen" class="form-control"
+                readonly>
+            </div>
+            <div class="form-group col-md-8">
+              <label for="institucionPrestadora">Institución Prestadora Servicios de Salud</label>
+              <input id="institucionPrestadora" type="text" formControlName="institucionPrestadora" class="form-control"
+                readonly>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label for="ciudad">Ciudad</label>
+              <input id="ciudad" type="text" formControlName="ciudad" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="departamento">Departamento</label>
+              <input id="departamento" type="text" formControlName="departamento" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+              <label>Zona</label>
+              <div class="d-flex">
+                <label>
+                  <input type="radio" formControlName="zona" value="rural"> Rural
+                </label>
+                <label>
+                  <input type="radio" formControlName="zona" value="urbano"> Urbano
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección: Datos de Identificación -->
+        <div class="form-section">
+          <h4>Datos de Identificación</h4>
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label for="nombres">Nombres</label>
+              <input id="nombres" type="text" formControlName="nombres" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="apellidos">Apellidos</label>
+              <input id="apellidos" type="text" formControlName="apellidos" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="fechaNacimiento">Fecha de Nacimiento</label>
+              <input id="fechaNacimiento" type="date" formControlName="fechaNacimiento" class="form-control">
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label>Tipo de Documento</label>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>
+                    <input type="radio" formControlName="tipoDocumento" value="Cedula de ciudadania"> Cédula de
+                    ciudadanía
+                  </label>
+                </div>
+                <div class="col-md-6">
+                  <label>
+                    <input type="radio" formControlName="tipoDocumento" value="Cedula de extranjeria"> Cédula de
+                    extranjería
+                  </label>
+                </div>
+                <div class="col-md-6">
+                  <label>
+                    <input type="radio" formControlName="tipoDocumento" value="Pasaporte"> Pasaporte
+                  </label>
+                </div>
+                <div class="col-md-6">
+                  <label>
+                    <input type="radio" formControlName="tipoDocumento" value="Permiso temporal de permanencia"> Permiso
+                    temporal de permanencia
+                  </label>
+                </div>
+                <div class="col-md-6">
+                  <label>
+                    <input type="radio" formControlName="tipoDocumento" value="Salvoconducto"> Salvoconducto
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="numIdentificacionPaciente">Número de Identificación</label>
+              <input id="numIdentificacionPaciente" type="text" formControlName="numIdentificacionPaciente"
+                class="form-control">
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="eapb">EAPB</label>
+              <input id="eapb" type="text" formControlName="eapb" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+              <label>Régimen</label>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>
+                    <input type="radio" formControlName="regimen" value="Contributivo"> Contributivo
+                  </label>
+                  <label>
+                    <input type="radio" formControlName="regimen" value="Subsidiado"> Subsidiado
+                  </label>
+                </div>
+                <div class="col-md-6 text-align-left">
+                  <label>
+                    <input type="radio" formControlName="regimen" value="Excepción"> Excepción
+                  </label>
+                  <label>
+                    <input type="radio" formControlName="regimen" value="Vinculado"> Vinculado
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección: Examen -->
+        <div class="form-section">
+          <h4>Examen</h4>
+          <!-- 2. Tipo de biopsia -->
+          <div class="form-group">
+            <label>2. Tipo de biopsia</label>
+            <div class="row">
+              <div class="col-md-3">
+                <label><input type="radio" formControlName="tipoBiopsia" value="Trucut"> Trucut</label>
+              </div>
+              <div class="col-md-3">
+                <label><input type="radio" formControlName="tipoBiopsia" value="BACAFF"> BACAFF</label>
+              </div>
+              <div class="col-md-3">
+                <label><input type="radio" formControlName="tipoBiopsia" value="Estereotáxica"> Estereotáxica</label>
+              </div>
+              <div class="col-md-3">
+                <label><input type="radio" formControlName="tipoBiopsia" value="Asistida por vacío"> Asistida por vacío
+                </label>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <!-- 3. Resultado de Patología -->
+          <div class="form-group">
+            <label>3. Resultado de Patología</label>
+            <div class="row">
+              <!-- Lesiones proliferativas -->
+              <div class="col-md-4">
+                <strong>Lesiones proliferativas</strong>
+                <div>
+                  <label><input type="checkbox" formControlName="hiperplasiaDuctal"> Hiperplasia ductal</label>
+                  <label><input type="checkbox" formControlName="lesionCelulasColumnar"> Lesiones de células columnares
+                    (hiperplasia de células columnares y atipia epitelial plana)</label>
+                  <label><input type="checkbox" formControlName="adenosis"> Adenosis esclerosante, adenosis
+                    microglandular</label>
+                  <label><input type="checkbox" formControlName="lesionEsclerosante"> Lesiones esclerosantes / cicatriz
+                    radial</label>
+                </div>
+              </div>
+              <!-- Lesiones fibroepiteliales -->
+              <div class="col-md-4">
+                <strong>Lesiones fibroepiteliales</strong>
+                <div>
+                  <label><input type="checkbox" formControlName="fibroadenoma"> Fibroadenomas</label>
+                  <label><input type="checkbox" formControlName="phyllodesBenigno"> Tumor Phyllodes benigno</label>
+                  <label><input type="checkbox" formControlName="phyllodesBorderline"> Tumor Phyllodes borderline</label>
+                  <label><input type="checkbox" formControlName="phyllodesMaligno"> Tumor Phyllodes maligno</label>
+                  <label><input type="checkbox" formControlName="hamartoma"> Hamartoma</label>
+                </div>
+              </div>
+              <!-- Lesiones papilares -->
+              <div class="col-md-4">
+                <strong>Lesiones papilares</strong>
+                <div>
+                  <label><input type="radio" formControlName="lesionPapilar" value="Sin atipia"> Sin atipia</label>
+                  <label><input type="radio" formControlName="lesionPapilar" value="Con atipia"> Con atipia</label>
+                </div>
+                <strong>Lesiones intraductuales</strong>
+                <div>
+                  <label><input type="radio" formControlName="lesionIntraductual" value="Hiperplasia ductal con atipia">
+                    Hiperplasia ductal con atipia</label>
+                  <label><input type="radio" formControlName="lesionIntraductual" value="Sin atipia"> Sin atipia</label>
+                  <label><input type="radio" formControlName="lesionIntraductual" value="Carcinoma ductal in situ">
+                    Carcinoma ductal in situ</label>
+                </div>
+                <strong>Neoplasia lobulillar no invasiva</strong>
+                <div>
+                  <label><input type="radio" formControlName="neoplasiaLobulillar" value="Hiperplasia lobulillar con atipia">
+                    Hiperplasia lobulillar con atipia</label>
+                  <label><input type="radio" formControlName="neoplasiaLobulillar" value="Carcinoma lobulillar in situ">
+                    Carcinoma lobulillar in situ</label>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <!-- Carcinoma infiltrante -->
+              <div class="col-md-4">
+                <strong>Carcinoma infiltrante</strong>
+                <div>
+                  <label><input type="checkbox" formControlName="carcinomaDuctal"> Carcinoma ductal</label>
+                  <label><input type="checkbox" formControlName="carcinomaLobulillar"> Carcinoma lobulillar</label>
+                  <label><input type="checkbox" formControlName="otrosCarcinomas"> Otros carcinomas (tubular, papilar,
+                    cuboidal, medular, mucinoso, etc.)</label>
+                </div>
+              </div>
+              <!-- Otros -->
+              <div class="col-md-4">
+                <strong>Otros</strong>
+                <div>
+                  <label><input type="checkbox" formControlName="muestraNoSignificativa"> Muestra no significativa o
+                    insuficiente</label>
+                  <label><input type="checkbox" formControlName="biopsiaNoRepresentativa"> Biopsia no representativa
+                  </label>
+                  <label>
+                    <input type="checkbox" formControlName="otrosResultado"> Otros
+                  </label>
+                  <div *ngIf="patologoForm.get('otrosResultado')?.value">
+                    <input type="text" formControlName="otrosResultadoCual" class="form-control" placeholder="¿Cuál?">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <!-- 4. Conducta sugerida por el patólogo -->
+          <div class="form-group">
+            <label>4. Conducta sugerida por el patólogo</label>
+            <div class="row">
+              <div class="col-md-4">
+                <label><input type="checkbox" formControlName="solicitudMarcadores"> Solicitud de marcadores de
+                  Inmunohistoquímica</label>
+                <label><input type="checkbox" formControlName="solicitudBiomarcadores"> Solicitud de biomarcadores
+                </label>
+                <label><input type="checkbox" formControlName="repetirBiopsia"> Repetir la biopsia</label>
+              </div>
+              <div class="col-md-4">
+                <label><input type="checkbox" formControlName="reseccionCompleta"> Resección completa de la lesión</label>
+                <label><input type="checkbox" formControlName="remisionCirujano"> Remisión a cirujano de mama</label>
+              </div>
+              <div class="col-md-4">
+                <label><input type="checkbox" formControlName="otraConducta"> Otra</label>
+                <div *ngIf="patologoForm.get('otraConducta')?.value">
+                  <input type="text" formControlName="otraConductaCual" class="form-control" placeholder="¿Cuál?">
+                </div>
+                <label><input type="checkbox" formControlName="ningunaConducta"> Ninguna</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <!-- Sección: Quien Diligenció -->
+        <div class="form-section">
+          <h4>Quien Diligenció</h4>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="nombreCompleto">Nombre Completo</label>
+              <input id="nombreCompleto" type="text" formControlName="nombreCompleto" class="form-control" readonly>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="cargo">Cargo</label>
+              <input id="cargo" type="text" formControlName="cargo" class="form-control" readonly>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="correoElectronico">Correo Electrónico</label>
+              <input id="correoElectronico" type="email" formControlName="correoElectronico" class="form-control"
+                readonly>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="telefonoContacto">Teléfono de Contacto</label>
+              <input id="telefonoContacto" type="text" formControlName="telefonoContacto" class="form-control"
+                readonly>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-create btn-lg">Registrar Examen</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

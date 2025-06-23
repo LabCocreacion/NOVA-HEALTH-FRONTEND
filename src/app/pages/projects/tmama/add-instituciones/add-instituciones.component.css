@@ -1,12 +1,9 @@
 .section {
-    padding: 63px;
-    background: #f4f4f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-height: 100vh; /* Ensure the section covers the full height of the viewport */
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
     display: flex;
     flex-direction: column;
-    padding-left: 373px;
 }
 
 .w-70 {
@@ -18,7 +15,7 @@
 }
 
 .card-header {
-    background: #C8A2C8;
+    background: #ffc0cb;
     border: none;
     padding: 10;
     margin-bottom: 20px;

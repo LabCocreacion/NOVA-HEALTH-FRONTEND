@@ -11,12 +11,14 @@ body, html {
 
 .navbar{
   display: block;
+  /* TODO: Cambiar a fixed y distribuir el contenido de la página */
+  position: fixed;
 }
 
 .main-container {
   display: flex;
   flex-direction: row;
-  min-height: 0;
+  min-height: 100vh;
   background-color: #f0f5f9;
 }
 
@@ -32,6 +34,7 @@ body, html {
   flex-direction: column;
   flex: 1 1 auto; 
   margin-top: 100px;
+  padding-left: 347px;
 }
 
 .footer {

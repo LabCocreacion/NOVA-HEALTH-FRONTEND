@@ -70,15 +70,18 @@ export class NavbarComponent {
       this.sidebarCompactBg = '#E86A92';
       this.navItems = [
         { label: 'Inicio', route: '/dashboard', icon: 'fas fa-home', pro: false },
-        { label: 'Pacientes', route: '/tamizacion-mama/list-pacientes', icon: 'fas fa-users', pro: true },
-        { label: 'Resultados', route: '/tamizacion/resultados', icon: 'fas fa-file-medical', pro: true },
-        { label: 'Estadísticas', route: '/tamizacion/estadisticas', icon: 'fas fa-chart-bar', pro: true },
+        { label: 'Instituciones', route: '/tamizacion-mama/list-instituciones', icon: 'fas fa-hospital', pro: true },
+        { label: 'Usuarios', route: '/cocreamos-usuarios/users', icon: 'fas fa-user-md', pro: true },
+        { label: 'Contacto', route: '/dashboard/page-develop', icon: 'fas fa-envelope', pro: true },
+        
       ];
       this.appItems = [
-        { label: 'Carga Reportes', route: '/tamizacion-mama/load-files', icon: 'fas fa-file-alt' },
-        { label: 'Instituciones', route: '/tamizacion-mama/list-instituciones', icon: 'fas fa-hospital' },
-        { label: 'Gestión Calidad Mam.', route: '/tamizacion-mama/dashboard-calidad', icon: 'fas fa-x-ray' },
-        { label: 'Usuarios', route: '/cocreamos-usuarios/users', icon: 'fas fa-user-md' },
+        { label: 'Pacientes', route: '/tamizacion-mama/list-pacientes', icon: 'fas fa-users'},
+        { label: 'Carga Reportes', route: '/tamizacion-mama/load-files', icon: 'fas fa-file-alt'},
+        { label: 'Gestión Calidad Mam.', route: '/tamizacion-mama/dashboard-calidad', icon: 'fas fa-x-ray'},
+        { label: 'Resultados', route: '/dashboard/page-develop', icon: 'fas fa-file-medical'  },
+        { label: 'Indicadores', route: '/dashboard/page-develop', icon: 'fas fa-chart-bar' },
+        
       ];
     }
   }

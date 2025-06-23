@@ -78,7 +78,7 @@ export class AddRadiologoFormComponent implements OnInit {
       }
     });
     this.userInfo = this.loginService.getUserInfo();
-    
+    console.log('Información del usuario:', this.userInfo);
     this.radiologoForm.patchValue({
       nombreCompleto: this.userInfo.userName,
       cargo: this.userInfo.userRol,

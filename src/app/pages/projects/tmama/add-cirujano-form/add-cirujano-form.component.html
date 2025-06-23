@@ -1,1 +1,253 @@
-<p>add-cirujano-form works!</p>
+<div class="section mt-5">
+  <div class="card">
+    <div class="card-header text-center">
+      <h3>Proyecto Detección y Tamización Cáncer de mama INC 2024</h3>
+      <h4>Formato 4 para Cirujano</h4>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="cirujanoForm" (ngSubmit)="onSubmit()">
+        <!-- Sección: Datos toma Examen -->
+        <div class="form-section">
+          <h4>Datos toma Examen</h4>
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label for="fechaTomaExamen">Fecha Toma Examen</label>
+              <input id="fechaTomaExamen" type="date" formControlName="fechaTomaExamen" class="form-control" readonly>
+            </div>
+            <div class="form-group col-md-8">
+              <label for="institucionPrestadora">Institución Prestadora Servicios de Salud</label>
+              <input id="institucionPrestadora" type="text" formControlName="institucionPrestadora" class="form-control" readonly>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label for="ciudad">Ciudad</label>
+              <input id="ciudad" type="text" formControlName="ciudad" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="departamento">Departamento</label>
+              <input id="departamento" type="text" formControlName="departamento" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+              <label>Zona</label>
+              <div class="d-flex">
+                <label>
+                  <input type="radio" formControlName="zona" value="rural"> Rural
+                </label>
+                <label>
+                  <input type="radio" formControlName="zona" value="urbano"> Urbano
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección: Datos de Identificación -->
+        <div class="form-section">
+          <h4>Datos de Identificación</h4>
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label for="nombres">Nombres</label>
+              <input id="nombres" type="text" formControlName="nombres" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="apellidos">Apellidos</label>
+              <input id="apellidos" type="text" formControlName="apellidos" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="fechaNacimiento">Fecha de Nacimiento</label>
+              <input id="fechaNacimiento" type="date" formControlName="fechaNacimiento" class="form-control">
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label>Tipo de Documento</label>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>
+                    <input type="radio" formControlName="tipoDocumento" value="Cedula de ciudadania"> Cédula de ciudadanía
+                  </label>
+                </div>
+                <div class="col-md-6">
+                  <label>
+                    <input type="radio" formControlName="tipoDocumento" value="Cedula de extranjeria"> Cédula de extranjería
+                  </label>
+                </div>
+                <div class="col-md-6">
+                  <label>
+                    <input type="radio" formControlName="tipoDocumento" value="Pasaporte"> Pasaporte
+                  </label>
+                </div>
+                <div class="col-md-6">
+                  <label>
+                    <input type="radio" formControlName="tipoDocumento" value="Permiso temporal de permanencia"> Permiso temporal de permanencia
+                  </label>
+                </div>
+                <div class="col-md-6">
+                  <label>
+                    <input type="radio" formControlName="tipoDocumento" value="Salvoconducto"> Salvoconducto
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="numIdentificacionPaciente">Número de Identificación</label>
+              <input id="numIdentificacionPaciente" type="text" formControlName="numIdentificacionPaciente" class="form-control">
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="eapb">EAPB</label>
+              <input id="eapb" type="text" formControlName="eapb" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+              <label>Régimen</label>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>
+                    <input type="radio" formControlName="regimen" value="Contributivo"> Contributivo
+                  </label>
+                  <label>
+                    <input type="radio" formControlName="regimen" value="Subsidiado"> Subsidiado
+                  </label>
+                </div>
+                <div class="col-md-6 text-align-left">
+                  <label>
+                    <input type="radio" formControlName="regimen" value="Excepción"> Excepción
+                  </label>
+                  <label>
+                    <input type="radio" formControlName="regimen" value="Vinculado"> Vinculado
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección: Examen -->
+        <div class="form-section">
+          <h4>Examen</h4>
+          <!-- 2. Motivo de remisión -->
+          <div class="form-group">
+            <label>2. Motivo de remisión</label>
+            <div class="row">
+              <div class="col-md-6">
+                <label><input type="radio" formControlName="motivoRemision" value="Hallazgos positivos en examenes diagnosticos"> Hallazgos positivos en exámenes diagnósticos (mamografía y/o ecografía)</label>
+                <label><input type="radio" formControlName="motivoRemision" value="Hallazgos positivos en mamografia de tamizacion"> Hallazgos positivos en mamografía de tamización</label>
+                <label><input type="radio" formControlName="motivoRemision" value="Biopsia positiva para cancer"> Biopsia con resultado positivo para cáncer</label>
+                <label><input type="radio" formControlName="motivoRemision" value="Biopsia con indicacion de cuadrantectomia"> Biopsia con resultado tenga indicación de cuadrantectomía diagnóstica</label>
+                <label><input type="radio" formControlName="motivoRemision" value="Biopsia no concluyente"> Biopsia no concluyente o imposible de tomar por parte de radiología que requiere cuadrantectomía diagnóstica</label>
+                <label>
+                  <input type="radio" formControlName="motivoRemision" value="Otra"> Otra
+                </label>
+                <div *ngIf="cirujanoForm.get('motivoRemision')?.value === 'Otra'">
+                  <input type="text" formControlName="motivoRemisionOtra" class="form-control" placeholder="¿Cuál?">
+                </div>
+                <label><input type="radio" formControlName="motivoRemision" value="Sin dato"> Sin dato</label>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <!-- 3. Conducta tomada por el cirujano de mama -->
+          <div class="form-group">
+            <label>3. Conducta tomada por el cirujano de mama</label>
+            <div class="row">
+              <div class="col-md-6">
+                <label><input type="radio" formControlName="conductaCirujano" value="Solicitud biopsia trucut guiada por ecografia"> Solicitud biopsia trucut guiada por ecografía</label>
+                <label><input type="radio" formControlName="conductaCirujano" value="Solicitud biopsia guiada por mamografia"> Solicitud biopsia guiada por mamografía (Estereotaxia) o asistida al vacío</label>
+                <label><input type="radio" formControlName="conductaCirujano" value="Cuadrantectomia diagnostica"> Cuadrantectomía diagnóstica</label>
+                <label><input type="radio" formControlName="conductaCirujano" value="Solicitud estudios de extension"> Solicitud estudios de extensión</label>
+                <label><input type="radio" formControlName="conductaCirujano" value="Solicitud estudios adicionales"> Solicitud estudios adicionales</label>
+                <label><input type="radio" formControlName="conductaCirujano" value="Seguimiento"> Seguimiento</label>
+                <label>
+                  <input type="radio" formControlName="conductaCirujano" value="Otra"> Otra
+                </label>
+                <div *ngIf="cirujanoForm.get('conductaCirujano')?.value === 'Otra'">
+                  <input type="text" formControlName="conductaCirujanoOtra" class="form-control" placeholder="¿Cuál?">
+                </div>
+                <label><input type="radio" formControlName="conductaCirujano" value="Ninguna"> Ninguna</label>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <!-- 4. En caso de diagnóstico de cáncer de mama realizar estadificación clínica (TNM) -->
+          <div class="form-group">
+            <label>4. En caso de diagnóstico de cáncer de mama realizar estadificación clínica (TNM)</label>
+            <div class="row">
+              <div class="col-md-12">
+                <label class="mr-3"><input type="radio" formControlName="estadificacionClinica" value="In situ"> In situ</label>
+                <label class="mr-3"><input type="radio" formControlName="estadificacionClinica" value="IA"> IA</label>
+                <label class="mr-3"><input type="radio" formControlName="estadificacionClinica" value="IB"> IB</label>
+                <label class="mr-3"><input type="radio" formControlName="estadificacionClinica" value="IIA"> IIA</label>
+                <label class="mr-3"><input type="radio" formControlName="estadificacionClinica" value="IIB"> IIB</label>
+                <label class="mr-3"><input type="radio" formControlName="estadificacionClinica" value="IIIA"> IIIA</label>
+                <label class="mr-3"><input type="radio" formControlName="estadificacionClinica" value="IIIB"> IIIB</label>
+                <label class="mr-3"><input type="radio" formControlName="estadificacionClinica" value="IIIC"> IIIC</label>
+                <label class="mr-3"><input type="radio" formControlName="estadificacionClinica" value="IV"> IV</label>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <!-- 5. Tratamiento inicial -->
+          <div class="form-group">
+            <label>5. Tratamiento inicial</label>
+            <div class="row">
+              <div class="col-md-6">
+                <label><input type="checkbox" formControlName="cirugiaTratamientoInicial"> Cirugía como tratamiento inicial</label>
+                <label><input type="checkbox" formControlName="quimioterapiaNeoadyuvante"> Quimioterapia neoadyuvante</label>
+                <label><input type="checkbox" formControlName="hormonoNeoadyuvante"> Hormonoterapia neoadyuvante</label>
+                <label><input type="checkbox" formControlName="quimioterapiaPrimaria"> Quimioterapia primaria</label>
+                <label><input type="checkbox" formControlName="hormonoPrimaria"> Hormonoterapia primaria</label>
+              </div>
+              <div class="col-md-6">
+                <label><input type="checkbox" formControlName="radioterapiaPaliativa"> Radioterapia paliativa</label>
+                <label>
+                  <input type="checkbox" formControlName="tratamientoOtra"> Otra
+                </label>
+                <div *ngIf="cirujanoForm.get('tratamientoOtra')?.value">
+                  <input type="text" formControlName="tratamientoOtraCual" class="form-control" placeholder="¿Cuál?">
+                </div>
+                <label><input type="checkbox" formControlName="tratamientoNinguna"> Ninguna</label>
+                <label><input type="checkbox" formControlName="tratamientoSinDato"> Sin dato</label>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <label>Fecha inicio de tratamiento</label>
+                <input type="date" formControlName="fechaInicioTratamiento" class="form-control">
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <!-- Sección: Quien Diligenció -->
+        <div class="form-section">
+          <h4>Quien Diligenció</h4>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="nombreCompleto">Nombre Completo</label>
+              <input id="nombreCompleto" type="text" formControlName="nombreCompleto" class="form-control" readonly>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="cargo">Cargo</label>
+              <input id="cargo" type="text" formControlName="cargo" class="form-control" readonly>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="correoElectronico">Correo Electrónico</label>
+              <input id="correoElectronico" type="email" formControlName="correoElectronico" class="form-control" readonly>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="telefonoContacto">Teléfono de Contacto</label>
+              <input id="telefonoContacto" type="text" formControlName="telefonoContacto" class="form-control" readonly>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-create btn-lg">Registrar Examen</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

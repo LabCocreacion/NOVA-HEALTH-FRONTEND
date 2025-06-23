@@ -1,12 +1,7 @@
 .section {
     padding: 63px;
-    background: #f4f4f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-height: 100vh; /* Ensure the section covers the full height of the viewport */
     display: flex;
     flex-direction: column;
-    padding-left: 373px;
 }
 
 .btn-create {
@@ -69,7 +64,7 @@
 }
 
 .table tbody tr:hover td {
-    background-color: #C8A2C8; /* Change background color on hover */
+    background-color: #ffc0cb; /* Change background color on hover */
     color: #fff; /* Change text color on hover */
     cursor: pointer;
 }
@@ -102,10 +97,47 @@
     color: #fff; /* Change icon color to white on hover */
 }
 
+.btn-primary {
+    background: #ffc0cb; /* Primary button background color */
+    color: #fff; /* Primary button text color */
+    border-color: #ffc0cb;
+}
+
 .table .btn-primary:hover {
     background: #007bff; /* Background color on hover for primary button */
 }
 
 .table .btn-danger:hover {
     background: #dc3545; /* Background color on hover for danger button */
+}
+
+.modal-content {
+  border-radius: 1.5rem !important;
+  border: none;
+}
+
+.modal-header {
+  border-bottom: none;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  background-color: #ffc0cb !important;
+}
+
+.modal-footer {
+  border-top: none;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.card {
+  border-radius: 1rem;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.bg-light {
+  background-color: #f8f9fa !important;
 }

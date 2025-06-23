@@ -1,8 +1,30 @@
 <div class="section">
+  <div class="row align-items-center mb-3">
+    <div class="col">
+      <div class="card mb-0">
+        <div class="card-body py-3 px-4">
+          <h2 class="card-title mb-2">Gestión de Pacientes</h2>
+          <p class="card-text mb-0">
+            Bienvenido al módulo de gestión de pacientes, busca el paciente para ver sus registros médicos, en caso de
+            que no este registrada en el sistema puedes agregarla dentro del formulario respectivo.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-auto d-flex card-animations">
+      <div class="card-animation mb-0 d-flex align-items-center justify-content-center">
+        <app-doctor></app-doctor>
+      </div>
+      <div class="card-animation mb-0 d-flex align-items-center justify-content-center">
+        <app-patient-x-ray></app-patient-x-ray>
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-12 my-5">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Buscar paciente..." [(ngModel)]="searchTerm" (input)="searchPaciente()">
+        <input type="text" class="form-control" placeholder="Buscar paciente..." [(ngModel)]="searchTerm"
+          (input)="searchPaciente()">
         <button class="btn btn-primary" (click)="searchPaciente()">
           <i class="fa fa-search"></i> Buscar
         </button>
@@ -10,10 +32,19 @@
     </div>
     <div class="col-12 text-center" *ngIf="noResults">
       <div class="alert alert-warning" role="alert">
-          Paciente no registrado en nuestro sistema.
+        Paciente no registrado en nuestro sistema.
       </div>
-      <button *ngIf="userInfo.userRol === 'Radiologo'" type="button" class="btn btn-create" routerLink="/tamizacion-mama/add-radiologo-form">
+      <button *ngIf="userInfo.userRol === 'Radiologo' || userInfo.userRol === 'Administrador'" type="button"
+        class="btn btn-create" routerLink="/tamizacion-mama/add-radiologo-form">
         <i class="fa-solid fa-plus"></i> Registrar Formulario Radiólogo
+      </button>
+      <button *ngIf="userInfo.userRol === 'Patologo' || userInfo.userRol === 'Administrador'" type="button"
+        class="btn btn-create" routerLink="/tamizacion-mama/add-patologo-form">
+        <i class="fa-solid fa-plus"></i> Registrar Formulario Patólogo
+      </button>
+      <button *ngIf="userInfo.userRol === 'CirujanoMama' || userInfo.userRol === 'Administrador'" type="button"
+        class="btn btn-create" routerLink="/tamizacion-mama/add-cirujano-form">
+        <i class="fa-solid fa-plus"></i> Registrar Formulario Cirujano de Mama
       </button>
     </div>
     <div class="col-12" *ngIf="!noResults">
@@ -38,7 +69,8 @@
               <td>{{ paciente.regimen }}</td>
               <td>
                 <div (click)="toggleRow(i, $event)">
-                  <i class="fas" [ngClass]="{'fa-chevron-down': expandedRow !== i, 'fa-chevron-up': expandedRow === i}"></i>
+                  <i class="fas"
+                    [ngClass]="{'fa-chevron-down': expandedRow !== i, 'fa-chevron-up': expandedRow === i}"></i>
                 </div>
               </td>
             </tr>
@@ -59,7 +91,8 @@
                     </thead>
                     <tbody>
                       <ng-container *ngFor="let form of forms">
-                        <tr (click)="goToDetailForm(form.examen,form.id, paciente.num_identificacion, form.institucion_prestadora)">
+                        <tr
+                          (click)="goToDetailForm(form.examen,form.id, paciente.num_identificacion, form.institucion_prestadora)">
                           <td>{{ form.examen }}</td>
                           <td>{{ form.institucion_prestadora }}</td>
                           <td>{{ form.fecha_toma_examen | date:'dd/MM/yyyy' }}</td>
@@ -73,8 +106,17 @@
                     </tbody>
                   </table>
                   <div class="col-12 text-center">
-                    <button *ngIf="userInfo.userRol === 'Radiologo'" type="button" class="btn btn-create" (click)="goToRadiologoForm(paciente.num_identificacion)">
+                    <button *ngIf="userInfo.userRol === 'Radiologo' || userInfo.userRol === 'Administrador'"
+                      type="button" class="btn btn-create" (click)="goToRadiologoForm(paciente.num_identificacion)">
                       <i class="fa-solid fa-plus"></i> Registrar Formulario Radiólogo
+                    </button>
+                    <button *ngIf="userInfo.userRol === 'Patologo' || userInfo.userRol === 'Administrador'"
+                      type="button" class="btn btn-create" (click)="goToRadiologoForm(paciente.num_identificacion)">
+                      <i class="fa-solid fa-plus"></i> Registrar Formulario Patólogo
+                    </button>
+                    <button *ngIf="userInfo.userRol === 'CirujanoMama' || userInfo.userRol === 'Administrador'"
+                      type="button" class="btn btn-create" (click)="goToRadiologoForm(paciente.num_identificacion)">
+                      <i class="fa-solid fa-plus"></i> Registrar Formulario Cirujano de Mama
                     </button>
                   </div>
                 </div>

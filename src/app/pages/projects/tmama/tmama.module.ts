@@ -9,6 +9,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoadFilesComponent } from './load-files/load-files.component';
 import { PacientesListComponent } from './pacientes-list/pacientes-list.component';
 import { AddRadiologoFormComponent } from './add-radiologo-form/add-radiologo-form.component';
+import { AddPatologoFormComponent } from './add-patologo-form/add-patologo-form.component';
+import { AddCirujanoFormComponent } from './add-cirujano-form/add-cirujano-form.component';
 import { DetailRadiologoFormComponent } from './detail-radiologo-form/detail-radiologo-form.component';
 import { MenuCalidadComponent } from './calidad/menu-calidad/menu-calidad.component';
 import { FormCalidadPhantomComponent } from './calidad/form-calidad-phantom/form-calidad-phantom.component';
@@ -23,6 +25,11 @@ import { FormProporcionBiradsComponent } from './calidad/form-proporcion-birads/
 import { FormReporteBiopsiasComponent } from './calidad/form-reporte-biopsias/form-reporte-biopsias.component';
 import { FormRellenadoComponent } from './calidad/form-rellenado/form-rellenado.component';
 import { FormHojaRadarComponent } from './calidad/form-hoja-radar/form-hoja-radar.component';
+// Importing animations components
+import { MamographyComponent } from '../../../shared/animations/mamography/mamography.component'
+import { PatientXRayComponent } from '../../../shared/animations/patient-x-ray/patient-x-ray.component';
+import { DoctorComponent } from '../../../shared/animations/doctor/doctor.component';
+import { ExcelAnimationComponent } from '../../../shared/animations/excel-animation/excel-animation.component';
 
 const routes: Routes = [
   { path: 'list-instituciones', component: InstitutosListComponent },
@@ -32,6 +39,8 @@ const routes: Routes = [
   { path: 'add-radiologo-form', component: AddRadiologoFormComponent },
   { path: 'add-radiologo-form/:num_identificacion_paciente', component: AddRadiologoFormComponent },
   { path: 'detail-radiologo-form/:idForm/:num_identificacion_paciente/:institucion_prestadora', component: DetailRadiologoFormComponent },
+  { path: 'add-patologo-form', component: AddPatologoFormComponent },
+  { path: 'add-cirujano-form', component: AddCirujanoFormComponent },
   { path: 'dashboard-calidad', component: MenuCalidadComponent },
   { path: 'dashboard-calidad/add-form-calidad', component: FormCalidadPhantomComponent },
   { path: 'dashboard-calidad/add-form-calidad-imagen', component: FormCalidadImagenComponent },
@@ -55,6 +64,8 @@ const routes: Routes = [
     LoadFilesComponent,
     PacientesListComponent,
     AddRadiologoFormComponent,
+    AddPatologoFormComponent,
+    AddCirujanoFormComponent,
     DetailRadiologoFormComponent,
     MenuCalidadComponent,
     FormCalidadPhantomComponent,
@@ -75,11 +86,17 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     GoogleMapsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MamographyComponent,
+    PatientXRayComponent,
+    DoctorComponent,
+    ExcelAnimationComponent
   ],
   exports: [
     AddRadiologoFormComponent,
     DetailRadiologoFormComponent,
+    AddPatologoFormComponent,
+    AddCirujanoFormComponent,
   ]
 })
 export class TmamaModule { }

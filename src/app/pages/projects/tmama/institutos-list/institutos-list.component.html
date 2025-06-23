@@ -1,11 +1,19 @@
 <div class="section">
   <div class="row">
-    <div class="col-12 my-5">
+    <div class="col-12 my-3">
       <button type="button" class="btn btn-create" (click)="AddInstitucion()">
         <i class="fa-solid fa-plus"></i> Registrar Institución
       </button>
     </div>
-    <div class="col-12">
+    <div class="col-12 my-3 d-flex justify-content-end">
+      <button class="btn btn-primary me-2" [class.active]="viewMode === 'list'" (click)="viewMode = 'list'">
+        <i class="fas fa-list"></i> Lista
+      </button>
+      <button class="btn btn-primary" [class.active]="viewMode === 'map'" (click)="viewMode = 'map'">
+        <i class="fas fa-map"></i> Mapa
+      </button>
+    </div>
+    <div class="col-12" *ngIf="viewMode === 'list'">
       <table class="table">
         <thead>
           <tr>
@@ -36,33 +44,94 @@
         </tbody>
       </table>
     </div>
+    <div class="col-12" *ngIf="viewMode === 'map'">
+      <div class="row">
+        <div class="col-md-4" style="max-height: 500px; overflow-y: auto;">
+          <ul class="list-group">
+            <li 
+              *ngFor="let institucion of instituciones; let i = index"
+              class="list-group-item"
+              [class.active]="selectedMapInstitucionIndex === i"
+              style="cursor:pointer"
+              (click)="focusInstitucionOnMap(institucion, i)">
+              {{ institucion.nombre }}
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-8">
+          <div style="width: 100%; height: 500px;">
+            <google-map 
+              [height]="'100%'" 
+              [width]="'100%'" 
+              [center]="mapCenter" 
+              [zoom]="mapZoom">
+              <map-marker *ngFor="let institucion of instituciones; let i = index"
+                [position]="{lat: institucion.latitud, lng: institucion.longitud}"
+                [icon]="selectedMapInstitucionIndex === i ? selectedMarkerIcon : defaultMarkerIcon">
+              </map-marker>
+            </google-map>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Modal -->
   <div class="modal fade" id="institucionModal" tabindex="-1" aria-labelledby="institucionModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="institucionModalLabel">Detalles de la Institución</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-header bg-primary text-white rounded-top-4">
+          <div class="d-flex align-items-center">
+            <i class="fas fa-hospital-alt fa-2x me-3"></i>
+            <h5 class="modal-title mb-0" id="institucionModalLabel">Detalles de la Institución</h5>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          <p><strong>Nombre:</strong> {{ selectedInstitucion?.nombre }}</p>
-          <p><strong>Nombre IPS:</strong> {{ selectedInstitucion?.nombre_ips }}</p>
-          <p><strong>Código IPS:</strong> {{ selectedInstitucion?.codigo_ips }}</p>
-          <p><strong>Dirección:</strong> {{ selectedInstitucion?.direccion }}</p>
-          <p><strong>Tipo de Servicio:</strong> {{ selectedInstitucion?.tipo_servicio }}</p>
-          <p><strong>Carácter Jurídico:</strong> {{ selectedInstitucion?.caracter_juridico }}</p>
-          <p><strong>Teléfono Gerencia:</strong> {{ selectedInstitucion?.telefono_gerencia }}</p>
-          <p><strong>Teléfono Enlace Técnico:</strong> {{ selectedInstitucion?.telefono_enlace_tecnico }}</p>
-          <p><strong>Zona:</strong> {{ selectedInstitucion?.zona }}</p>
-          <p><strong>Fecha de Creación:</strong> {{ selectedInstitucion?.fecha_creacion | date: 'short' }}</p>
-          <p><strong>Usuario de Creación:</strong> {{ selectedInstitucion?.creation_user }}</p>
-          <p><strong>Latitud:</strong> {{ selectedInstitucion?.latitud }}</p>
-          <p><strong>Longitud:</strong> {{ selectedInstitucion?.longitud }}</p>
+        <div class="modal-body bg-light">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="card border-0 bg-white shadow-sm mb-3">
+                <div class="card-body">
+                  <h6 class="card-title text-secondary mb-2"><i class="fas fa-id-badge me-2"></i>Identidad</h6>
+                  <p class="mb-1"><strong>Nombre:</strong> {{ selectedInstitucion?.nombre }}</p>
+                  <p class="mb-1"><strong>Nombre IPS:</strong> {{ selectedInstitucion?.nombre_ips }}</p>
+                  <p class="mb-1"><strong>Código IPS:</strong> {{ selectedInstitucion?.codigo_ips }}</p>
+                  <p class="mb-1"><strong>Carácter Jurídico:</strong> {{ selectedInstitucion?.caracter_juridico }}</p>
+                  <p class="mb-1"><strong>Tipo de Servicio:</strong> {{ selectedInstitucion?.tipo_servicio }}</p>
+                </div>
+              </div>
+              <div class="card border-0 bg-white shadow-sm mb-3">
+                <div class="card-body">
+                  <h6 class="card-title text-secondary mb-2"><i class="fas fa-map-marker-alt me-2"></i>Ubicación</h6>
+                  <p class="mb-1"><strong>Dirección:</strong> {{ selectedInstitucion?.direccion }}</p>
+                  <p class="mb-1"><strong>Zona:</strong> {{ selectedInstitucion?.zona }}</p>
+                  <p class="mb-1"><strong>Latitud:</strong> {{ selectedInstitucion?.latitud }}</p>
+                  <p class="mb-1"><strong>Longitud:</strong> {{ selectedInstitucion?.longitud }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-0 bg-white shadow-sm mb-3">
+                <div class="card-body">
+                  <h6 class="card-title text-secondary mb-2"><i class="fas fa-phone-alt me-2"></i>Contacto</h6>
+                  <p class="mb-1"><strong>Tel. Gerencia:</strong> {{ selectedInstitucion?.telefono_gerencia }}</p>
+                  <p class="mb-1"><strong>Tel. Técnico:</strong> {{ selectedInstitucion?.telefono_enlace_tecnico }}</p>
+                </div>
+              </div>
+              <div class="card border-0 bg-white shadow-sm mb-3">
+                <div class="card-body">
+                  <h6 class="card-title text-secondary mb-2"><i class="fas fa-calendar-alt me-2"></i>Registro</h6>
+                  <p class="mb-1"><strong>Fecha de Creación:</strong> {{ selectedInstitucion?.fecha_creacion | date: 'short' }}</p>
+                  <p class="mb-1"><strong>Usuario de Creación:</strong> {{ selectedInstitucion?.creation_user }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <div class="modal-footer bg-white rounded-bottom-4">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+            <i class="fas fa-times me-1"></i> Cerrar
+          </button>
         </div>
       </div>
     </div>

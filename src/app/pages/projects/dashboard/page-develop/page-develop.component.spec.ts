@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MamographyComponent } from './mamography.component';
+import { PageDevelopComponent } from './page-develop.component';
 
-describe('MamographyComponent', () => {
-  let component: MamographyComponent;
-  let fixture: ComponentFixture<MamographyComponent>;
+describe('PageDevelopComponent', () => {
+  let component: PageDevelopComponent;
+  let fixture: ComponentFixture<PageDevelopComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MamographyComponent]
+      imports: [PageDevelopComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MamographyComponent);
+    fixture = TestBed.createComponent(PageDevelopComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,13 +1,11 @@
 .section {
     padding: 63px;
-    background: #f4f4f9;
-    padding-left: 358px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-height: 100vh; /* Ensure the section covers the full height of the viewport */
+    border-radius: 16px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center items horizontally */
+    align-items: center;
+    background: #f5f8fa;
+    min-height: 100vh;
 }
 
 .btn-create {
@@ -23,6 +21,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
+    margin-right: 3px;
 }
 
 .btn-create i {
@@ -72,7 +71,7 @@
 
 /* Estilos de hover específicos para la tabla principal */
 .table tbody > tr:hover > td {
-    background-color: #C8A2C8; /* Change background color on hover */
+    background-color: #ffc0cb; /* Change background color on hover */
     color: #fff; /* Change text color on hover */
     cursor: pointer;
 }
@@ -96,7 +95,7 @@
 }
 
 .table .btn:hover {
-    background: #007bff; /* Background color on hover */
+    background: #ffc0cb; /* Background color on hover */
     color: #fff; /* Text color on hover */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
@@ -106,7 +105,7 @@
 }
 
 .table .btn-primary:hover {
-    background: #007bff; /* Background color on hover for primary button */
+    background: #ffc0cb; /* Background color on hover for primary button */
 }
 
 .table .btn-danger:hover {
@@ -144,7 +143,7 @@
 }
 
 .table-accordion .fa-eye {
-    color: #007bff;
+    color: #ffc0cb;
     cursor: pointer;
     transition: color 0.3s ease;
 }
@@ -167,4 +166,85 @@
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* Modern card style for the patient management info */
+.card {
+    border-radius: 16px;
+    border: none;
+    margin-bottom: 0;
+    min-width: 420px;
+    max-width: 880px;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-body.flex-row {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+.card-content {
+    flex: 1 1 auto;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #22223b;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #4a4e69;
+    margin-bottom: 0;
+}
+
+.card-animations,
+.col-auto.d-flex.gap-2 {
+    gap: 0 !important;
+    position: relative;
+}
+
+.card-animation {
+    margin-left: 0 !important;
+    margin-right: -70px !important;
+    border-radius: 16px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    /* Elimina cualquier margen interno */
+}
+
+.card-animation:first-child {
+    z-index: 2; /* El primer card se verá encima */
+}
+
+.card-animation + .card-animation {
+    margin-left: -40px !important; /* Superpone más la segunda card sobre la primera */
+    z-index: 1;
+}
+
+app-doctor, app-patient-x-ray {
+    width: 200px !important;
+    height: 200px !important;
+    display: block;
+    margin: 0 !important;
+}
+
+.btn-primary{
+    background-color: #ffc0cb !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
 }

@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 import { LottieComponent, AnimationOptions } from 'ngx-lottie';
 
 @Component({
-  selector: 'app-mamography',
-  templateUrl: './mamography.component.html',
+  selector: 'app-doctor',
+  templateUrl: './doctor.component.html',
+  styleUrl: './doctor.component.css',
   standalone: true,
   imports: [CommonModule, LottieComponent]
 })
-export class MamographyComponent {
+export class DoctorComponent {
 
-  options: AnimationOptions = {
-    path: 'assets/lottie/breast-mammography.json',
-  }
+    options: AnimationOptions = {
+      path: 'assets/lottie/doctor.json',
+    }
 
 }

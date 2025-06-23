@@ -18,7 +18,10 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterLoginComponent } from './shared/footer/footer-login/footer-login.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { provideLottieOptions } from 'ngx-lottie';
+// Importing animations components
 import { MamographyComponent } from './shared/animations/mamography/mamography.component';
+import { PatientXRayComponent } from './shared/animations/patient-x-ray/patient-x-ray.component';
+import { DoctorComponent } from './shared/animations/doctor/doctor.component';
 
 @NgModule({ declarations: [
         AppComponent,
@@ -39,7 +42,9 @@ import { MamographyComponent } from './shared/animations/mamography/mamography.c
         ReactiveFormsModule,
         FullCalendarModule,
         FormsModule,
-        MamographyComponent], 
+        MamographyComponent,
+        PatientXRayComponent,
+        DoctorComponent], 
     providers: [
         provideHttpClient(withInterceptorsFromDi()),
         provideLottieOptions({

@@ -6,7 +6,6 @@ import { LottieComponent, AnimationOptions } from 'ngx-lottie';
   selector: 'app-radiologist-animation',
   imports: [CommonModule, LottieComponent],
   templateUrl: './radiologist-animation.component.html',
-  styleUrl: './radiologist-animation.component.css',
   standalone: true,
 })
 export class RadiologistAnimationComponent {
