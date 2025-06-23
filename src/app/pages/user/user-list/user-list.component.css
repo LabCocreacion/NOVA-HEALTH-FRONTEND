@@ -2,6 +2,7 @@
     padding: 63px;
     display: flex;
     flex-direction: column;
+    padding-left: 347px;
 }
 
 .btn-create-user {
