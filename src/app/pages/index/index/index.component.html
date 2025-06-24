@@ -108,3 +108,17 @@
         </div>
     </div>
 </div>
+
+<!-- Botón flotante para abrir/cerrar el chat -->
+<button 
+  class="chat-bot-fab" 
+  (click)="showChatBot = !showChatBot"
+  style="position: fixed; bottom: 24px; right: 24px; z-index: 1050; background: #00b198; color: white; border: none; border-radius: 50%; width: 56px; height: 56px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); font-size: 28px; display: flex; align-items: center; justify-content: center;">
+  💬
+</button>
+
+<!-- Ventana del chat-bot flotante -->
+<app-chat-bot
+  *ngIf="showChatBot"
+  style="position: fixed; bottom: 90px; right: 24px; z-index: 1051; width: 350px; max-width: 90vw;">
+</app-chat-bot>

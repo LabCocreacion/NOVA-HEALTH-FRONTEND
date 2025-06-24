@@ -1,0 +1,15 @@
+<div class="chat-bot-window">
+  <div class="chat-bot-header">
+    <span>Chatbot</span>
+    <!-- Puedes agregar un botón de cerrar aquí si lo deseas -->
+  </div>
+  <div class="chat-bot-messages">
+    <div *ngFor="let msg of messages" class="message" [ngClass]="msg.from">
+      {{ msg.text }}
+    </div>
+  </div>
+  <form class="chat-bot-input" (submit)="sendMessage()">
+    <input type="text" [(ngModel)]="userInput" name="userInput" placeholder="Escribe tu mensaje..." autocomplete="off" required />
+    <button type="submit">Enviar</button>
+  </form>
+</div>

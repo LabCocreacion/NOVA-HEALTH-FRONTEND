@@ -18,6 +18,7 @@ export class IndexComponent implements AfterViewChecked {
   calendarOptions: any;
   email: string = '';
   password: string = '';
+  showChatBot: boolean = false;
 
 
   constructor( private loginService: LoginService, private router: Router) {

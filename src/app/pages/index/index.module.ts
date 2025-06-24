@@ -4,7 +4,8 @@ import { IndexComponent } from './index/index.component';
 import { RouterModule, Routes } from '@angular/router';
 import { CalendarComponent } from './calendar/calendar.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { ChatBotComponent } from 'src/app/shared/chat-bot/chat-bot.component';
 
 const routes: Routes = [
   { path: 'index', component: IndexComponent }
@@ -13,7 +14,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     IndexComponent,
-    CalendarComponent
+    CalendarComponent,
+    ChatBotComponent
   ],
   imports: [
     CommonModule,
