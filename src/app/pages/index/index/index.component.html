@@ -38,23 +38,6 @@
                 </a>
             </div>
         </div>
-        <div class="image-container">
-            <img src="/assets/img/mascota.svg" alt="Mascota" class="login-image">
-        </div>
-        <div class="login-container">
-            <h3 style="color: #00b198;">Ingreso <b>usuarios</b></h3>
-            <form (ngSubmit)="onLogin()">
-                <div class="form-group mb-3">
-                    <label for="username">Usuario</label>
-                    <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" placeholder="Email" required>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="password">Contraseña</label>
-                    <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" placeholder="Contraseña" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Iniciar sesión</button>
-            </form>
-        </div>
     </div>
     <div class="menu-container mb-5">
         <div class="butttons justify-content-center">

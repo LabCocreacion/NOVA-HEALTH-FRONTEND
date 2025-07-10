@@ -27,18 +27,6 @@ export class IndexComponent implements AfterViewChecked {
     };
   }
 
-  onLogin(): void {
-    this.loginService.login(this.email, this.password).subscribe(
-      response => {
-        this.router.navigate(['/dashboard']);
-      },
-      error => {
-        console.error('Login failed', error);
-        alert('Invalid credentials');
-      }
-    );
-  }
-
   ngAfterViewChecked() {
     if (!this.carouselInitialized) {
       setTimeout(() => {

@@ -21,6 +21,7 @@
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
     margin-right: 3px;
+    margin-bottom: 3px;
 }
 
 .btn-create i {
